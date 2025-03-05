@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "tailwind": "npx tailwindcss -i src/styles/tailwind.css -o public/styles/tailwind.css --watch",
-    "build": "vite build",
+    "build": "vite build && npx tailwindcss -i src/styles/tailwind.css -o public/styles/tailwind.css --minify",
     "preview": "vite preview"
   },
   "devDependencies": {
