@@ -1,0 +1,51 @@
+.swiper {
+    $self: &;
+
+    &-pagination {
+        &-bullet {
+            width: 1rem !important;
+            height: 1rem !important;
+
+            &-active {
+                background: var(--color10) !important;
+            }
+        }
+    }
+
+    &--review-slider {
+        .swiper-pagination {
+            @include media-breakpoint-up(xl) {
+                width: auto !important;
+                left: 6rem !important;
+            }
+        }
+    }
+
+    &--trusted-company {
+        #{ $self }-pagination {
+            &-bullet {
+                width: 0.6rem !important;
+                height: 0.6rem !important;
+                background: var(--color2) !important;
+
+                &-active {
+                    background: var(--color10) !important;
+                }
+            }
+        }
+    }
+
+    &--domestic-company {
+        #{ $self }-pagination {
+            &-bullet {
+                width: 0.7rem !important;
+                height: 0.7rem !important;
+                background: var(--color12) !important;
+
+                &-active {
+                    background: var(--color10) !important;
+                }
+            }
+        }
+    }
+}

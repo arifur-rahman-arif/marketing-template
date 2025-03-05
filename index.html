@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="stylesheet" href="/styles/tailwind.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Vite App</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- ====================== -->
+            <!-- Main banner -->
+            <!-- ====================== -->
+            <main class="relative">
+                <div class="relative z-[1]">
+                    <!-- Mobile overlay -->
+                    <svg
+                        class="pointer-events-none absolute left-0 top-0 z-[2] h-full w-full md:hidden"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="375"
+                        height="607"
+                        viewBox="0 0 375 607"
+                        fill="none"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0 -1H375V607H0V-1Z"
+                            fill="url(#paint0_linear_36056_8988)"
+                            fill-opacity="0.5"
+                        />
+                        <defs>
+                            <linearGradient
+                                id="paint0_linear_36056_8988"
+                                x1="187.5"
+                                y1="607"
+                                x2="187.5"
+                                y2="-1"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop stop-opacity="0.5" />
+                                <stop offset="1" stop-opacity="0.4" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Desktop overlay -->
+
+                    <svg
+                        class="pointer-events-none absolute left-0 top-0 z-[2] hidden h-full w-full md:block"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1440"
+                        height="810"
+                        viewBox="0 0 1440 810"
+                        fill="none"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0 0H1440V810H0V0Z"
+                            fill="url(#paint0_linear_36056_8581)"
+                            fill-opacity="0.5"
+                        />
+                        <defs>
+                            <linearGradient
+                                id="paint0_linear_36056_8581"
+                                x1="720"
+                                y1="927"
+                                x2="720"
+                                y2="-546.5"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0.0197274" />
+                                <stop offset="1" stop-color="#666666" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <picture class="w-full">
+                        <!-- Mobile Image -->
+                        <source
+                            srcset="/assets/images/masthead/centre-masthead-home-mobile.png"
+                            media="(max-width: 767px)"
+                            width="375"
+                            height="600"
+                            class="w-full"
+                        />
+
+                        <!--  Desktop Image (default) -->
+                        <img
+                            src="/assets/images/masthead/centre-masthead.png"
+                            alt=""
+                            width="1440"
+                            height="810"
+                            class="w-full object-cover"
+                        />
+                    </picture>
+                </div>
+
+                <div
+                    class="container absolute left-0 top-0 z-[3] grid h-full w-full pt-6 md:content-center md:gap-10 xl:!ml-[calc(calc(100vw_-_var(--container-width))_/_2)]"
+                >
+                    <img
+                        src="/assets/images/logos/MFS Logo.svg"
+                        width="170"
+                        height="89"
+                        alt=""
+                        class="max-md:max-w-[5.6rem]"
+                    />
+
+                    <div class="md:gap grid content-start pb-24 max-md:mt-auto md:content-center md:gap-8">
+                        <div>
+                            <p class="text-lg font-700 leading-6 text-secondary-paleIvory">
+                                Welcome To My First Skool’s EYC
+                            </p>
+                            <h1 class="text-secondary-paleIvory">2 Punggol Drive</h1>
+                        </div>
+                        <p class="max-w-[35rem] text-sm font-500 leading-5 text-white max-md:mt-2">
+                            We recognise the early years' impact on your child's future. Our EYCs in Punggol nurture
+                            children from two months to four years old.
+                        </p>
+
+                        <!-- USP desktop version -->
+                        <div class="grid gap-8 max-md:hidden">
+                            <!-- Usp icons -->
+                            <div class="flex flex-wrap items-center justify-start gap-14">
+                                <div class="grid justify-items-center gap-4">
+                                    <img
+                                        src="/public/assets/images/icons/icon-building.svg"
+                                        width="49"
+                                        height="49"
+                                        alt=""
+                                    />
+                                    <span class="text-center text-sm font-700 leading-[1.4rem] text-white">
+                                        Guarantees <br />a K1 spot
+                                    </span>
+                                </div>
+
+                                <!-- Line -->
+                                <span class="h-20 w-[0.5px] bg-gray-20"></span>
+
+                                <div class="grid justify-items-center gap-4">
+                                    <img
+                                        src="/public/assets/images/icons/icon-boosting.svg"
+                                        width="49"
+                                        height="49"
+                                        alt=""
+                                    />
+                                    <span class="text-center text-sm font-700 leading-[1.4rem] text-white">
+                                        Boosting <br />social Skills
+                                    </span>
+                                </div>
+
+                                <!-- Line -->
+                                <span class="h-20 w-[0.5px] bg-gray-20"></span>
+
+                                <div class="grid justify-items-center gap-4">
+                                    <img
+                                        src="/public/assets/images/icons/icon-experience.svg"
+                                        width="49"
+                                        height="49"
+                                        alt=""
+                                    />
+                                    <span class="text-center text-sm font-700 leading-[1.4rem] text-white">
+                                        Hands-on <br />exploration
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Centre search -->
+                            <div class="grid gap-2">
+                                <span class="text-sm font-700 leading-5 text-white">
+                                    Select your preferred start dates
+                                </span>
+
+                                <form class="flex items-center justify-start gap-4">
+                                    <input type="text" name="search" id="search" placeholder="Search" />
+                                    <button type="submit" class="mfs-button !py-3">Register Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- ====================== -->
+            <!-- Footer Area -->
+            <!-- ====================== -->
+            <footer id="site-footer" class="grid gap-10 bg-gray-0 lg:gap-16" role="contentinfo">
+                <div class="footer-container container grid content-start gap-10 py-10 md:py-12 lg:py-16">
+                    <!-- First column -->
+                    <div class="grid content-start gap-4">
+                        <span class="text-xs font-700 leading-5 text-gray-80 md:text-sm">
+                            We're only a click or call away.<br />
+                            Contact us at:
+                        </span>
+
+                        <div class="grid grid-cols-[auto_1fr] items-start gap-4">
+                            <img src="/assets/images/icons/icon-map.svg" width="18" height="24" alt="" />
+                            <span class="max-w-[13rem] text-xs font-500 leading-5 text-gray-80 md:text-sm">
+                                229 Mountbatten Road #02-08<br />Mountbatten <br />Singapore 398007
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-[auto_1fr] items-start gap-4">
+                            <img src="/assets/images/icons/icon-phone.svg" width="16" height="16" alt="" />
+                            <a href="tel:6509 7887" class="text-xs font-500 leading-5 text-gray-80 md:text-sm">
+                                6509 7887 (Hotline)
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-[auto_1fr] items-start gap-4">
+                            <img class="mt-1" src="/assets/images/icons/icon-mail.svg" width="16" height="12" alt="" />
+                            <a
+                                href="mailto:info@myfirstskool.com"
+                                class="text-xs font-500 leading-5 text-gray-80 md:text-sm"
+                            >
+                                info@myfirstskool.com
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-[auto_1fr] items-start gap-4">
+                            <img class="mt-1" src="/assets/images/icons/icon-mail.svg" width="16" height="12" alt="" />
+                            <a
+                                href="mailto:media@ntucfirstcampus.com"
+                                class="text-xs font-500 leading-5 text-gray-80 md:text-sm"
+                            >
+                                media@ntucfirstcampus.com
+                            </a>
+                        </div>
+
+                        <a href="#" class="mfs-button mfs-button--secondary lg:justify-self-start"
+                            >Start Whatsapp chat</a
+                        >
+                    </div>
+
+                    <!-- Second column / Accordion column -->
+                    <div class="grid">
+                        <div class="accordion footer-accordion lg:grid lg:grid-cols-[auto_1fr] lg:gap-12">
+                            <!-- About Us -->
+                            <div class="desktop-container">
+                                <div class="accordion-item grid-row-1 active">
+                                    <button class="accordion-button">
+                                        About Us
+                                        <img
+                                            src="/assets/images/icons/icon-arrow-down.svg"
+                                            alt=""
+                                            width="24"
+                                            height="24"
+                                        />
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li>
+                                                <a href="/about-us/my-first-skool"> Our Achievements </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- My First Skool Experience -->
+                                <div class="accordion-item grid-row-2">
+                                    <button class="accordion-button">
+                                        My First Skool Experience
+                                        <img
+                                            src="/assets/images/icons/icon-arrow-down.svg"
+                                            alt=""
+                                            width="24"
+                                            height="24"
+                                        />
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li>
+                                                <a href="/our-approach/curriculum/"> Our Curriculum </a>
+                                            </li>
+                                            <li>
+                                                <a href="/our-centres/find-a-centre"> Early Years Centre </a>
+                                            </li>
+                                            <li>
+                                                <a href="/our-centres/find-a-centre"> Large Childcare Centre </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Standalone Links (No Accordion) -->
+                                <a href="/our-centres/find-a-centre" class="accordion-single grid-row-3"
+                                    >Find A Centre</a
+                                >
+
+                                <a href="/fees-perks/fees" class="accordion-single grid-row-4">Admission & Fees</a>
+                            </div>
+
+                            <div class="desktop-container">
+                                <!-- Resources -->
+                                <div class="accordion-item grid-row-5">
+                                    <button class="accordion-button">
+                                        Resources
+                                        <img
+                                            src="/assets/images/icons/icon-arrow-down.svg"
+                                            alt=""
+                                            width="24"
+                                            height="24"
+                                        />
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li>
+                                                <a href="/for-parents/resources/"> Info Library </a>
+                                            </li>
+                                            <li>
+                                                <a href="/for-parents/calendar/"> Academic Calendar </a>
+                                            </li>
+                                            <li>
+                                                <a href="/faq"> FAQs </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Standalone Links -->
+                                <a href="/register" class="accordion-single grid-row-6"> Register Now </a>
+
+                                <a href="/teach-with-us" class="accordion-single grid-row-7"> Careers </a>
+
+                                <a
+                                    href="https://myfirstclub.myfirstskool.com/"
+                                    target="_blank"
+                                    class="accordion-single grid-row-8 !justify-start !gap-2"
+                                >
+                                    My First Club
+                                    <img src="/assets/images/icons/icon-external.svg" width="11" height="11" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third column -->
+                    <div class="grid grid-cols-[auto_1fr] content-start items-center gap-9 md:grid-cols-1 md:gap-4">
+                        <div class="grid gap-2">
+                            <span class="text-xs font-700 leading-5 text-gray-80 md:text-sm"> Follow Us </span>
+                            <div class="flex items-center justify-start gap-2">
+                                <a href="https://www.facebook.com/myfirstskoolsg/" target="_blank">
+                                    <img
+                                        src="/assets/images/icons/icon-facebook.svg"
+                                        width="32"
+                                        height="32"
+                                        alt="icon-facebook"
+                                    />
+                                </a>
+
+                                <a href="https://www.instagram.com/myfirstskoolsg/" target="_blank">
+                                    <img
+                                        src="/assets/images/icons/icon-insta.svg"
+                                        width="32"
+                                        height="32"
+                                        alt="Instagram"
+                                    />
+                                </a>
+
+                                <a href="https://t.me/myfirstskool" target="_blank">
+                                    <img
+                                        src="/assets/images/icons/icon-telegram.png"
+                                        width="32"
+                                        height="32"
+                                        alt="Telegram"
+                                    />
+                                </a>
+
+                                <a href="https://www.youtube.com/user/MyFirstSkool" target="_blank">
+                                    <img
+                                        src="/assets/images/icons/icon-youtube.svg"
+                                        width="32"
+                                        height="32"
+                                        alt="Youtube"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+
+                        <img
+                            src="/assets/images/logos/influentional-badge.png"
+                            width="146"
+                            height="59"
+                            class="max-sm:max-w-[8.25rem]"
+                        />
+                    </div>
+
+                    <!-- Fourth column -->
+                    <div class="grid w-full gap-4 sm:max-w-[17rem]">
+                        <script
+                            charset="utf-8"
+                            type="text/javascript"
+                            src="//js.hsforms.net/forms/embed/v2.js"
+                        ></script>
+                        <script>
+                            hbspt.forms.create({
+                                portalId: '21698896',
+                                formId: 'cfc8cd3e-612d-4a57-829b-0404f7336ca3',
+                                region: 'na1',
+                                css: ''
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="grid w-full rounded-lg border border-solid border-primary-50 p-6">
+                        <img
+                            src="/assets/images/logos/first-campus.png"
+                            width="100"
+                            height="31"
+                            alt=""
+                            class="relative -top-10 h-10 w-[12rem] justify-self-center bg-gray-0 object-contain"
+                        />
+
+                        <div
+                            class="grid grid-cols-[auto_auto] content-start justify-between gap-10 pb-6 md:flex md:items-center md:justify-center md:pb-8 lg:gap-16"
+                        >
+                            <a href="/">
+                                <img src="/assets/images/logos/myfirstskool.png" width="100" height="53" alt="" />
+                            </a>
+                            <a href="https://www.littleskoolhouse.com/" target="_blank">
+                                <img src="/assets/images/logos/littleskool.png" width="100" height="121" alt="" />
+                            </a>
+                            <a href="https://outdoorschool.sg/" target="_blank">
+                                <img src="/assets/images/logos/firstcampus.png" width="100" height="24" alt="" />
+                            </a>
+                            <a href="https://www.seedcampus.sg/changemakers" target="_blank">
+                                <img src="/assets/images/logos/firstcampus-seed.png" width="100" height="24" alt="" />
+                            </a>
+                            <a
+                                class="col-span-full justify-self-center"
+                                href="https://ntucfcdev.wpengine.com/do-good/bright-horizons-fund"
+                                target="_blank"
+                            >
+                                <img src="/assets/images/logos/bright-horizons.png" width="100" height="41" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="bg-gray-80">
+                    <div class="container grid gap-2 py-6 md:grid-cols-[auto_1fr] md:py-4">
+                        <span class="text-xs font-500 leading-5 text-white">
+                            Copyright 2025 © My First Skool. All rights reserved.
+                        </span>
+                        <div class="flex items-center justify-start gap-4 md:justify-self-end">
+                            <a
+                                class="text-xs font-500 leading-5 text-gray-20 transition-all duration-500 hover:text-primary-100"
+                                href="/privacy-policy"
+                            >
+                                Privacy Policy
+                            </a>
+                            <a
+                                class="text-xs font-500 leading-5 text-gray-20 transition-all duration-500 hover:text-primary-100"
+                                href="/report-vulnerability/"
+                            >
+                                Report Vulnerability
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

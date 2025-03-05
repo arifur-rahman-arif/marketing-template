@@ -1,0 +1,97 @@
+:root {
+    // =============================================
+    //------------- Color variables ----------------
+    // =============================================
+
+    //------------- Gray Scale Colors ----------------
+    --Gray-80: #333333;
+    --Gray-70: #424242;
+    --Gray-60: #595959;
+    --Gray-40: #cec7c9;
+    --Gray-20: #d9d9d9;
+    --Gray-10: #ebebec;
+    --Gray-00: #f5f7f9;
+    --White: #ffffff;
+
+    //------------- Primary Colors ----------------
+    --P-100: #ffaf85;
+    --P-50: #ffdecc;
+
+    //------------- Secondary Colors ----------------
+    --S-Light-Cream: #fff7eb;
+    --S-Light-Gray-Beige: #ebe8e3;
+    --S-Pale-Ivory: #ffffee;
+    --S-Soft-Peach: #fff4ed;
+
+    //------------- Tinted Colors ----------------
+    --T-Aqua-Green: #acd9cd;
+    --T-Dusty-Blue: #c5d7e3;
+    --T-Fresh-Green: #f0f9ee;
+    --T-Rose-Pink: #efb6a2;
+    --T-Sage-Green: #bfc897;
+    --T-Sky-Blue: #ecf9ff;
+    --T-Soft-Beige: #f3ece4;
+
+    //------------- Alert Colors ----------------
+    --Success-150: #086343;
+    --Success-100: #008556;
+    --Warning-150: #c8661d;
+    --Warning-100: #e3b28e;
+    --Alert-150: #9f1b1f;
+    --Alert-100: #de1c22;
+
+    //------------- MFS Logo Colors ----------------
+    --MFS-Logo-Orange: #f0611c;
+    --MFS-Logo-Grey-01: #767474;
+    --MFS-Logo-Grey-02: #5a5a5c;
+
+    //------------- Singapore Icon Colors ----------------
+    --SG-Red: #ed4c5c;
+    --SG-White: #f9f9f9;
+
+    // ------------------ Typography variables -------------------
+    // Livvic font weights
+    --100: 100;
+    --200: 200;
+    --300: 300;
+    --400: 400;
+    --500: 500;
+    --600: 600;
+    --700: 700;
+    --900: 900;
+
+    // Miscellaneous variables
+    --container-width: 73.125rem; // 1170px
+
+    // ------------------ Border radius -------------------
+    --Border-Radius-border-radius-none: 0rem; /* 0px */
+    --Border-Radius-border-radius-xxsmall: 0.125rem; /* 2px */
+    --Border-Radius-border-radius-xsmall: 0.25rem; /* 4px */
+    --Border-Radius-border-radius-small: 0.5rem; /* 8px */
+    --Border-Radius-border-radius-medium: 1rem; /* 16px */
+    --Border-Radius-border-radius-large: 1.5rem; /* 24px */
+    --Border-Radius-border-radius-xlarge: 2rem; /* 32px */
+    --Border-Radius-border-radius-round: 6.25rem; /* 100px */
+
+    // ------------------ Box shadow -------------------
+    --Shadow-1: 0 1px 3px 0 rgba(166, 175, 195, 0.4);
+    --Shadow-2: 0 5px 12px 0 rgba(0, 0, 0, 0.1);
+    --Shadow-3: 0 4px 12px 0 rgba(13, 10, 44, 0.06);
+    --Shadow-4: 0 10px 15px 0 rgba(5, 13, 29, 0.18);
+    --Shadow-5: 0 34px 26px 0 rgba(13, 10, 44, 0.05);
+    --Shadow-6: 0 20px 20px 0 rgba(5, 13, 29, 0.2);
+
+    // ------------------ Spacing -------------------
+    --Spacing-spacing-00: 0rem; // 0px
+    --Spacing-spacing-01: 0.125rem; // 2px
+    --Spacing-spacing-02: 0.25rem; // 4px
+    --Spacing-spacing-03: 0.5rem; // 8px
+    --Spacing-spacing-04: 1rem; // 16px
+    --Spacing-spacing-05: 1.5rem; // 24px
+    --Spacing-spacing-06: 2rem; // 32px
+    --Spacing-spacing-07: 2.5rem; // 40px
+    --Spacing-spacing-08: 3rem; // 48px
+    --Spacing-spacing-09: 3.5rem; // 56px
+    --Spacing-spacing-10: 4rem; // 64px
+    --Spacing-spacing-11: 5rem; // 80px
+}

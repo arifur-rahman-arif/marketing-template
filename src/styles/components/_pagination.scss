@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    .page-numbers {
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius1);
+        background: var(--color6);
+        color: var(--color11);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--color1);
+            color: var(--color16);
+            box-shadow: var(--shadow1);
+            transform: scale(1.05);
+        }
+
+        &.current {
+            background: var(--color10);
+            color: var(--color1);
+            font-weight: 700;
+        }
+    }
+}

@@ -1,0 +1,302 @@
+@use '../utils/breakpoints' as *;
+
+// .site-content {
+//     display: none !important;
+// }
+
+.header-container {
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--White);
+}
+
+#site-header {
+    border-bottom: 2px solid var(--P-100, #ffaf85);
+    position: relative;
+    z-index: 2;
+
+    &.active {
+        .navigation-container {
+            @include media-breakpoint-down(xl) {
+                max-height: calc(100vh - 100px);
+                pointer-events: auto;
+                padding-top: 1.5rem;
+            }
+        }
+    }
+}
+
+.hamburger-menu {
+    $self: &;
+    position: relative;
+    cursor: pointer;
+
+    img {
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__close-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    &.active {
+        #{$self}__close-icon {
+            opacity: 1;
+        }
+
+        #{$self}__open-icon {
+            opacity: 0;
+        }
+    }
+}
+
+.navigation-container {
+    // Styles to be applied to for both desktop and mobile
+    .menu {
+        & > li {
+            position: relative;
+
+            &.external > a {
+                padding-right: 1.5rem;
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%) translateX(0.5rem);
+                }
+            }
+        }
+
+        & > li > a {
+            color: var(--Gray-80, #333);
+            font-size: 1rem;
+            font-weight: var(--700);
+            line-height: 1.75rem;
+            display: block;
+            padding: 1rem;
+        }
+
+        .sub-menu {
+            transition: all 0.5s ease-in-out;
+            background: var(--White);
+            & > li {
+                & > a {
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    color: var(--Gray-80);
+                    font-size: 0.875rem;
+                    font-weight: var(--500);
+                    line-height: 1.375rem; /* 157.143% */
+                }
+            }
+        }
+    }
+
+    // Styles to be applied to for mobile
+    @include media-breakpoint-down(xl) {
+        display: grid;
+        position: absolute;
+        top: calc(100% + 1px);
+        background: var(--White);
+        padding: 0rem var(--Spacing-spacing-04);
+        width: 100%;
+        left: 0;
+        height: 100vh;
+        max-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        pointer-events: none;
+        transition:
+            max-height 0.7s ease-in-out,
+            padding 1s ease-in-out;
+
+        .menu {
+            display: grid;
+            gap: var(--Spacing-spacing-03);
+
+            & > li {
+                display: block;
+            }
+
+            & > li > a {
+                border-radius: 1.5rem;
+                border: 1px solid var(--Gray-10);
+                background: var(--White);
+            }
+
+            & > li.menu-item-has-children {
+                display: grid;
+                grid-template-columns: 1fr auto;
+
+                position: relative;
+
+                & > a {
+                    border-radius: 1.5rem 0rem 0rem 1.5rem;
+                    width: 100%;
+                }
+
+                .submenu-arrow {
+                    grid-row: 1/1;
+                    grid-column: 2/3;
+                    display: flex;
+                    width: 3.75rem;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    border-radius: 0rem 1.5rem 1.5rem 0rem;
+                    border-top: 1px solid var(--Gray-10);
+                    border-right: 1px solid var(--Gray-10);
+                    border-bottom: 1px solid var(--Gray-10);
+
+                    svg {
+                        transition: all 0.5s ease-in-out;
+                    }
+                }
+
+                &.active {
+                    .submenu-arrow {
+                        svg {
+                            transform: rotate(-180deg);
+                        }
+                    }
+
+                    .sub-menu {
+                        max-height: var(--submenu-height) !important;
+                        border: 1px solid var(--Gray-10);
+                    }
+                }
+            }
+
+            .sub-menu {
+                margin-top: 0.5rem;
+                grid-column: span 2;
+                width: 100%;
+                z-index: 2;
+                background: var(--White);
+                display: grid;
+                border-radius: var(--Border-Radius-border-radius-large);
+                border: 1px solid var(--White);
+                overflow: hidden;
+                height: 100%;
+                max-height: 0;
+
+                & > li {
+                    & > a {
+                        padding: 1rem;
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(xl) {
+                padding-bottom: 6rem;
+            }
+        }
+    }
+
+    // Styles to be applied to for desktop
+    @include media-breakpoint-up(xl) {
+        margin-left: auto;
+
+        .menu {
+            display: flex;
+            gap: 0.75rem;
+
+            & > li:not(li.external) {
+                border: 1px solid transparent;
+                transition: all 0.5s ease-in-out;
+                border-radius: var(--Border-Radius-border-radius-round);
+                padding: 0 0.5rem;
+
+                svg,
+                svg * {
+                    transition: all 0.5s ease-in-out;
+                }
+
+                &:hover {
+                    background: var(--Gray-80);
+                    border: 1px solid var(--Gray-80);
+
+                    & > a {
+                        color: var(--White);
+                    }
+                    .sub-menu {
+                        opacity: 1;
+                        pointer-events: auto;
+                        transform: translateY(1rem);
+                    }
+
+                    svg {
+                        transform: rotate(-180deg);
+                    }
+
+                    svg path {
+                        fill: var(--White);
+                    }
+                }
+            }
+
+            & > li > a {
+                padding: 0.5rem 0;
+                transition: all 0.5s ease-in-out;
+            }
+
+            & > li.menu-item-has-children {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                gap: var(--Spacing-spacing-02);
+                padding-left: 0.75rem !important;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 1rem;
+                    background: transparent;
+                }
+            }
+
+            .sub-menu {
+                position: absolute;
+                top: 100%;
+                border-radius: var(--Border-Radius-border-radius-large);
+                border: 1px solid var(--Gray-10);
+                background: var(--White);
+                box-shadow: 0px 4px 12px 0px rgba(13, 10, 44, 0.06);
+                width: max-content;
+                min-width: 12.5rem;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-1rem);
+                max-height: max-content !important;
+
+                & > li {
+                    & > a {
+                        display: block;
+                        padding: 0.5rem 1rem;
+                        color: var(--Gray-80);
+                        font-size: 0.875rem;
+                        font-weight: var(--500);
+                        line-height: 1.375rem; /* 157.143% */
+                        transition: all 0.5s ease-in-out;
+
+                        &:hover {
+                            color: var(--P-100);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

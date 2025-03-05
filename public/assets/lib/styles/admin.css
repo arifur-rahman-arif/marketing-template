@@ -1,0 +1,14 @@
+/* #menu-plugins, #toplevel_page_wp-mail-smtp, #toplevel_page_wc-admin-path--analytics-overview,
+#toplevel_page_woocommerce-marketing, #toplevel_page_wpml_plugin_log, #menu-tools, #menu-comments, #toplevel_page_edit-post_type-acf-field-group {
+	display: none !important;
+}	 */
+
+
+/* Style the 'Private' label for deal custom post type */
+/* .post-type-deal .post-state {
+    background-color: yellow !important;
+    color: black;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+} */

@@ -1,0 +1,15 @@
+@keyframes hand-shake {
+  0%, 33% {
+	transform: rotate(0deg);
+  }
+  34%, 66% {
+	transform: rotate(-45deg);
+  }
+  67%, 100% {
+	transform: rotate(0deg);
+  }
+}
+
+.shake-animation {
+  animation: hand-shake 2s steps(2, end) infinite; /* 3s cycle, 1s per step */
+}

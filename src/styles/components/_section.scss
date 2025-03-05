@@ -1,0 +1,14 @@
+@use '../utils/breakpoints' as *;
+
+.section {
+    margin-top: 2.5rem;
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        margin-top: 3.5rem;
+    }
+
+    @include media-breakpoint-up('xl') {
+        margin-top: 5rem;
+    }
+}

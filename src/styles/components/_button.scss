@@ -1,0 +1,97 @@
+@use '../utils/breakpoints' as *;
+
+@mixin mfs-button() {
+    background: var(--P-100);
+    outline: none;
+    border: 2px solid var(--P-100);
+    display: inline-block;
+    padding: var(--Spacing-spacing-03);
+    border-radius: 6.25rem;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 2; /* Ensure the text is above the pseudo-element */
+    color: var(--Gray-80);
+    font-weight: var(--700);
+    font-size: 0.75rem;
+
+    @include media-breakpoint-up(md) {
+        padding: var(--Spacing-spacing-04) var(--Spacing-spacing-06);
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background: var(--P-50);
+        border-color: var(--P-50);
+    }
+
+    &:focus {
+        background: var(--P-100);
+        border: 2px solid var(--P-50);
+    }
+
+    &:active {
+        background: var(--P-100);
+    }
+
+    &--loading {
+        *:not(.spinner) {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        pointer-events: none;
+
+        .spinner {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.mfs-button {
+    $self: &;
+
+    @include mfs-button();
+
+    // // Secondary small
+    &--secondary {
+        border-radius: var(--Border-Radius-border-radius-round);
+        border: 2px solid var(--Gray-80);
+        color: var(--Gray-80);
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: var(--700);
+        line-height: 1.375rem; /* 157.143% */
+        background: transparent;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            padding: 1rem 2rem;
+        }
+
+        &:hover {
+            border: 2px solid var(--White);
+            background: var(--P-50);
+            color: var(--Gray-80);
+        }
+
+        &:focus {
+            border: 3px solid var(--Gray-80);
+            color: var(--Gray-80);
+            background: transparent;
+        }
+
+        &:active {
+            color: var(--Gray-80);
+            background: transparent;
+        }
+    }
+}

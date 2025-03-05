@@ -1,0 +1,868 @@
+@import '../utils/variables';
+
+// Load components
+@import '../components/button';
+@import '../components/inputs';
+@import '../components/select';
+
+@mixin button-style-1() {
+    background-color: var(--color10);
+    border-color: var(--color10);
+    color: var(--color16);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius1);
+    font-weight: var(--700);
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--color10);
+    }
+}
+
+@mixin button-style-2() {
+    background-color: var(--color1);
+    border-color: var(--color1);
+    color: var(--color16);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius1);
+    font-weight: var(--700);
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        background-color: var(--color10);
+        border-color: var(--color10);
+    }
+}
+
+#buddypress {
+    #object-nav {
+        display: none;
+    }
+
+    .bp-messages-nav-panel,
+    #send_message_form {
+        border-radius: var(--border-radius2);
+        border: 1px solid var(--color15);
+    }
+
+    #subnav {
+        margin: 0;
+    }
+
+    #subsubnav {
+        margin: 1rem 0 0 0;
+        padding: 0 1rem;
+    }
+
+    #user_messages_search_form {
+        border: none;
+        position: relative;
+        &::before {
+            display: none;
+        }
+    }
+
+    // BuddyBoss all form input customization
+    #user_messages_search,
+    .select2-search__field,
+    #group-members-search,
+    #dir-groups-search,
+    #dir-members-search {
+        @include input-style();
+
+        background-color: var(--color16);
+        border-color: var(--color2);
+        color: var(--colo11);
+        padding: 0.5rem 1rem;
+    }
+
+    #user_messages_search_submit {
+        position: absolute;
+        right: 0;
+    }
+
+    #bp-messages-threads-list {
+        margin-top: 1.5rem;
+    }
+
+    .thread-avatar img {
+        border-radius: 50%;
+    }
+
+    .bp-navs {
+        overflow: visible;
+    }
+
+    .bb_more_options_list li {
+        width: 100%;
+
+        a {
+            width: 100%;
+        }
+    }
+
+    #send_message_form {
+        padding: 1rem;
+
+        .select2-selection {
+            height: 55px !important;
+        }
+    }
+
+    .bp-messages-recipient {
+        border-bottom: 1px solid var(--color15);
+    }
+
+    #send-to-input {
+        display: none;
+    }
+
+    .select2-search__field {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .bp-messages-recipient {
+        padding: 0rem 1rem 1.5rem 1rem;
+        height: auto;
+        display: grid;
+        gap: 0.5rem;
+
+        .select2-container {
+            width: 100%;
+            // Hide it
+            display: none;
+        }
+
+        .bb-select-container {
+            all: unset;
+        }
+
+        .select2-search {
+            margin: 0;
+        }
+
+        .select2-selection__rendered {
+            display: grid !important;
+            justify-items: start;
+            gap: 0.5rem;
+        }
+
+        .select2-selection__choice {
+            background-color: var(--color10) !important;
+            border-radius: var(--border-radius1);
+            font-weight: var(--700);
+        }
+    }
+
+    #bp-message-content,
+    .bp-messages-content {
+        border-radius: var(--border-radius2);
+        border: 1px solid var(--color15);
+
+        & > div {
+            width: 100%;
+        }
+
+        #message_content {
+            width: 100%;
+            max-width: 100%;
+            border-radius: var(--border-radius2);
+            padding: 1rem 0.8rem;
+            border: 1px solid transparent;
+            transition: all 0.5s ease-out;
+            outline: none;
+
+            &:focus {
+                border-color: var(--color10);
+            }
+        }
+    }
+
+    .single-message-thread-header {
+        background: transparent !important;
+    }
+
+    .bp-messages-container {
+        gap: 1rem;
+    }
+
+    .bp-messages-content {
+        padding: 1rem;
+    }
+
+    .bp-messages-content-wrapper {
+        padding: 0;
+    }
+
+    .divider-date {
+        border-radius: var(--border-radius2);
+        width: auto;
+        border: 1px solid var(--color15);
+    }
+
+    #bp-message-thread-list {
+        background-color: var(--color16);
+
+        li {
+            border: 1px solid var(--color15);
+            box-shadow: none;
+            border-radius: var(--border-radius1);
+        }
+
+        .avatar {
+            border-radius: 50%;
+        }
+
+        .bp-user-link strong {
+            font-size: 0.87rem;
+        }
+
+        .bp-message-content-wrap {
+            margin: 0;
+        }
+    }
+
+    #send-reply {
+        margin-top: auto;
+
+        .message-metadata {
+            display: none;
+        }
+    }
+
+    .single-message-thread-header {
+        z-index: 10;
+    }
+
+    #message-reply-new-submit {
+        background-color: var(--color10);
+    }
+
+    // Buddy boss all forms customization
+    #group-members-search-form,
+    #dir-groups-search-form,
+    #group_invites_search_form,
+    #dir-members-search-form,
+    #group_invites_search_form {
+        position: relative;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    #group-members-search-submit,
+    #dir-groups-search-submit,
+    #group_invites_search_submit,
+    #dir-members-search-submit,
+    #group_invites_search_submit {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .bp-group-meta-wrap {
+        margin-top: 1rem !important;
+    }
+
+    .leave-group {
+        background-color: var(--color10);
+        border-color: var(--color10);
+        color: var(--color16);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius1);
+        font-weight: var(--700);
+    }
+
+    .friendship-button a {
+        @include button-style-2();
+    }
+
+    .friendship-button.pending_friend a {
+        @include button-style-2();
+        background-color: var(--color8);
+        border-color: var(--color8);
+    }
+
+    #send-private-message a {
+        @include button-style-1();
+    }
+
+    .footer-button-wrap {
+        justify-content: center;
+        display: flex !important;
+        margin-top: 1rem;
+        gap: 1rem;
+
+        .generic-button {
+            padding: 0;
+        }
+    }
+
+    #members-group-list {
+        li > div {
+            border-radius: var(--border-radius2);
+            overflow: hidden;
+        }
+    }
+
+    // ----------------- Customize the navigation bar --------------------------------
+    .groups-nav,
+    .members-nav,
+    .user-subnav {
+        display: flex;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                transition: all 0.5s ease-out;
+            }
+        }
+
+        .selected {
+            background: var(--color1);
+
+            a {
+                background: var(--color1);
+
+                color: var(--color16);
+                &:hover {
+                    background: var(--color10);
+                }
+            }
+        }
+    }
+
+    .user-subnav {
+        a {
+            padding: 0.8rem 1rem;
+        }
+    }
+
+    // Groups create form
+    #group-create-body {
+        display: grid;
+        gap: 1rem;
+
+        h3 {
+            text-align: left;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            max-width: 40rem;
+
+            @include input-style();
+
+            background-color: var(--color16);
+            border-color: var(--color2);
+            color: var(--colo11);
+            padding: 1rem;
+        }
+
+        #group-creation-create,
+        #group-creation-previous {
+            @include button-style-2();
+            padding: 1rem;
+        }
+
+        #group-creation-next {
+            @include button-style-1();
+            padding: 1rem;
+        }
+
+        #previous-next {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            width: auto;
+
+            input {
+                width: auto;
+            }
+        }
+
+        .group-create-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .group-settings-selections {
+            display: grid;
+
+            fieldset {
+                display: grid;
+
+                legend {
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            .bp-radio-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                input {
+                    @include radio-input-style();
+                }
+
+                label {
+                    margin: 0;
+                }
+            }
+        }
+
+        .group-invitations {
+            .bp-radio-wrap {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .members-directory-container {
+        display: grid;
+
+        .grid-filters {
+            display: none !important;
+        }
+    }
+
+    .item-body {
+        display: grid;
+    }
+
+    .friends-request-list {
+        .item-avatar {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1.5rem;
+        }
+
+        .friends-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+
+            .button.accept {
+                background-color: var(--color18);
+                color: var(--color16);
+                font-weight: var(--700);
+                border-radius: var(--border-radius1);
+                border: 2px solid var(--color18);
+                transition: all 0.5s ease-out;
+                padding: 0.4rem 0.8rem;
+                margin: 0;
+
+                &:hover {
+                    background-color: transparent;
+                    color: var(--color18);
+                }
+            }
+            .button.reject {
+                background-color: var(--color17);
+                color: var(--color16);
+                font-weight: var(--700);
+                border-radius: var(--border-radius1);
+                border: 2px solid var(--color17);
+                transition: all 0.5s ease-out;
+                padding: 0.4rem 0.8rem;
+                margin: 0;
+
+                &:hover {
+                    background-color: transparent;
+                    color: var(--color17);
+                }
+            }
+
+            .switch-button {
+                display: none;
+            }
+        }
+    }
+
+    #notifications-user-list {
+        .notifications-options-nav {
+            display: flex;
+            margin-top: 1.5rem;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        #notification-select {
+            border: 1px solid var(--color10);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius1);
+        }
+
+        #notification-bulk-manage {
+            @include button-style-1();
+            padding: 0.3rem 1rem;
+
+            border: 2px solid var(--color10);
+        }
+
+        .notifications.bp-tables-user {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: var(--color16);
+            border-radius: var(--border-radius2);
+            box-shadow: var(--shadow1);
+
+            thead {
+                background-color: var(--color10);
+                color: var(--color16);
+
+                th {
+                    padding: 1rem;
+                    text-align: left;
+                    font-weight: var(--700);
+                    color: var(--color16);
+                    font-size: 0.9rem;
+                    border-bottom: 2px solid var(--color15);
+
+                    &.icon,
+                    &.bulk-select-all {
+                        width: 2.5rem;
+                        text-align: left;
+
+                        input {
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
+
+                        input[type='checkbox'] {
+                            accent-color: var(--color1);
+                        }
+                    }
+
+                    &.title {
+                        width: 42%;
+                    }
+
+                    &.date,
+                    &.actions {
+                        text-align: left;
+                        white-space: nowrap;
+                    }
+
+                    &.date {
+                        display: flex;
+                        width: 10%;
+
+                        .bb-icon-angle-up.bb-icon-l,
+                        .bb-icon-angle-down.bb-icon-l {
+                            &:before {
+                                color: var(--color16);
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    border-bottom: 1px solid var(--color15);
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: var(--color19);
+                    }
+
+                    td {
+                        padding: 1rem;
+                        font-size: 0.85rem;
+                        color: var(--color12);
+
+                        &.bulk-select-check,
+                        &.notification-since,
+                        &.notification-actions {
+                            text-align: left;
+
+                            input {
+                                width: 1.2rem;
+                                height: 1.2rem;
+                            }
+                        }
+
+                        input[type='checkbox'] {
+                            accent-color: var(--color10);
+                        }
+
+                        .notification-description a {
+                            color: var(--color1);
+                            font-weight: var(--500);
+                            text-decoration: none;
+                            transition: color 0.3s;
+
+                            &:hover {
+                                color: var(--color3);
+                                text-decoration: underline;
+                            }
+                        }
+
+                        .notification-since {
+                            color: var(--color13);
+                            font-style: italic;
+                        }
+
+                        &.notification-actions {
+                            display: flex;
+                            gap: 0.5rem;
+                            align-items: center;
+                        }
+
+                        &.notification-actions a {
+                            color: var(--color1);
+                            font-weight: var(--600);
+                            transition: color 0.3s;
+                            vertical-align: middle;
+
+                            &.mark-read {
+                                color: var(--color10);
+
+                                &:hover {
+                                    color: var(--color3);
+                                }
+                            }
+
+                            &.delete {
+                                color: var(--color17);
+
+                                &:hover {
+                                    color: var(--color7);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #members-list {
+        .list-wrap {
+            overflow: visible;
+        }
+
+        .bb_more_options_action {
+            display: none;
+        }
+    }
+
+    .woocommerce {
+        margin-top: 2rem;
+
+        .jc-button {
+            @include jc-button();
+        }
+
+        .woocommerce-Addresses {
+            margin-top: 1.5rem;
+        }
+    }
+
+    #shop-track-personal-li,
+    #shop-downloads-personal-li {
+        display: none;
+    }
+
+    #cover-image-container {
+        border-radius: var(--border-radius2);
+        border: 1px solid var(--color15);
+
+        .bb_more_options_list {
+            padding: 0;
+        }
+
+        #send-private-message a {
+            background-color: var(--color16);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-header-actions-wrap {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .bb_more_options.header-dropdown {
+            margin: 0;
+        }
+
+        .bb_more_options_action {
+            i {
+                font-size: 2rem;
+            }
+        }
+
+        .friendship-button {
+            margin: 0;
+        }
+    }
+
+    .friendship-button.not_friends button {
+        @include button-style-2();
+    }
+
+    .friendship-button.pending_friend button {
+        @include button-style-1();
+        border: 2px solid var(--color8);
+        background-color: var(--color8);
+
+        &:hover {
+            color: var(--color8);
+        }
+    }
+
+    .friendship-button.is_friend button {
+        @include button-style-2();
+
+        &:hover {
+            background-color: var(--color17);
+            border-color: var(--color17);
+        }
+    }
+
+    #edit-account-form {
+        .jc-button {
+            @include jc-button();
+        }
+    }
+
+    #group-invites-container {
+        #members-list {
+            .avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+            }
+        }
+
+        #group_invites_search_form {
+            display: grid;
+            width: 100%;
+        }
+
+        #group_invites_search_submit {
+            z-index: 3;
+        }
+
+        .total-members-text {
+            display: none;
+        }
+
+        .bp-group-message-wrap {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bp-group-invite-label {
+            margin: 0;
+        }
+
+        #bp-group-send-invite-switch-checkbox {
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--color10);
+        }
+
+        .bp-group-invite-label {
+            flex-grow: 1;
+        }
+
+        #group-invites-send-to-input {
+            display: none;
+        }
+
+        #send-invites-control {
+            width: 100%;
+            margin: 2rem 1rem 0 auto;
+        }
+
+        #bp-group-invite-content {
+            display: grid;
+        }
+
+        .select2-selection__choice {
+            border-radius: var(--border-radius1);
+            padding: 0.2rem 0.5rem;
+            background: var(--color1);
+        }
+    }
+}
+
+.select2-results__option {
+    .avatar.avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+}
+
+.select2-container {
+    width: 100%;
+    max-width: 350px;
+    background: var(--color16);
+    border-radius: var(--border-radius1);
+    z-index: 99;
+}
+
+.bb-compose-input {
+    display: block;
+}
+
+.select2-results__option {
+    margin-top: 0.5rem !important;
+    padding: 0.3rem 0;
+    transition: all 0.5s ease-out;
+    & > div {
+        display: flex !important;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &--highlighted {
+        background-color: var(--color10) !important;
+    }
+}
+
+#select2-send-to-input-results {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+
+    li {
+        padding: 0.5rem;
+    }
+}
+
+body.buddypress .site-content {
+    padding: 0 !important;
+}

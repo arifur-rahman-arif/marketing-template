@@ -1,0 +1,137 @@
+@use '../utils/breakpoints' as *;
+@use './button' as *;
+
+/* Make sure the form container has proper spacing */
+#label-email-cfc8cd3e-612d-4a57-829b-0404f7336ca3 {
+  &,
+  * {
+	font-size: 0.75rem;
+	font-weight: var(--700);
+	line-height: 1.25rem; /* 166.667% */
+	color: var(--Gray-80);
+	
+	@include media-breakpoint-up(md) {
+	  font-size: 0.875rem !important;
+	  line-height: 1.375rem !important; /* 157.143% */
+	}
+  }
+  
+  .hs-form-required {
+	display: none;
+  }
+}
+
+#hsForm_cfc8cd3e-612d-4a57-829b-0404f7336ca3 {
+  display: grid;
+}
+
+.hbspt-form {
+  .hs-form-field {
+	display: grid;
+	gap: 0.5rem;
+  }
+  
+  .hs-input {
+	font-size: 0.875rem !important;
+	font-weight: var(--500) !important;
+	line-height: 1.375rem !important; /* 157.143% */
+	display: flex;
+	padding: 0.75rem 1rem !important;
+	color: var(--Gray-80) !important;
+	border: 1px solid var(--Gray-10) !important;
+	border-radius: var(--Border-Radius-border-radius-round) !important;
+	background: var(--White) !important;
+	
+	&::placeholder {
+	  font-size: 0.875rem;
+	  font-weight: var(--500);
+	  line-height: 1.375rem; /* 157.143% */
+	  color: var(--Gray-20);
+	}
+	
+	&:hover {
+	  border: 1px solid var(--Gray-60) !important;
+	}
+	
+	&:focus {
+	  border: 3px solid var(--Gray-60) !important;
+	  
+	  &::placeholder {
+		color: var(--Gray-80) !important;
+	  }
+	}
+  }
+  
+  .hs-error-msg {
+	font-size: 0.875rem !important;
+	font-weight: var(--500);
+	line-height: 1.375rem; /* 157.143% */
+	color: var(--Alert-100);
+  }
+  
+  .hs-richtext.hs-main-font-element {
+	margin-top: 0.5rem !important;
+	
+	p {
+	  *,
+	  & {
+		font-size: 0.75rem !important;
+		font-weight: var(--400) !important;
+		line-height: 1.25rem !important; /* 166.667% */
+		color: var(--Gray-80) !important;
+	  }
+	}
+  }
+  
+  .hs_recaptcha {
+	visibility: visible !important;
+	margin-top: 1rem !important;
+	justify-self: center;
+  }
+  
+  .hs_submit {
+	@include media-breakpoint-up(md) {
+	  justify-self: flex-start;
+	}
+  }
+  
+  .hs-button {
+	@include mfs-button();
+	font-size: 0.875rem;
+	font-weight: var(--700);
+	font-style: normal;
+	line-height: 1.375rem; /* 157.143% */
+	width: 100%;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	cursor: pointer !important;
+	text-align: center;
+	color: var(--Gray-80);
+	border: 2px solid var(--Gray-80);
+	border-radius: var(--Border-Radius-border-radius-round);
+	background: transparent;
+	
+	@include media-breakpoint-up(md) {
+	  font-size: 1rem;
+	  line-height: 1.75rem;
+	  padding: 1rem 2rem;
+	}
+	
+	&:hover {
+	  color: var(--Gray-80);
+	  border: 2px solid var(--White);
+	  background: var(--P-50);
+	}
+	
+	&:focus {
+	  color: var(--Gray-80);
+	  border: 3px solid var(--Gray-80);
+	  background: transparent;
+	}
+	
+	&:active {
+	  color: var(--Gray-80);
+	  background: transparent;
+	}
+  }
+}

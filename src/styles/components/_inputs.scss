@@ -1,0 +1,42 @@
+@mixin input-style {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    background-color: var(--color11);
+    color: var(--color16);
+    border: 2px solid var(--color16);
+    outline: none;
+    border-radius: var(--border-radius1);
+    transition: border 0.4s ease-in-out;
+    z-index: 2;
+    font-weight: var(--600);
+
+    &::placeholder {
+        opacity: 0.8;
+        font-size: 0.875rem;
+    }
+
+    &:focus {
+        border-color: var(--color10);
+    }
+
+    &--white {
+        background-color: var(--color16);
+        border-color: var(--color2);
+        color: var(--colo11);
+        padding: 1rem;
+    }
+
+    &--off-white {
+        background-color: var(--color19);
+        border-color: var(--color2);
+        color: var(--colo11);
+        padding: 1rem;
+    }
+}
+
+.form-input {
+    $self: &;
+
+    @include input-style();
+}

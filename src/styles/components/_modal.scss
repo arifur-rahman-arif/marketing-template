@@ -1,0 +1,29 @@
+/* Hide modal initially */
+#jc-modal {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    .modal-container {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+#jc-modal.show {
+    opacity: 1;
+
+    .modal-container {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#jc-modal.hide {
+    opacity: 0;
+
+    .modal-container {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}

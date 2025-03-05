@@ -1,0 +1,29 @@
+:root {
+    --ss-primary-color: var(--color1);
+    // --ss-bg-color: #ffffff;
+    // --ss-font-placeholder-color: #8d8d8d;
+    // --ss-disabled-color: #dcdee2;
+    // --ss-border-color: #dcdee2;
+    // --ss-highlight-color: #fffb8c;
+    // --ss-success-color: #00b755;
+    // --ss-error-color: #dc3545;
+    --ss-focus-color: var(--color1);
+    // --ss-main-height: 30px;
+    // --ss-content-height: 300px;
+    // --ss-spacing-l: 7px;
+    // --ss-spacing-m: 5px;
+    --ss-spacing-s: 0.6rem;
+    // --ss-animation-timing: 0.2s;
+    // --ss-border-radius: 4px;
+    --ss-font-color: var(--color11);
+}
+
+.ss-addable {
+    padding: 0.5rem 1rem;
+    background: var(--color1);
+    border-radius: var(--border-radius2);
+
+    svg path {
+        stroke: var(--color16) !important;
+    }
+}

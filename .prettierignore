@@ -1,0 +1,15 @@
+*.json
+*.lock
+*.config.*
+*.sh
+*.conf
+package.json
+composer.json
+composer.lock
+yarn.lock
+*.md
+node_modules/**
+assets/**
+build/**
+vendor/**
+.husky/**

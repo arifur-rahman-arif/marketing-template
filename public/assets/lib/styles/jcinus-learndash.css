@@ -1,0 +1,107 @@
+.ld-course-navigation-heading.ld-course-navigation-heading.ld-course-navigation-heading.ld-course-navigation-heading {
+	background-color: var(--color10) !important;
+}
+
+.ld-focus-sidebar-trigger.ld-focus-sidebar-trigger.ld-focus-sidebar-trigger.ld-focus-sidebar-trigger.ld-focus-sidebar-trigger {
+	background-color: var(--color10) !important;
+}
+
+
+.ld-course-navigation-heading .ld-icon-content {
+	display: none;
+}
+
+
+
+.learndash-wrapper .ld-progress .ld-progress-bar {
+	background-color: var(--color15);
+}
+
+.ld-expand-button .ld-text {
+	color: var(--color11) !important;
+}
+
+.ld-icon-arrow-down.ld-icon-arrow-down {
+	color: var(--color16) !important;
+}
+
+.ld-topic-title {
+	padding-left: 2rem !important;
+}
+
+
+.ld-topic-title::before {
+	left: 0;
+}
+
+.ld-lesson-item-preview-heading {
+	flex-direction: row-reverse !important;
+}
+
+.ld-lesson-section-heading {
+	font-size: 1.2rem !important;
+}
+
+.ld-expand-button {
+	padding-left: 0 !important;
+}
+
+.ld-icon-arrow-down.ld-icon-arrow-down.ld-icon-arrow-down.ld-icon-arrow-down.ld-icon-arrow-down {
+	background-color: var(--color10) !important;
+}
+
+.ld-lesson-item-preview {
+	display: grid !important;
+	gap: 1rem;
+}
+
+.ld-table-list-items {
+	padding-left: 0 !important;
+}
+
+.ld-table-list-item-preview {
+	padding-left: 1rem !important;
+	gap: 1rem !important;
+}
+
+.learndash-wrapper #quiz_continue_link, .learndash-wrapper .ld-secondary-background, .learndash-wrapper .learndash_mark_complete_button, .learndash-wrapper #learndash_mark_complete_button, .learndash-wrapper .ld-status-complete, .learndash-wrapper .ld-alert-success .ld-button, .learndash-wrapper .ld-alert-success .ld-alert-icon {
+	background-color: var(--color18) !important;
+}
+
+.ld-content-action .ld-button.ld-button.ld-button.ld-button.ld-button.ld-button {
+	background-color: var(--color1) !important;
+}
+
+.ld-content-action .ld-text {
+	color: var(--color16) !important;
+}
+
+@media (min-width: 640px) {
+  .ld-content-action .ld-text {
+    white-space: nowrap !important;
+  }
+
+  .ld-tabs-content iframe {
+	width: 100%;
+  }
+}
+
+.ld-tabs-content iframe {
+	max-width: 100%;
+  }
+
+.ld-content-action .ld-button.ld-button.ld-button.ld-button.ld-button.ld-button .ld-icon {
+	color: var(--color16) !important;
+}
+
+.learndash-wrapper {
+	display: grid;
+	gap: 2rem;
+}
+
+
+@media (min-width: 768px) {
+	.ld-tabs-content iframe {
+		min-height: 28rem !important;
+	}
+}

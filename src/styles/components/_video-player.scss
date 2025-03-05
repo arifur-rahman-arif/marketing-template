@@ -1,0 +1,18 @@
+.plyr {
+    --plyr-color-main: var(--color10);
+}
+.plyr__poster {
+    background-size: cover !important;
+}
+
+.plyr.plyr {
+    svg {
+        fill: white;
+    }
+}
+
+.plyr__controls {
+    .plyr__controls__item.plyr__time {
+        color: var(--color16);
+    }
+}

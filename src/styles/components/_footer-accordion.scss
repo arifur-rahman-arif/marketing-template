@@ -1,0 +1,97 @@
+@use '../utils/breakpoints' as *;
+
+.footer-accordion {
+    @include media-breakpoint-up(lg) {
+        .desktop-container {
+            display: grid;
+            gap: var(--Spacing-spacing-05);
+            align-content: baseline;
+        }
+    }
+
+    .accordion-button,
+    .accordion-single {
+        border-bottom: 1px solid var(--Gray-10);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        font-weight: var(--700);
+        color: var(--Gray-80);
+        padding: 1rem 0;
+
+        @include media-breakpoint-up(lg) {
+            border: none;
+            padding: 0;
+        }
+    }
+
+    .accordion-item {
+        @include media-breakpoint-up(lg) {
+            display: grid;
+            gap: var(--Spacing-spacing-03);
+        }
+    }
+
+    .accordion-button {
+        img {
+            transition: all 0.5s ease-in-out;
+            transform: rotate(-180deg);
+        }
+
+        @include media-breakpoint-up(lg) {
+            img {
+                display: none;
+            }
+        }
+    }
+
+    ul li {
+        a {
+            font-size: 0.75rem;
+            line-height: 1.25rem;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                color: var(--P-100);
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            border-bottom: 1px solid var(--Gray-10);
+            padding: 1rem 0;
+        }
+    }
+
+    .accordion-item {
+        @include media-breakpoint-down(lg) {
+            .accordion-content {
+                display: none;
+            }
+
+            // First accordion should be open
+            &.active {
+                .accordion-content {
+                    display: block;
+                }
+
+                .accordion-button {
+                    img {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-single {
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            color: var(--P-100);
+        }
+    }
+}

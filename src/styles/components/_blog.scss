@@ -1,0 +1,10 @@
+.prose ul > li::marker {
+    /* Custom color for bullet points */
+    color: var(--color10);
+    font-size: 1.2rem;
+}
+
+/* Hide bullet points if an li has a nested ul */
+.prose:not(.dynamic-content) ul > li:has(ul) {
+    list-style-type: none;
+}
