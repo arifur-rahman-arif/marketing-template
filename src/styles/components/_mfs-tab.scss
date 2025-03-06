@@ -1,0 +1,50 @@
+@use '../utils/breakpoints' as *;
+
+.mfs-tab {
+    $self: &;
+    display: grid;
+
+    @include media-breakpoint-down(md) {
+        gap: 1.5rem;
+    }
+
+    &__btn-container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 10px;
+        overflow-y: auto;
+    }
+
+    &__btn {
+        display: flex;
+        padding: var(--Spacing-spacing-03) var(--Spacing-spacing-05);
+        justify-content: center;
+        align-items: center;
+        color: var(--Gray-80, #333);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: var(--700);
+        line-height: 1.75rem; /* 175% */
+        border-radius: var(--Border-Radius-border-radius-medium);
+        background: var(--T-Soft-Beige);
+        white-space: nowrap;
+        transition: all 0.5s ease-in-out;
+        opacity: 0.3;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    &__content-wrapper {
+        position: relative;
+    }
+
+    &__content {
+        padding: var(--Spacing-spacing-05);
+        border-radius: var(--Border-Radius-border-radius-large);
+        background: var(--T-Soft-Beige);
+    }
+}
