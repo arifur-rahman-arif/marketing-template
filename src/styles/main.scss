@@ -15,6 +15,7 @@
 @use 'components/animation/shake';
 @use 'components/inputs';
 @use 'components/flatpicker';
+@use 'components/explore-centre';
 // @use 'components/swiper';
 // @use 'components/video-player';
 // @use 'components/modal';
@@ -101,6 +102,7 @@ body {
         * {
             font-size: 1rem;
             font-weight: var(--500);
+            color: var(--Gray-80);
         }
     }
 
@@ -145,7 +147,8 @@ body {
     h6 {
         &,
         * {
-            color: var(--color11);
+            color: var(--Gray-80);
+            font-weight: var(--700);
         }
     }
 
@@ -174,7 +177,7 @@ body {
         * {
             font-size: 1.875rem; // Mobile H2
             font-weight: bold;
-            line-height: auto;
+            line-height: normal;
 
             @include media-breakpoint-up(md) {
                 font-size: 3rem; // Desktop H2

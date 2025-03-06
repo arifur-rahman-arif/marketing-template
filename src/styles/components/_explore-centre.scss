@@ -1,0 +1,17 @@
+@use '../utils/breakpoints' as *;
+
+.explore-centre {
+    .rounded-coin {
+        svg {
+            @media screen and (max-width: 1440px) {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    #rounded-coin::-webkit-scrollbar {
+        height: 0px !important;
+    }
+}
