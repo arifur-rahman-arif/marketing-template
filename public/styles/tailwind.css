@@ -2890,16 +2890,16 @@ video {
   background-color: var(--P-100);
 }
 
+.bg-tinted-freshGreen {
+  background-color: var(--T-Fresh-Green);
+}
+
 .bg-tinted-softBeige {
   background-color: var(--T-Soft-Beige);
 }
 
 .bg-white {
   background-color: var(--White);
-}
-
-.bg-tinted-freshGreen {
-  background-color: var(--T-Fresh-Green);
 }
 
 .decoration-slice {
@@ -3062,6 +3062,10 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pb-28 {
   padding-bottom: 7rem;
 }
@@ -3084,6 +3088,10 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-left {
@@ -5573,6 +5581,10 @@ video {
     gap: 2.5rem;
   }
 
+  .md\:gap-16 {
+    gap: 4rem;
+  }
+
   .md\:gap-4 {
     gap: 1rem;
   }
@@ -5585,10 +5597,6 @@ video {
     gap: 1.88rem;
   }
 
-  .md\:gap-16 {
-    gap: 4rem;
-  }
-
   .md\:justify-self-end {
     justify-self: end;
   }
@@ -5596,6 +5604,11 @@ video {
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .md\:py-28 {
@@ -5606,11 +5619,6 @@ video {
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-
-  .md\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
   }
 
   .md\:pb-8 {
