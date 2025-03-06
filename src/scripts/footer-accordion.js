@@ -1,16 +1,11 @@
 class FooterAccordion {
-    accordionButtons: JQuery<HTMLElement>;
-
     constructor() {
         this.accordionButtons = $('.footer-accordion .accordion-button');
         this.handleResize();
-        $(window).on('resize', this.handleResize);
+        $(window).on('resize', this.handleResize.bind(this));
     }
 
-    /**
-     * Checks screen width and adds/removes event listeners accordingly
-     */
-    handleResize = (): void => {
+    handleResize() {
         const screenWidth = window.innerWidth;
 
         if (screenWidth <= 1024) {
@@ -18,29 +13,19 @@ class FooterAccordion {
         } else {
             this.disableAccordion();
         }
-    };
-
-    /**
-     * Enable accordion functionality
-     */
-    enableAccordion(): void {
-        this.accordionButtons.off('click').on('click', this.toggleAccordion);
     }
 
-    /**
-     * Disable accordion functionality and reset styles
-     */
-    disableAccordion(): void {
+    enableAccordion() {
+        this.accordionButtons.off('click').on('click', this.toggleAccordion.bind(this));
+    }
+
+    disableAccordion() {
         this.accordionButtons.off('click'); // Remove event listeners
         $('.accordion-content').removeAttr('style'); // Ensure all accordions are visible
         $('.accordion-button img').css('transform', 'rotate(0deg)');
     }
 
-    /**
-     * Toggles the accordion content and animates the arrow icon
-     * @param event - Click event
-     */
-    toggleAccordion = (event: JQuery.ClickEvent): void => {
+    toggleAccordion(event) {
         const button = $(event.currentTarget);
         const content = button.next('.accordion-content');
         const icon = button.find('img');
@@ -52,8 +37,7 @@ class FooterAccordion {
             content.slideDown(300);
             icon.css('transform', 'rotate(0deg)');
         }
-    };
+    }
 }
 
-// Instantiate the FooterAccordion class
-new FooterAccordion();
+export default FooterAccordion;

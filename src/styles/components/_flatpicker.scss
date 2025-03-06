@@ -1,0 +1,163 @@
+@use '../utils/breakpoints' as *;
+
+.flatpickr {
+    &-calendar {
+        margin-top: 0.3rem !important;
+        border-radius: none !important;
+        border: 1px solid var(--color15) !important;
+        box-shadow: none !important;
+        padding: 0.5rem !important;
+        width: 22rem !important;
+
+        @include media-breakpoint-up(sm) {
+            width: 23rem !important;
+            padding: 1.25rem !important;
+        }
+    }
+
+    &-months {
+        display: grid !important;
+        grid-template-columns: 1fr auto auto !important;
+    }
+
+    &-prev-month,
+    &-next-month {
+        svg {
+            width: 1rem !important;
+            height: 1rem !important;
+            fill: var(--Gray-80) !important;
+        }
+    }
+    &-prev-month {
+        position: relative !important;
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+
+    &-next-month {
+        position: relative !important;
+        padding-right: 0 !important;
+    }
+
+    &-month {
+        position: relative !important;
+        grid-column-start: 1;
+        grid-column: span 1 / span 1;
+        display: flex;
+        align-items: center !important;
+        justify-content: start !important;
+    }
+
+    &-current-month {
+        padding: 0 !important;
+        width: 100% !important;
+        left: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: start;
+        flex-direction: row-reverse;
+
+        .numInputWrapper {
+            width: 4.3rem !important;
+        }
+
+        .cur-year {
+            color: var(--Gray-80) !important;
+            font-weight: var(--500) !important;
+            font-size: 1.25rem !important;
+        }
+    }
+
+    &-monthDropdown-months {
+        padding: 0 !important;
+        left: calc(50% - 1.9rem);
+
+        @include media-breakpoint-up(sm) {
+            left: calc(13.5rem / 2);
+        }
+
+        & {
+            transform: translateX(-50%);
+            color: var(--color9) !important;
+            font-weight: var(--500) !important;
+            font-size: 1.25rem !important;
+        }
+
+        & option {
+            background-color: var(--color4) !important;
+            color: var(--color9) !important;
+            padding: 0.5rem !important;
+        }
+    }
+
+    &-innerContainer {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    &-rContainer {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    &-weekdays {
+        height: auto !important;
+        margin-top: 0.5rem;
+    }
+
+    &-weekday {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        font-weight: var(--500);
+    }
+
+    &-days {
+        width: 100% !important;
+        display: block !important;
+
+        .dayContainer {
+            display: grid !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            grid-template-columns: repeat(7, 1fr);
+            border: 1px solid #d5d4df;
+            border-bottom: none;
+            border-right: none !important;
+        }
+    }
+
+    &-day {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        border: none !important;
+        border-bottom: 1px solid #d5d4df !important;
+        border-right: 1px solid #d5d4df !important;
+        border-radius: 0 !important;
+        font-size: 0.875rem !important;
+
+        &.today {
+            background-color: var(--P-50);
+            border-color: var(--P-50);
+            border: none !important;
+        }
+
+        &.nextMonthDay,
+        &.prevMonthDay:not(.flatpickr-disabled) {
+            background-color: #e8e8e8 !important;
+            color: var(--color2) !important;
+        }
+
+        &:hover {
+            background-color: var(--P-100) !important;
+            color: var(--Gray-80) !important;
+            border: none !important;
+        }
+
+        &.selected {
+            background-color: var(--Success-150) !important;
+            color: var(--White) !important;
+            border: none !important;
+        }
+    }
+}

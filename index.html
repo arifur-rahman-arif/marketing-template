@@ -17,42 +17,21 @@
             <!-- Main banner -->
             <!-- ====================== -->
             <main class="relative">
-                <div class="relative z-[1]">
+                <div class="absolute z-[1] h-full w-full">
                     <!-- Mobile overlay -->
-                    <svg
+                    <div
                         class="pointer-events-none absolute left-0 top-0 z-[2] h-full w-full md:hidden"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="375"
-                        height="607"
-                        viewBox="0 0 375 607"
-                        fill="none"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M0 -1H375V607H0V-1Z"
-                            fill="url(#paint0_linear_36056_8988)"
-                            fill-opacity="0.5"
-                        />
-                        <defs>
-                            <linearGradient
-                                id="paint0_linear_36056_8988"
-                                x1="187.5"
-                                y1="607"
-                                x2="187.5"
-                                y2="-1"
-                                gradientUnits="userSpaceOnUse"
-                            >
-                                <stop stop-opacity="0.5" />
-                                <stop offset="1" stop-opacity="0.4" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.32) 100%)"
+                    ></div>
 
                     <!-- Desktop overlay -->
+                    <div
+                        class="pointer-events-none absolute left-0 top-0 z-[2] h-full w-full"
+                        style="background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.56) 78.5%)"
+                    ></div>
 
                     <svg
-                        class="pointer-events-none absolute left-0 top-0 z-[2] hidden h-full w-full md:block"
+                        class="pointer-events-none absolute left-0 top-0 z-[2] hidden h-full w-full"
                         xmlns="http://www.w3.org/2000/svg"
                         width="1440"
                         height="810"
@@ -80,14 +59,15 @@
                             </linearGradient>
                         </defs>
                     </svg>
-                    <picture class="w-full">
+
+                    <picture class="h-full w-full">
                         <!-- Mobile Image -->
                         <source
                             srcset="/assets/images/masthead/centre-masthead-home-mobile.png"
                             media="(max-width: 767px)"
                             width="375"
                             height="600"
-                            class="w-full"
+                            class="h-full w-full"
                         />
 
                         <!--  Desktop Image (default) -->
@@ -96,13 +76,13 @@
                             alt=""
                             width="1440"
                             height="810"
-                            class="w-full object-cover"
+                            class="h-full w-full object-cover"
                         />
                     </picture>
                 </div>
 
                 <div
-                    class="container absolute left-0 top-0 z-[3] grid h-full w-full pt-6 md:content-center md:gap-10 xl:!ml-[calc(calc(100vw_-_var(--container-width))_/_2)]"
+                    class="container relative z-[3] grid h-full min-h-[40rem] w-full pb-28 pt-6 md:min-h-[38rem] md:content-center md:gap-10 md:py-28"
                 >
                     <img
                         src="/assets/images/logos/MFS Logo.svg"
@@ -112,12 +92,16 @@
                         class="max-md:max-w-[5.6rem]"
                     />
 
-                    <div class="md:gap grid content-start pb-24 max-md:mt-auto md:content-center md:gap-8">
+                    <div class="md:gap grid content-start max-md:mt-auto md:content-center md:gap-8">
                         <div>
-                            <p class="text-lg font-700 leading-6 text-secondary-paleIvory">
+                            <p
+                                class="animate__animated animate__fadeInDown text-lg font-700 leading-6 text-secondary-paleIvory"
+                            >
                                 Welcome To My First Skool’s EYC
                             </p>
-                            <h1 class="text-secondary-paleIvory">2 Punggol Drive</h1>
+                            <h1 class="animate__animated animate__fadeInDown text-secondary-paleIvory">
+                                2 Punggol Drive
+                            </h1>
                         </div>
                         <p class="max-w-[35rem] text-sm font-500 leading-5 text-white max-md:mt-2">
                             We recognise the early years' impact on your child's future. Our EYCs in Punggol nurture
@@ -171,21 +155,154 @@
                                 </div>
                             </div>
 
-                            <!-- Centre search -->
-                            <div class="grid gap-2">
+                            <!-- Registration -->
+                            <div class="grid gap-2 sm:max-w-[32rem]">
                                 <span class="text-sm font-700 leading-5 text-white">
                                     Select your preferred start dates
                                 </span>
 
-                                <form class="flex items-center justify-start gap-4">
-                                    <input type="text" name="search" id="search" placeholder="Search" />
-                                    <button type="submit" class="mfs-button !py-3">Register Now</button>
+                                <form class="registration-start-date-form grid grid-cols-[1fr_auto] items-center gap-4">
+                                    <div class="relative">
+                                        <div class="form-input">
+                                            <input
+                                                type="date"
+                                                name="start-date"
+                                                id="start-date"
+                                                class="w-full"
+                                                placeholder="Select start dates"
+                                            />
+
+                                            <span class="form-input__error">Please select a start date</span>
+                                        </div>
+                                        <img
+                                            src="/public/assets/images/icons/icon-calender.svg"
+                                            width="15"
+                                            height="15"
+                                            alt=""
+                                            class="absolute right-4 top-1/2 z-[4] -translate-y-1/2"
+                                        />
+                                    </div>
+
+                                    <button type="submit" class="mfs-button !p-3">Register Now</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
+
+            <!-- ====================== -->
+            <!-- USP mobile version -->
+            <!-- ====================== -->
+
+            <div class="relative grid gap-8 bg-tinted-softBeige py-6 pt-16 md:hidden">
+                <div class="absolute left-1/2 top-0 z-[1] w-full -translate-x-1/2 -translate-y-[3.6rem]">
+                    <div class="relative">
+                        <svg
+                            class="mx-auto h-28 max-w-full"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="375"
+                            height="163"
+                            viewBox="0 0 375 163"
+                            fill="none"
+                        >
+                            <path
+                                d="M917 125.807C917 153.421 894.614 162.307 867 162.307H197H-473C-500.614 162.307 -523 158.421 -523 130.807L-523 126.807C-523 99.1928 -500.614 90 -473 90H57C84.6143 90 105.938 65.9766 120.523 42.5287C136.406 16.9963 164.718 0 197 0C229.282 0 257.594 16.9963 273.477 42.5287C288.062 65.9766 309.386 90 337 90H867C894.5 90 917 94.1928 917 121.807V125.807Z"
+                                fill="#F3ECE4"
+                            />
+                        </svg>
+
+                        <div
+                            class="absolute left-1/2 top-1/2 z-[3] -translate-x-[40%] -translate-y-1/2 md:-translate-y-1/2"
+                        >
+                            <div class="relative">
+                                <img
+                                    src="/assets/images/section-images/masthead-sticker-2.png"
+                                    alt=""
+                                    width="144"
+                                    height="144"
+                                    class="slow-spin max-md:max-h-[4.5rem] max-md:max-w-[4.5rem]"
+                                />
+
+                                <img
+                                    src="/public/assets/images/section-images/masthead-sticker-imoji.png"
+                                    alt=""
+                                    width="73"
+                                    height="73"
+                                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-md:max-h-9 max-md:max-w-9"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usp icons -->
+                <div class="relative z-[2] flex flex-wrap items-center justify-center justify-items-center gap-7 px-6">
+                    <div class="grid justify-items-center gap-4">
+                        <img src="/public/assets/images/icons/icon-building-orange.svg" width="42" height="42" alt="" />
+                        <span class="text-center text-xs font-900 leading-5 text-gray-80">
+                            Guarantees <br />a K1 spot
+                        </span>
+                    </div>
+                    <!-- Line -->
+                    <span class="h-20 w-[0.5px] bg-gray-20"></span>
+
+                    <div class="grid justify-items-center gap-4">
+                        <img src="/public/assets/images/icons/icon-boosting-orange.svg" width="42" height="42" alt="" />
+                        <span class="text-center text-xs font-900 leading-5 text-gray-80">
+                            Boosting <br />social Skills
+                        </span>
+                    </div>
+
+                    <!-- Line -->
+                    <span class="h-20 w-[0.5px] bg-gray-20"></span>
+                    <div class="grid justify-items-center gap-4">
+                        <img
+                            src="/public/assets/images/icons/icon-experience-orange.svg"
+                            width="42"
+                            height="42"
+                            alt=""
+                        />
+                        <span class="text-center text-xs font-900 leading-5 text-gray-80">
+                            Hands-on <br />exploration
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Registration -->
+                <div
+                    class="relative z-[2] grid w-full gap-2 justify-self-center px-6 py-6 max-sm:bg-secondary-lightGrayBeige sm:max-w-[32rem]"
+                >
+                    <span class="text-sm font-700 leading-5 text-gray-80">Select your preferred start dates</span>
+
+                    <form class="registration-start-date-form grid items-center gap-2">
+                        <div class="relative">
+                            <div class="form-input">
+                                <div class="relative">
+                                    <input
+                                        type="date"
+                                        name="start-date"
+                                        id="start-date"
+                                        class="w-full"
+                                        placeholder="Select start dates"
+                                    />
+                                    <img
+                                        src="/public/assets/images/icons/icon-calender.svg"
+                                        width="15"
+                                        height="15"
+                                        alt=""
+                                        class="absolute right-4 top-1/2 z-[4] -translate-y-1/2"
+                                    />
+                                </div>
+
+                                <span class="form-input__error">Please select a start date</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="mfs-button !p-3">Register Now</button>
+                    </form>
+                </div>
+            </div>
 
             <!-- ====================== -->
             <!-- Footer Area -->
