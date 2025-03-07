@@ -79,7 +79,10 @@
         background: var(--T-Soft-Beige);
         display: none;
         transition: all 0.5s ease-in-out;
-        opacity: 0;
+
+        & * {
+            opacity: 0;
+        }
 
         @include media-breakpoint-up(lg) {
             border-top-left-radius: 0;
@@ -93,7 +96,10 @@
 
         &.active {
             display: block;
-            animation: fadeIn 1.5s ease-in-out forwards;
+
+            & * {
+                animation: fadeIn 1s ease-in-out forwards;
+            }
         }
     }
 }
