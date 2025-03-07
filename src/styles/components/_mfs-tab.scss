@@ -1,23 +1,34 @@
 @use '../utils/breakpoints' as *;
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .mfs-tab {
     $self: &;
     display: grid;
-
-    @include media-breakpoint-down(md) {
-        gap: 1.5rem;
-    }
 
     &__btn-container {
         display: flex;
         justify-content: start;
         align-items: center;
         gap: 1rem;
-        padding-bottom: 10px;
         overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
     }
 
     &__btn {
+        position: relative;
         display: flex;
         padding: var(--Spacing-spacing-03) var(--Spacing-spacing-05);
         justify-content: center;
@@ -30,11 +41,31 @@
         border-radius: var(--Border-Radius-border-radius-medium);
         background: var(--T-Soft-Beige);
         white-space: nowrap;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.7s ease-in-out;
         opacity: 0.3;
 
         &.active {
             opacity: 1;
+        }
+
+        svg {
+            display: none;
+            pointer-events: none;
+        }
+
+        @include media-breakpoint-up(lg) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+            height: 4rem;
+
+            svg {
+                display: block;
+                position: absolute;
+                right: 0;
+                transform: translateX(50%);
+            }
         }
     }
 
@@ -46,5 +77,23 @@
         padding: var(--Spacing-spacing-05);
         border-radius: var(--Border-Radius-border-radius-large);
         background: var(--T-Soft-Beige);
+        display: none;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+
+        @include media-breakpoint-up(lg) {
+            border-top-left-radius: 0;
+            padding: 3rem 2rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            border-top-left-radius: 0;
+            padding: 6rem;
+        }
+
+        &.active {
+            display: block;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
     }
 }
