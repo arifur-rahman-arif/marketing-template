@@ -294,30 +294,30 @@ body {
     }
 }
 
-// ::-webkit-scrollbar {
-//     width: 10px;
-// }
+::-webkit-scrollbar {
+    width: 13px;
+}
 
-// ::-webkit-scrollbar-thumb {
-//     background: linear-gradient(to top, var(--color1) 0%, transparent 100%);
-//     border-radius: 100px;
-// }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, var(--P-100) 0%, var(--T-Sage-Green) 100%);
+    border-radius: 100px;
+}
 
-// ::-webkit-scrollbar-track {
-//     background: var(--color13);
-// }
+::-webkit-scrollbar-track {
+    background: var(--T-Aqua-Green);
+}
 
-// ::-webkit-scrollbar-track-piece {
-//     background: var(--color13);
-// }
+::-webkit-scrollbar-track-piece {
+    background: var(--T-Aqua-Green);
+}
 
-// input:-webkit-autofill {
-//     -webkit-box-shadow: 0 0 0 50px var(--color16) inset; /* Change the color to your own background color */
-// }
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px var(--color16) inset; /* Change the color to your own background color */
+}
 
-// input:-webkit-autofill:focus {
-//     -webkit-box-shadow: 0 0 0 50px var(--color16) inset; /*your box-shadow*/
-// }
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px var(--color16) inset; /*your box-shadow*/
+}
 
 // tippy arrow scss
 .tippy-box.tippy-box {
