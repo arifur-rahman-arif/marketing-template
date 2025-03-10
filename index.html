@@ -360,16 +360,16 @@
                         <!-- Grid item 1 -->
                         <div class="grid gap-4 md:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-[1fr_auto]">
                             <div
-                                class="explore-centre__item-1 grid gap-6 rounded-large bg-primary-100 p-8 md:order-2 lg:max-w-[23.13rem]"
+                                class="explore-centre__item-1 grid content-start gap-6 rounded-large bg-primary-100 p-8 md:order-2 md:grid-rows-[auto_1fr_auto] lg:max-w-[23.13rem]"
                             >
                                 <img
                                     src="/public/assets/images/icons/icon-open-book.svg"
-                                    width="60"
-                                    height="41"
+                                    width="80"
+                                    height="80"
                                     alt=""
                                     class="max-md:max-h-20 max-md:max-w-20"
                                 />
-                                <h3 class="max-w-[19rem] text-2xl leading-7 md:text-3xl md:leading-9">
+                                <h3 class="max-w-[19rem] text-2xl leading-7 md:self-end md:text-3xl md:leading-9">
                                     Mother tongue and language curriculum
                                 </h3>
 
@@ -904,7 +904,6 @@
             <!-- ====================== -->
             <!-- Principal Message -->
             <!-- ====================== -->
-
             <section id="principal-message" class="section bg-secondary-paleIvory">
                 <div
                     class="grid content-center gap-4 overflow-hidden py-20 pl-6 md:gap-16 lg:grid-cols-[auto_1fr] xl:pl-[calc(calc(100vw_-_var(--container-width))_/_2)]"
@@ -972,6 +971,192 @@
                                     and help them thrive in a safe, nurturing space.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ====================== -->
+            <!-- Testimonial Slider -->
+            <!-- ====================== -->
+            <section id="testimonial-slider" class="section bg-secondary-softPeach">
+                <div
+                    class="relative grid content-start gap-4 pt-10 md:grid-cols-[auto_1fr] md:gap-6 md:pt-20 xl:gap-32 xl:pl-[calc(calc(100vw_-_var(--container-width))_/_2)]"
+                >
+                    <div class="grid content-start gap-16 md:mt-12 xl:mt-14">
+                        <h2 class="mx-6 block max-w-[12rem] content-center text-balance md:max-w-[16.5rem]">
+                            <span class="inline-block rounded-round bg-tinted-sageGreen px-5 py-1 pb-2">Hear it</span>
+                            from other parents
+                        </h2>
+
+                        <div class="flex items-center justify-start gap-4 px-6 max-md:hidden">
+                            <!-- External buttons -->
+                            <button
+                                class="external-prev pointer-events-none cursor-pointer opacity-30 transition-all duration-300"
+                            >
+                                <img
+                                    src="/assets/images/icons/icon-rounded-arrow.svg"
+                                    class="rotate-180"
+                                    width="60"
+                                    height="60"
+                                    alt=""
+                                />
+                            </button>
+                            <button class="external-next cursor-pointer transition-all duration-300">
+                                <img src="/assets/images/icons/icon-rounded-arrow.svg" width="60" height="60" alt="" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Swiper -->
+                    <div class="overflow-x-hidden">
+                        <div class="swiper swiper--testimonials overflow-hidden">
+                            <!-- Background overlay -->
+                            <div
+                                class="overlay absolute right-0 top-0 z-[1] h-full w-full translate-x-28 md:translate-x-36 xl:w-full"
+                            >
+                                <div class="relative h-full w-full rounded-s-large rounded-bl-none bg-tinted-sageGreen">
+                                    <svg
+                                        class="absolute left-0 top-full -translate-y-1"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="66"
+                                        height="51"
+                                        viewBox="0 0 66 51"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M0.656054 34.0055V0.620605H65.6969L30.0727 44.3925C28.5586 46.3243 26.6243 47.8857 24.4166 48.9584C22.209 50.031 19.7859 50.5867 17.3314 50.583C15.3892 50.54 13.4648 50.2013 11.6245 49.5789C8.38303 48.4785 5.57443 46.3777 3.60328 43.579C1.63214 40.7803 0.600192 37.4282 0.656054 34.0055Z"
+                                            fill="var(--T-Sage-Green)"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="swiper-wrapper w-full">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div>
+                                        <img
+                                            src="/public/assets/images/icons/icon-quote.svg"
+                                            width="57"
+                                            height="41"
+                                            alt=""
+                                            class="max-md:max-w-[1.63rem]"
+                                        />
+
+                                        <p
+                                            class="mt-2.5 line-clamp-6 text-xs font-700 leading-5 text-gray-80 md:mt-6 md:text-base md:leading-7"
+                                        >
+                                            Both my sons are in MFS, and it’s been a wonderful learning experience. The
+                                            teachers are caring, approachable, and keep parents well-informed.
+                                        </p>
+
+                                        <div class="reviewer mt-2 grid overflow-hidden transition-all duration-500">
+                                            <span class="text-right text-xs font-700 leading-5 text-gray-80"
+                                                >Latifah Aziz</span
+                                            >
+                                            <p class="text-right text-xs leading-5">
+                                                My First Skool at<br />
+                                                Blk 295A Compassvale
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div>
+                                        <img
+                                            src="/public/assets/images/icons/icon-quote.svg"
+                                            width="57"
+                                            height="41"
+                                            alt=""
+                                            class="max-md:max-w-[1.63rem]"
+                                        />
+
+                                        <p
+                                            class="mt-2.5 line-clamp-6 text-xs font-700 leading-5 text-gray-80 md:mt-6 md:text-base md:leading-7"
+                                        >
+                                            Both my sons are in MFS, and it’s been a wonderful learning experience. The
+                                            teachers are caring, approachable, and keep parents well-informed.
+                                        </p>
+
+                                        <div class="reviewer mt-2 grid overflow-hidden transition-all duration-500">
+                                            <span class="text-right text-xs font-700 leading-5 text-gray-80"
+                                                >Latifah Aziz</span
+                                            >
+                                            <p class="text-right text-xs leading-5">
+                                                My First Skool at<br />
+                                                Blk 295A Compassvale
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div>
+                                        <img
+                                            src="/public/assets/images/icons/icon-quote.svg"
+                                            width="57"
+                                            height="41"
+                                            alt=""
+                                            class="max-md:max-w-[1.63rem]"
+                                        />
+
+                                        <p
+                                            class="mt-2.5 line-clamp-6 text-xs font-700 leading-5 text-gray-80 md:mt-6 md:text-base md:leading-7"
+                                        >
+                                            Both my sons are in MFS, and it’s been a wonderful learning experience. The
+                                            teachers are caring, approachable, and keep parents well-informed.
+                                        </p>
+
+                                        <div class="reviewer mt-2 grid overflow-hidden transition-all duration-500">
+                                            <span class="text-right text-xs font-700 leading-5 text-gray-80"
+                                                >Latifah Aziz</span
+                                            >
+                                            <p class="text-right text-xs leading-5">
+                                                My First Skool at<br />
+                                                Blk 295A Compassvale
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div>
+                                        <img
+                                            src="/public/assets/images/icons/icon-quote.svg"
+                                            width="57"
+                                            height="41"
+                                            alt=""
+                                            class="max-md:max-w-[1.63rem]"
+                                        />
+
+                                        <p
+                                            class="mt-2.5 line-clamp-6 text-xs font-700 leading-5 text-gray-80 md:mt-6 md:text-base md:leading-7"
+                                        >
+                                            Both my sons are in MFS, and it’s been a wonderful learning experience. The
+                                            teachers are caring, approachable, and keep parents well-informed.
+                                        </p>
+
+                                        <div class="reviewer mt-2 grid overflow-hidden transition-all duration-500">
+                                            <span class="text-right text-xs font-700 leading-5 text-gray-80"
+                                                >Latifah Aziz</span
+                                            >
+                                            <p class="text-right text-xs leading-5">
+                                                My First Skool at<br />
+                                                Blk 295A Compassvale
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slider action buttons -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -1239,7 +1424,11 @@
                 <div class="bg-gray-80">
                     <div class="container grid gap-2 py-6 md:grid-cols-[auto_1fr] md:py-4">
                         <span class="text-xs font-500 leading-5 text-white">
-                            Copyright 2025 © My First Skool. All rights reserved.
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            My First Skool. All rights reserved.
                         </span>
                         <div class="flex items-center justify-start gap-4 md:justify-self-end">
                             <a

@@ -118,7 +118,171 @@
         }
 
         #{ $self }-button-lock {
-            display: none;
+            display: none !important;
+        }
+    }
+
+    &--testimonials {
+        display: grid !important;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.5rem;
+        align-content: start;
+        min-height: 30.5rem;
+
+        @include media-breakpoint-up(md) {
+            height: 100%;
+            max-height: 30.69rem;
+        }
+
+        .overlay {
+            max-height: 18.65rem;
+
+            @include media-breakpoint-down(md) {
+                margin-top: calc(44px + 1rem);
+            }
+
+            @include media-breakpoint-up(md) {
+                max-height: 23.65rem;
+            }
+        }
+
+        #{ $self }-wrapper {
+            align-items: center;
+            grid-column: 1 / -1;
+            align-items: center !important;
+
+            @include media-breakpoint-down(md) {
+                padding-left: 1.5rem;
+                margin-top: 1.9rem;
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0.8rem;
+            }
+        }
+
+        #{ $self }-button-next,
+        #{ $self }-button-prev {
+            all: unset;
+            width: 2.7rem;
+            &::after {
+                content: url('/assets/images/icons/icon-rounded-arrow.svg');
+                width: 44px;
+                height: 44px;
+                transition: all 0.5s ease-in-out;
+
+                @include media-breakpoint-up(lg) {
+                    transform: translateY(50%);
+                }
+            }
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            height: 100%;
+            grid-row: 1 / 2;
+
+            @include media-breakpoint-up(md) {
+                display: none !important;
+            }
+        }
+
+        #{ $self }-button-next {
+            grid-column: 2 / -1;
+        }
+
+        #{ $self }-button-prev {
+            grid-column: 1 / 2;
+
+            @include media-breakpoint-down(md) {
+                padding-left: 1.5rem;
+            }
+
+            &::after {
+                transform: rotate(180deg);
+                @include media-breakpoint-up(lg) {
+                    transform: translateY(50%) rotate(180deg);
+                }
+            }
+        }
+
+        #{ $self }-pagination {
+            z-index: 3;
+            position: relative;
+            display: block !important;
+            grid-column: 1 / -1;
+            margin-top: 3.54rem;
+
+            &-bullet {
+                transition: all 0.5s ease-in-out;
+                width: 0.625rem;
+                height: 0.625rem;
+                background: var(--Gray-20);
+                opacity: 1;
+
+                &-active {
+                    width: 2.32rem;
+                    border-radius: var(--Border-Radius-border-radius-round);
+                }
+            }
+
+            &-lock {
+                display: none;
+            }
+        }
+
+        #{ $self }-slide {
+            width: auto !important;
+            height: 15.3rem !important;
+            display: grid !important;
+            place-content: center;
+
+            & > div {
+                position: relative;
+                z-index: 2;
+                transition: all 0.5s ease-in-out;
+                display: grid !important;
+                width: 100%;
+                grid-template-rows: auto auto 1fr;
+                max-width: 13rem /* 208px */ !important;
+                align-content: flex-start;
+                border-radius: var(--Border-Radius-border-radius-medium);
+                padding: 1rem /* 16px */;
+                background: var(--White);
+                border: 2px solid var(--Gray-80);
+
+                @include media-breakpoint-up(md) {
+                    max-width: 20.5rem /* 328px */ !important;
+                    border-radius: var(--Border-Radius-border-radius-large);
+                    padding: 1.5rem /* 24px */;
+                    border-width: 3px;
+                }
+            }
+
+            .reviewer {
+                max-height: 0;
+
+                @include media-breakpoint-up(md) {
+                    margin-top: auto;
+                }
+            }
+
+            &-active {
+                @include media-breakpoint-up(md) {
+                    height: 21.875rem !important;
+                }
+
+                .reviewer {
+                    max-height: 4rem !important;
+                }
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                .reviewer {
+                    max-height: 4rem !important;
+                }
+            }
         }
     }
 }

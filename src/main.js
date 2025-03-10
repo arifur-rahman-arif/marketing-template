@@ -9,6 +9,7 @@ import jQuery from 'jquery';
 import FooterAccordion from './scripts/footer-accordion';
 import StartDateForm from './scripts/start-date-form';
 import MFS_Tab from './scripts/mfs-tab';
+import SwiperSetup from './scripts/swiper-scripts';
 import './scripts/swiper-scripts';
 
 window.$ = jQuery.noConflict();
@@ -17,3 +18,4 @@ window.$ = jQuery.noConflict();
 new FooterAccordion();
 new StartDateForm();
 new MFS_Tab();
+new SwiperSetup();
