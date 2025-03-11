@@ -84,7 +84,7 @@
         display: none;
         transition: all 0.5s ease-in-out;
 
-        & * {
+        & *:not(.accordion *) {
             opacity: 0;
         }
 
@@ -101,8 +101,23 @@
         &.active {
             display: block;
 
-            & * {
+            & *:not(.accordion *) {
                 animation: fadeIn 1s ease-in-out forwards;
+            }
+        }
+    }
+
+    &--accordion {
+        #{ $self }__content {
+            @include media-breakpoint-up(lg) {
+                padding: var(--Spacing-spacing-07) var(--Spacing-spacing-05) var(--Spacing-spacing-05)
+                    var(--Spacing-spacing-05);
+            }
+        }
+
+        #{ $self }__btn {
+            @include media-breakpoint-up(xl) {
+                width: 30%;
             }
         }
     }

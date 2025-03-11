@@ -11,18 +11,23 @@
 @use 'components/footer';
 @use 'components/footer-accordion';
 @use 'components/footer-subscription';
-@use 'components/animation/spin';
-@use 'components/animation/shake';
+
 @use 'components/inputs';
 @use 'components/flatpicker';
 @use 'components/explore-centre';
 @use 'components/mfs-tab';
 @use 'components/swiper';
+@use 'components/accordion';
 // @use 'components/video-player';
 // @use 'components/modal';
 // @use 'components/select';
 // @use 'components/pagination';
 // @use 'components/blog';
+
+// Animations
+@use 'components/animation/spin';
+@use 'components/animation/shake';
+@use 'components/animation/arrow-animation';
 
 * {
     box-sizing: border-box;

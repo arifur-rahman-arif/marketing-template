@@ -1,13 +1,14 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Mousewheel, Keyboard, EffectFade } from 'swiper/modules';
-
-Swiper.use([Navigation, Pagination, Mousewheel, Keyboard, EffectFade]);
+import { Navigation, Pagination, Keyboard, EffectFade, Autoplay } from 'swiper/modules';
 
 export default class SwiperSetup {
     constructor() {
+        Swiper.use([Navigation, Pagination, Keyboard, EffectFade, Autoplay]);
+
         this.initSpotsSwiper();
         this.initTestimonialSwiper();
         this.initExternalButtons();
+        this.initTrustedSlider();
     }
 
     initSpotsSwiper() {
@@ -93,5 +94,28 @@ export default class SwiperSetup {
             nextButton.prop('disabled', false); // Enable the "Next" button if it's not the last slide
             nextButton.removeClass('opacity-30 pointer-events-none');
         }
+    }
+
+    initTrustedSlider() {
+        new Swiper('.swiper--trusted-brands', {
+            speed: 2000,
+            slidesPerView: 'auto',
+            spaceBetween: 152,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            slidesOffsetBefore: 24,
+            centerInsufficientSlides: true,
+            keyboard: true,
+            breakpoints: {
+                320: {
+                    spaceBetween: 76
+                },
+                768: {
+                    spaceBetween: 152
+                }
+            }
+        });
     }
 }

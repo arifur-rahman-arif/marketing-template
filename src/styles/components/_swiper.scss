@@ -285,4 +285,13 @@
             }
         }
     }
+
+    &--trusted-brands {
+        #{ $self }-wrapper {
+            align-items: center;
+        }
+        #{ $self }-slide {
+            width: auto !important;
+        }
+    }
 }

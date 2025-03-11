@@ -1,0 +1,79 @@
+@use '../utils/breakpoints' as *;
+
+.mfs-accordion {
+    $self: &;
+
+    &-item {
+        padding: var(--Spacing-spacing-05) 0;
+        border-bottom: 1px solid var(--Gray-20);
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: var(--Spacing-spacing-04) 0;
+        }
+    }
+
+    &-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+
+        // Text styling
+        color: var(--Gray-80);
+        text-align: left;
+        font-size: 1rem;
+        font-weight: var(--700);
+        line-height: 1.75rem; /* 175% */
+
+        img {
+            transition: all 0.5s ease-in-out;
+            transform: rotate(0deg);
+        }
+    }
+
+    &-content {
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+        max-height: 0;
+
+        & > div {
+            padding-bottom: 1rem;
+            padding-top: 1.5rem;
+
+            & * {
+                transition: all 1s ease-in-out;
+                opacity: 0;
+            }
+        }
+
+        p {
+            color: var(--Gray-80);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.75rem; /* 175% */
+        }
+    }
+
+    &-item.active {
+        #{ $self }-button {
+            img {
+                transform: rotate(-180deg);
+            }
+        }
+
+        #{ $self }-content {
+            max-height: var(--accordion-content-height);
+
+            & > div {
+                & * {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
