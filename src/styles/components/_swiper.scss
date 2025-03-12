@@ -294,4 +294,105 @@
             width: auto !important;
         }
     }
+
+    // ===============
+    // General styles
+    // ===============
+    &--centres {
+        #{ $self }-button-next,
+        #{ $self }-button-prev {
+            width: 2.7rem;
+            &::after {
+                content: url('/assets/images/icons/icon-rounded-arrow.svg');
+                width: 44px;
+                height: 44px;
+                transition: all 0.5s ease-in-out;
+
+                @include media-breakpoint-up(lg) {
+                    transform: translateY(50%);
+                }
+            }
+            cursor: pointer;
+        }
+
+        #{ $self }-button-prev {
+            &::after {
+                transform: rotate(180deg);
+                @include media-breakpoint-up(lg) {
+                    transform: translateY(50%) rotate(180deg);
+                }
+            }
+        }
+
+        #{ $self }-pagination {
+            &-bullet {
+                transition: all 0.5s ease-in-out;
+                width: 0.625rem;
+                height: 0.625rem;
+                background: var(--Gray-20);
+                opacity: 1;
+
+                &-active {
+                    width: 2.32rem;
+                    border-radius: var(--Border-Radius-border-radius-round);
+                }
+            }
+
+            &-lock {
+                display: none;
+            }
+        }
+    }
+
+    &--centres {
+        padding-bottom: 5rem !important;
+
+        @include media-breakpoint-up(xl) {
+            padding-bottom: 4rem !important;
+        }
+
+        #{ $self }-wrapper {
+            width: 100%;
+        }
+
+        #{ $self }-button-prev,
+        #{ $self }-button-next {
+            top: auto !important;
+            bottom: 0;
+            z-index: 99 !important;
+
+            @include media-breakpoint-up(lg) {
+                transform: translateY(-50%);
+            }
+
+            @include media-breakpoint-up(xl) {
+                display: none;
+            }
+        }
+
+        #{ $self }-button-prev {
+            left: 0 !important;
+        }
+
+        #{ $self }-button-next {
+            right: 0 !important;
+        }
+
+        #{ $self }-pagination {
+            bottom: 0 !important;
+            transform: translateY(-50%);
+        }
+
+        // #{ $self }-slide {
+        //     width: 100% !important;
+        //     max-width: 20rem;
+        //     // display: grid !important;
+        //     // place-content: center;
+
+        //     img {
+        //         width: 100%;
+        //         height: 100%;
+        //     }
+        // }
+    }
 }
