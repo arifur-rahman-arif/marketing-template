@@ -1,9 +1,9 @@
 @use '../utils/breakpoints' as *;
 
 @mixin mfs-button() {
-    background: var(--P-100);
+    background: var(--Gray-80);
     outline: none;
-    border: 2px solid var(--P-100);
+    border: 2px solid var(--Gray-80);
     display: inline-block;
     padding: var(--Spacing-spacing-03);
     border-radius: 6.25rem;
@@ -11,7 +11,7 @@
     position: relative;
     overflow: hidden;
     z-index: 2; /* Ensure the text is above the pseudo-element */
-    color: var(--Gray-80);
+    color: var(--White);
     font-weight: var(--700);
     font-size: 0.875rem;
 
@@ -21,35 +21,18 @@
     }
 
     &:hover {
-        background: var(--P-50);
-        border-color: var(--P-50);
+        background: var(--Gray-60);
+        border-color: var(--Gray-60);
+        box-shadow: var(--Shadow-3);
     }
 
     &:focus {
-        background: var(--P-100);
-        border: 2px solid var(--P-50);
+        background: var(--Gray-80);
+        border: 2px solid var(--Gray-40);
     }
 
     &:active {
-        background: var(--P-100);
-    }
-
-    &--loading {
-        *:not(.spinner) {
-            display: none;
-        }
-
-        &::before {
-            display: none;
-        }
-
-        pointer-events: none;
-
-        .spinner {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        background: var(--Gray-80);
     }
 }
 
@@ -57,6 +40,16 @@
     $self: &;
 
     @include mfs-button();
+
+    &--small {
+        padding: var(--Spacing-spacing-03) var(--Spacing-spacing-06);
+        font-size: var(--font-size-Small, 0.875rem);
+
+        @include media-breakpoint-up(md) {
+            padding: var(--Spacing-spacing-03) var(--Spacing-spacing-06);
+            font-size: var(--font-size-Small, 0.875rem);
+        }
+    }
 
     // Secondary
     &--secondary {
@@ -78,9 +71,9 @@
         }
 
         &:hover {
+            color: var(--White);
             border: 2px solid var(--White);
-            background: var(--P-50);
-            color: var(--Gray-80);
+            background: var(--Gray-60);
         }
 
         &:focus {

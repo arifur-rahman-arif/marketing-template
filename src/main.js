@@ -11,6 +11,7 @@ import StartDateForm from './scripts/start-date-form';
 import MFS_Tab from './scripts/mfs-tab';
 import SwiperSetup from './scripts/swiper-scripts';
 import Accordion from './scripts/accordion';
+import VideoPlayer from './scripts/video-player';
 import './scripts/swiper-scripts';
 
 window.$ = jQuery.noConflict();
@@ -21,3 +22,4 @@ new StartDateForm();
 new MFS_Tab();
 new SwiperSetup();
 new Accordion();
+new VideoPlayer();

@@ -4,86 +4,52 @@
     $self: &;
 
     &--spots {
-        display: grid !important;
-        row-gap: 2rem;
-        grid-template-columns: 1fr 1fr;
+        padding-bottom: 6rem !important;
 
-        @include media-breakpoint-up(md) {
-            column-gap: 1rem;
-        }
-
-        @include media-breakpoint-up(lg) {
-            grid-template-columns: auto 1fr auto;
-            grid-template-rows: 1fr auto;
-            column-gap: 2rem;
-        }
-
-        #{ $self }-wrapper {
-            grid-column: 1 / -1;
-
-            @include media-breakpoint-up(lg) {
-                grid-column: 2 / 3;
-                grid-row: 1 / 2;
-            }
+        @include media-breakpoint-up(xl) {
+            padding-right: 4.5rem !important;
+            padding-left: 4.5rem !important;
         }
 
         #{ $self }-button-next,
         #{ $self }-button-prev {
-            all: unset;
             width: 2.7rem;
+            top: auto;
+            bottom: 0;
+
             &::after {
+                position: absolute;
                 content: url('/assets/images/icons/icon-rounded-arrow.svg');
                 width: 44px;
                 height: 44px;
                 transition: all 0.5s ease-in-out;
-
-                @include media-breakpoint-up(lg) {
-                    transform: translateY(50%);
-                }
             }
-            display: grid;
-            place-items: center;
-            cursor: pointer;
-            height: 100%;
-            grid-row: 3 / 4;
 
             @include media-breakpoint-up(lg) {
-                grid-row: 1 / 2;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
 
         #{ $self }-button-next {
-            justify-self: end;
-            margin-right: 2px;
-            grid-column: 2 / -1;
-
-            @include media-breakpoint-up(lg) {
-                grid-column: 3 / -1;
-            }
+            right: 0;
         }
 
         #{ $self }-button-prev {
+            left: 0;
             &::after {
                 transform: rotate(180deg);
-                @include media-breakpoint-up(lg) {
-                    transform: translateY(50%) rotate(180deg);
-                }
+                left: 0;
             }
-
-            grid-column: 1 / 2;
         }
 
         #{ $self }-pagination {
-            display: block;
-            grid-row: 2 / 3;
-            position: relative;
-            width: 100%;
-            grid-column: 1 / -1;
+            transform: translateY(-4.5rem);
+            top: 100% !important;
+            bottom: 0;
 
-            @include media-breakpoint-up(lg) {
-                position: relative;
-                grid-row: 2 / 3;
-                grid-column: 1 / 4;
+            @include media-breakpoint-up(xl) {
+                transform: translateY(-4rem);
             }
 
             &-bullet {
@@ -105,15 +71,14 @@
         }
 
         #{ $self }-slide {
-            * {
-                opacity: 0;
-                transition: all 1s ease-in-out;
-            }
+            opacity: 0 !important;
+            transition: all 0.5s ease-in-out !important;
+            pointer-events: none;
+            background: inherit;
 
             &-active {
-                * {
-                    opacity: 1;
-                }
+                opacity: 1 !important;
+                pointer-events: all;
             }
         }
 
@@ -382,17 +347,5 @@
             bottom: 0 !important;
             transform: translateY(-50%);
         }
-
-        // #{ $self }-slide {
-        //     width: 100% !important;
-        //     max-width: 20rem;
-        //     // display: grid !important;
-        //     // place-content: center;
-
-        //     img {
-        //         width: 100%;
-        //         height: 100%;
-        //     }
-        // }
     }
 }

@@ -16,6 +16,7 @@ export default class SwiperSetup {
             speed: 2000,
             slidesPerView: 1,
             effect: 'fade',
+            autoHeight: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
@@ -24,7 +25,15 @@ export default class SwiperSetup {
                 el: '.swiper-pagination',
                 clickable: true
             },
-            keyboard: true
+            keyboard: true,
+            breakpoints: {
+                370: {
+                    autoHeight: true
+                },
+                1024: {
+                    autoHeight: false
+                }
+            }
         });
     }
 
