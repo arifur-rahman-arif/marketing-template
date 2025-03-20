@@ -13,7 +13,16 @@ class VideoPlayer {
             // Initialize the Plyr player
             const player = new Plyr(element, {
                 autoplay: true,
-                controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'pip', 'fullscreen']
+                controls: [
+                    'play-large',
+                    'play',
+                    'progress',
+                    'current-time',
+                    'duration',
+                    'pip',
+                    'fullscreen',
+                    'clickToPlay'
+                ]
             });
 
             // Add touch event for play/pause on mobile
