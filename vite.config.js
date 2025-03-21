@@ -9,8 +9,23 @@ const inputFiles = Object.fromEntries(
 
 export default defineConfig({
     build: {
+        minify: 'terser', // Enables Terser minification
+        sourcemap: false, // Disables source maps for smaller output
         rollupOptions: {
-            input: inputFiles
+            input: inputFiles,
+            output: {
+                entryFileNames: '[name].[hash].js', // Uses hashed filenames
+                chunkFileNames: '[name].[hash].js',
+                assetFileNames: '[name].[ext]',
+                format: 'es',
+                compact: true, // Compacts output for minification
+                generatedCode: 'es2015'
+            }
         }
+    },
+    esbuild: {
+        minify: true, // Ensures esbuild minifies as well
+        legalComments: 'none', // Removes unnecessary comments
+        keepNames: false // Allows mangling of function and variable names
     }
 });

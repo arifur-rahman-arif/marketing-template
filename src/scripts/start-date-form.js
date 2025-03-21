@@ -66,6 +66,14 @@ class StartDateForm {
             }
 
             console.log(startDate);
+
+            // Scroll to a specific section after form submission
+            $('html, body').animate(
+                {
+                    scrollTop: $('#registration-form').offset().top
+                },
+                1000
+            );
         });
     };
 

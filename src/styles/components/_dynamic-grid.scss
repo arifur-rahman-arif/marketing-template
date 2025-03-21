@@ -1,0 +1,128 @@
+@use '../utils/breakpoints' as *;
+
+.dynamic-count-grid {
+    @include media-breakpoint-up(sm) {
+        grid-template-columns: 1fr 1fr;
+
+        &--count-2 {
+            grid-template-columns: 1fr;
+
+            .registration-item {
+                & > img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        &--count-3 {
+            grid-template-columns: 1fr 1fr;
+
+            .registration-item {
+                grid-column: 1 / -1;
+            }
+        }
+
+        &--count-4 {
+            grid-template-columns: 1fr 1fr;
+
+            & > div:nth-child(3) {
+                grid-column: 1 / -1;
+            }
+
+            .registration-item {
+                grid-column: 1 / -1;
+            }
+        }
+
+        &--count-5 {
+            .registration-item {
+                grid-column: 1 / -1;
+
+                & > img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        &--count-auto {
+            .registration-item {
+                grid-column: 1 / -1;
+
+                & > img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &--count-2 {
+            grid-template-columns: auto 1fr;
+
+            & > div:not(.registration-item) {
+                max-width: 23.125rem;
+                width: 100%;
+            }
+
+            .registration-item {
+                width: 100%;
+
+                & > img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        &--count-3 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &--count-4 {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            & > div:nth-child(3) {
+                grid-column: auto;
+            }
+        }
+
+        &--count-5 {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .registration-item {
+                grid-column: 2 / -1;
+
+                & > img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        &--count-auto {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .registration-item {
+                grid-column: 1 / -1;
+
+                & > img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .registration-item {
+            & > img {
+                object-fit: cover;
+                height: 23.25rem;
+                max-width: 23.25rem;
+            }
+        }
+    }
+}
