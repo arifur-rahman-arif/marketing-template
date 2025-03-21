@@ -150,7 +150,7 @@
             <!-- ====================== -->
             <!-- USP mobile version -->
             <!-- ====================== -->
-            <div class="relative grid gap-8 bg-tinted-softBeige py-6 pt-16 md:hidden">
+            <div class="relative grid gap-8 bg-tinted-softBeige pt-16 md:hidden">
                 <div class="absolute left-1/2 top-0 z-[1] w-full -translate-x-1/2 -translate-y-[3.6rem]">
                     <div class="relative">
                         <svg
@@ -298,7 +298,7 @@
                     </div>
                 </div>
 
-                <div class="container grid gap-10 py-10 pb-6 md:gap-12 xl:gap-20 xl:py-20">
+                <div class="container grid gap-10 py-10 pb-6 md:gap-12 md:py-20 md:pt-16 xl:gap-20">
                     <div class="grid items-center gap-2 md:gap-4 xl:grid-cols-[1fr_auto] xl:gap-12">
                         <h2 class="max-w-[30rem]">
                             A safe & nurturing<br />
@@ -484,165 +484,86 @@
             <!-- ====================== -->
             <!-- Secure Spot -->
             <!-- ====================== -->
-            <section class="section">
-                <div class="container grid gap-10">
+            <section id="secure-spot" class="bg-tinted-softBeige">
+                <div
+                    class="container grid items-center gap-10 pt-10 md:grid-cols-2 md:py-20 lg:grid-cols-[auto_1fr] xl:gap-32"
+                >
+                    <img
+                        src="/assets/images/section-images/secure-spot-image.png"
+                        width="470"
+                        height="352"
+                        alt=""
+                        class="max-h-[352px] rounded-large object-cover"
+                    />
                     <!-- Item 1 -->
-                    <div class="grid justify-center gap-4 rounded-large bg-secondary-lightCream p-6">
-                        <h2 class="text-center max-md:text-[2.5rem] max-md:leading-[3rem]">Secure your spot</h2>
-                        <p class="text-center text-lg font-400 [&_b]:font-700">
-                            <b>Enjoy exclusive enrolment perks including $8.55 worth of Linkpoints monthly!</b><br />For
-                            all enrolments at My First Skool, 2 Punggol Drive (Early years centre):
+                    <div class="grid max-w-[35.5rem] gap-4 md:gap-6">
+                        <h2 class="max-md:text-[1.875rem] max-md:leading-[2rem]">Secure your spot</h2>
+
+                        <p class="max-w-[21rem] font-700 md:max-w-[35.56rem]">
+                            Enjoy $8.55 in Linkpoints monthly and up to $500* in exclusive enrolment perks:
                         </p>
 
-                        <p
-                            class="text-balance rounded-large border border-dashed border-gray-80 p-4 text-center text-[1.5rem] font-700 leading-[1.86rem]"
+                        <div
+                            class="prose prose-ul:mt-0 prose-li:mb-0 prose-li:mt-0 prose-li:pl-0 prose-li:marker:text-gray-80 max-md:mt-2"
                         >
-                            Enjoy $300 in Grab vouchers for transport and food delivery
-                        </p>
+                            <ul class="">
+                                <li>$87.20 registration fee waiver</li>
+                                <li>2 uniform sets worth $54.50</li>
+                                <li>
+                                    $160 NTUC FairPrice vouchers (Playgroup to Nursery 1) or $160 NTUC FairPrice
+                                    vouchers plus $200 off Holiday Camps (Nursery 2 to Kindergarten 2)
+                                </li>
+                                <li>$8.55 in Linkpoints per household monthly</li>
+                            </ul>
+                        </div>
+
+                        <!-- Registration -->
+                        <div
+                            class="relative z-[2] grid w-full gap-2 justify-self-center max-md:py-6 sm:max-w-[32rem] xl:justify-self-start"
+                        >
+                            <span class="text-sm font-700 leading-5 text-gray-80"
+                                >Select your preferred start dates</span
+                            >
+
+                            <form
+                                class="registration-start-date-form grid items-center gap-2 xl:grid-cols-[1fr_auto] xl:gap-4"
+                            >
+                                <div class="relative xl:max-w-[23.18rem]">
+                                    <div class="form-input">
+                                        <div class="relative">
+                                            <input
+                                                type="date"
+                                                name="start-date"
+                                                id="start-date"
+                                                class="w-full"
+                                                placeholder="Select start dates"
+                                            />
+                                            <img
+                                                src="/assets/images/icons/icon-calender.svg"
+                                                width="15"
+                                                height="15"
+                                                alt=""
+                                                class="absolute right-4 top-1/2 z-[4] -translate-y-1/2"
+                                            />
+                                        </div>
+
+                                        <span class="form-input__error">Please select a start date</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="mfs-button !p-3">Register Now</button>
+                            </form>
+                        </div>
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="relative w-full overflow-hidden">
-                        <div class="swiper swiper--spots overflow-hidden">
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide max-w-full overflow-hidden">
-                                    <div
-                                        class="grid w-full items-center gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[1fr_auto]"
-                                    >
-                                        <img
-                                            src="/assets/images/section-images/image-playgroup.png"
-                                            width="570"
-                                            height="428"
-                                            alt=""
-                                            class="w-full"
-                                        />
-
-                                        <div class="grid content-center gap-4 xl:max-w-[24.5rem]">
-                                            <span
-                                                class="max-w-[24.4rem] text-[1.875rem] font-700 leading-[2.375rem] text-gray-80"
-                                            >
-                                                Perks for playgroup to nursery 1
-                                            </span>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-primary-100 p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-building.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $87.20 Registration Fee Waiver
-                                                </span>
-                                            </div>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-tinted-dustyBlue p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-antena.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 Off Singapore Holiday Camps
-                                                </span>
-                                            </div>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-tinted-sageGreen p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-scale.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 NTUC FairPrice Vouchers
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Slides -->
-                                <div class="swiper-slide max-w-full overflow-hidden">
-                                    <div
-                                        class="grid w-full items-center gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[1fr_auto]"
-                                    >
-                                        <img
-                                            src="/assets/images/section-images/image-playgroup.png"
-                                            width="570"
-                                            height="428"
-                                            alt=""
-                                            class="w-full"
-                                        />
-
-                                        <div class="grid content-center gap-4 xl:max-w-[24.5rem]">
-                                            <span
-                                                class="max-w-[24.4rem] text-[1.875rem] font-700 leading-[2.375rem] text-gray-80"
-                                            >
-                                                Perks for playgroup to nursery 2
-                                            </span>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-primary-100 p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-building.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $87.20 Registration Fee Waiver
-                                                </span>
-                                            </div>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-tinted-dustyBlue p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-antena.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 Off Singapore Holiday Camps
-                                                </span>
-                                            </div>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-tinted-sageGreen p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-scale.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 NTUC FairPrice Vouchers
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slider action buttons -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
                 </div>
             </section>
+
+            <!-- ====================== -->
+            <!-- Secure Spot -->
+            <!-- ====================== -->
+            <section class="find-a-centre"></section>
 
             <!-- ====================== -->
             <!-- Trusted brands -->
@@ -731,7 +652,7 @@
             <!-- ====================== -->
             <!-- Testimonial Slider -->
             <!-- ====================== -->
-            <section id="testimonial-slider" class="section bg-secondary-softPeach">
+            <section id="testimonial-slider" class="bg-secondary-softPeach">
                 <div
                     class="relative grid content-start gap-4 pt-10 md:grid-cols-[auto_1fr] md:gap-6 md:pt-20 xl:gap-32 xl:pl-[calc(calc(100vw_-_var(--container-width))_/_2)]"
                 >

@@ -26,16 +26,16 @@ class VideoPlayer {
             });
 
             // Add touch event for play/pause on mobile
-            $(element)
-                .parent()
-                .on('click', function (event) {
-                    event.preventDefault(); // Prevent unwanted side effects
-                    if (player.playing) {
-                        player.pause();
-                    } else {
-                        player.play();
-                    }
-                });
+            // $(element)
+            //     .parents('.mfs-tab__content-wrapper')
+            //     .on('click', function (event) {
+            //         event.preventDefault(); // Prevent unwanted side effects
+            //         if (player.playing) {
+            //             player.pause();
+            //         } else {
+            //             player.play();
+            //         }
+            //     });
         });
     }
 }

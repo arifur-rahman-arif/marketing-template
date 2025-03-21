@@ -9,7 +9,7 @@
             href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
             rel="stylesheet"
         />
-        <title>2 Punggol Drive</title>
+        <title>A bright start at My First Skool</title>
     </head>
     <body>
         <div id="app">
@@ -21,19 +21,25 @@
                     <!-- Mobile overlay -->
                     <div
                         class="pointer-events-none absolute left-0 top-0 z-[2] h-full w-full md:hidden"
-                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.32) 100%)"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.2) 100%)"
                     ></div>
 
                     <!-- Desktop overlay -->
                     <div
                         class="pointer-events-none absolute left-0 top-0 z-[2] hidden h-full w-full md:block"
-                        style="background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.56) 78.5%)"
+                        style="
+                            background: linear-gradient(
+                                0deg,
+                                rgba(0, 0, 0, 0.4) -10.86%,
+                                rgba(102, 102, 102, 0) 167.47%
+                            );
+                        "
                     ></div>
 
                     <picture class="h-full w-full">
                         <!-- Mobile Image -->
                         <source
-                            srcset="/assets/images/masthead/centre-masthead-home-mobile.png"
+                            srcset="/assets/images/masthead/district-masthead-home-template-2-mobile.png"
                             media="(max-width: 767px)"
                             width="375"
                             height="600"
@@ -42,7 +48,7 @@
 
                         <!--  Desktop Image (default) -->
                         <img
-                            src="/assets/images/masthead/centre-masthead.png"
+                            src="/assets/images/masthead/district-masthead-template-2.png"
                             alt=""
                             width="1440"
                             height="810"
@@ -52,7 +58,7 @@
                 </div>
 
                 <div
-                    class="container relative z-[3] grid h-full min-h-[40rem] w-full pb-28 pt-6 md:min-h-[38rem] md:content-center md:gap-10 md:py-28 md:pb-[6.43rem]"
+                    class="container relative z-[3] grid h-full min-h-[40rem] w-full pb-28 pt-6 md:min-h-[38rem] md:content-center md:gap-10 md:py-28 md:pb-[10rem] lg:pb-[13rem]"
                 >
                     <img
                         src="/assets/images/logos/MFS Logo.svg"
@@ -67,13 +73,15 @@
                             <p
                                 class="animate__animated animate__fadeInDown text-lg font-700 leading-6 text-secondary-paleIvory"
                             >
-                                Welcome To My First Skool’s EYC
+                                Welcome to My First Skool
                             </p>
                             <h1 class="animate__animated animate__fadeInDown text-secondary-paleIvory">
-                                2 Punggol Drive
+                                A bright start at <br />My First Skool
                             </h1>
                         </div>
-                        <p class="max-w-[35rem] text-sm font-500 leading-5 text-white max-md:mt-2">
+                        <p
+                            class="max-w-[21rem] text-sm font-500 leading-5 text-white max-md:mt-2 md:max-w-[34rem] md:text-base md:leading-7"
+                        >
                             We recognise the early years' impact on your child's future. Our EYCs in Punggol nurture
                             children from two months to four years old.
                         </p>
@@ -83,9 +91,10 @@
                             <!-- Usp icons -->
                             <div class="flex flex-wrap items-center justify-start gap-14">
                                 <div class="grid justify-items-center gap-4">
-                                    <img src="/assets/images/icons/icon-building.svg" width="64" height="64" alt="" />
-                                    <span class="text-center text-sm font-700 leading-[1.4rem] text-white">
-                                        Guarantees <br />a K1 spot
+                                    <span
+                                        class="max-w-[7.43rem] text-center text-sm font-700 leading-[1.4rem] text-white"
+                                    >
+                                        years in childcare leadership
                                     </span>
                                 </div>
 
@@ -93,9 +102,8 @@
                                 <span class="h-20 w-[0.5px] bg-gray-20"></span>
 
                                 <div class="grid justify-items-center gap-4">
-                                    <img src="/assets/images/icons/icon-boosting.png" width="64" height="64" alt="" />
-                                    <span class="text-center text-sm font-700 leading-[1.4rem] text-white">
-                                        Boosting <br />social Skills
+                                    <span class="max-w-20 text-center text-sm font-700 leading-[1.4rem] text-white">
+                                        centres island-wide
                                     </span>
                                 </div>
 
@@ -103,43 +111,12 @@
                                 <span class="h-20 w-[0.5px] bg-gray-20"></span>
 
                                 <div class="grid justify-items-center gap-4">
-                                    <img src="/assets/images/icons/icon-experience.svg" width="64" height="64" alt="" />
-                                    <span class="text-center text-sm font-700 leading-[1.4rem] text-white">
-                                        Hands-on <br />exploration
+                                    <span
+                                        class="max-w-[5.75rem] text-center text-sm font-700 leading-[1.4rem] text-white"
+                                    >
+                                        futures brightened yearly
                                     </span>
                                 </div>
-                            </div>
-
-                            <!-- Registration -->
-                            <div class="grid gap-2 sm:max-w-[34rem]">
-                                <span class="text-sm font-700 leading-5 text-white">
-                                    Select your preferred start dates
-                                </span>
-
-                                <form class="registration-start-date-form grid grid-cols-[1fr_auto] items-center gap-4">
-                                    <div class="relative">
-                                        <div class="form-input">
-                                            <input
-                                                type="date"
-                                                name="start-date"
-                                                id="start-date"
-                                                class="w-full"
-                                                placeholder="Select start dates"
-                                            />
-
-                                            <span class="form-input__error">Please select a start date</span>
-                                        </div>
-                                        <img
-                                            src="/assets/images/icons/icon-calender.svg"
-                                            width="15"
-                                            height="15"
-                                            alt=""
-                                            class="absolute right-4 top-1/2 z-[4] -translate-y-1/2"
-                                        />
-                                    </div>
-
-                                    <button type="submit" class="mfs-button !py-3">Register Now</button>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -149,7 +126,7 @@
             <!-- ====================== -->
             <!-- USP mobile version -->
             <!-- ====================== -->
-            <div class="relative grid gap-8 bg-tinted-softBeige pt-16 md:hidden">
+            <div class="relative grid gap-8 bg-secondary-lightCream py-6 pt-16 md:hidden">
                 <div class="absolute left-1/2 top-0 z-[1] w-full -translate-x-1/2 -translate-y-[3.6rem]">
                     <div class="relative">
                         <svg
@@ -162,7 +139,7 @@
                         >
                             <path
                                 d="M917 125.807C917 153.421 894.614 162.307 867 162.307H197H-473C-500.614 162.307 -523 158.421 -523 130.807L-523 126.807C-523 99.1928 -500.614 90 -473 90H57C84.6143 90 105.938 65.9766 120.523 42.5287C136.406 16.9963 164.718 0 197 0C229.282 0 257.594 16.9963 273.477 42.5287C288.062 65.9766 309.386 90 337 90H867C894.5 90 917 94.1928 917 121.807V125.807Z"
-                                fill="#F3ECE4"
+                                fill="var(--S-Light-Cream)"
                             />
                         </svg>
 
@@ -179,7 +156,7 @@
                                 />
 
                                 <img
-                                    src="/assets/images/section-images/masthead-sticker-imoji.png"
+                                    src="/assets/images/section-images/template-2-masthead-sticker-imoji.png"
                                     alt=""
                                     width="73"
                                     height="73"
@@ -191,72 +168,42 @@
                 </div>
 
                 <!-- Usp icons -->
-                <div class="relative z-[2] flex flex-wrap items-center justify-center justify-items-center gap-7 px-6">
-                    <div class="grid justify-items-center gap-4">
-                        <img src="/assets/images/icons/icon-building-orange.svg" width="42" height="42" alt="" />
-                        <span class="text-center text-xs font-900 leading-5 text-gray-80">
-                            Guarantees <br />a K1 spot
+                <div class="relative z-[2] flex flex-wrap items-center justify-around justify-items-center gap-7 px-6">
+                    <div class="grid justify-items-center">
+                        <span class="text-center text-xl font-700 text-gray-80">45+</span>
+                        <span class="max-w-[3.81rem] text-center text-xs font-900 leading-5 text-gray-80">
+                            years in childcare leadership
                         </span>
                     </div>
                     <!-- Line -->
-                    <span class="h-20 w-[0.5px] bg-gray-20"></span>
+                    <span class="h-20 w-[1px] bg-gray-80"></span>
 
-                    <div class="grid justify-items-center gap-4">
-                        <img src="/assets/images/icons/icon-boosting-orange.png" width="42" height="42" alt="" />
-                        <span class="text-center text-xs font-900 leading-5 text-gray-80">
-                            Boosting <br />social Skills
+                    <div class="grid justify-items-center">
+                        <span class="text-center text-xl font-700 text-gray-80">150+</span>
+                        <span class="max-w-[3.81rem] text-center text-xs font-900 leading-5 text-gray-80">
+                            centres island-wide
                         </span>
                     </div>
 
                     <!-- Line -->
-                    <span class="h-20 w-[0.5px] bg-gray-20"></span>
-                    <div class="grid justify-items-center gap-4">
-                        <img src="/assets/images/icons/icon-experience-orange.svg" width="42" height="42" alt="" />
-                        <span class="text-center text-xs font-900 leading-5 text-gray-80">
-                            Hands-on <br />exploration
+                    <span class="h-20 w-[1px] bg-gray-80"></span>
+
+                    <div class="grid justify-items-center">
+                        <span class="text-center text-xl font-700 text-gray-80">26,000</span>
+                        <span class="max-w-[3.81rem] text-center text-xs font-900 leading-5 text-gray-80">
+                            futures brightened yearly
                         </span>
                     </div>
-                </div>
-
-                <!-- Registration -->
-                <div
-                    class="relative z-[2] grid w-full gap-2 justify-self-center px-6 py-6 max-sm:bg-secondary-lightGrayBeige sm:max-w-[32rem]"
-                >
-                    <span class="text-sm font-700 leading-5 text-gray-80">Select your preferred start dates</span>
-
-                    <form class="registration-start-date-form grid items-center gap-2">
-                        <div class="relative">
-                            <div class="form-input">
-                                <div class="relative">
-                                    <input
-                                        type="date"
-                                        name="start-date"
-                                        id="start-date"
-                                        class="w-full"
-                                        placeholder="Select start dates"
-                                    />
-                                    <img
-                                        src="/assets/images/icons/icon-calender.svg"
-                                        width="15"
-                                        height="15"
-                                        alt=""
-                                        class="absolute right-4 top-1/2 z-[4] -translate-y-1/2"
-                                    />
-                                </div>
-
-                                <span class="form-input__error">Please select a start date</span>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="mfs-button !p-3">Register Now</button>
-                    </form>
                 </div>
             </div>
 
             <!-- ====================== -->
-            <!-- Explore our centre -->
+            <!-- Where curiosity meets care -->
             <!-- ====================== -->
-            <section id="explore-our-centre" class="section explore-centre grid overflow-x-hidden bg-white md:!-mt-20">
+            <section
+                id="where-curiosity-meets-care"
+                class="mb-20 grid overflow-x-hidden bg-tinted-dustyBlue md:!-mt-20"
+            >
                 <!-- The rounded seal -->
                 <div
                     class="rounded-coin relative z-[4] overflow-x-auto overflow-y-hidden pb-4 max-md:hidden"
@@ -272,7 +219,7 @@
                     >
                         <path
                             d="M643.523 43.2217C659.406 17.6893 687.718 0.692993 720 0.692993C752.282 0.692993 780.594 17.6893 796.477 43.2217C811.062 66.6696 832.386 90.693 860 90.693H1440V163H3.8147e-06V90.693H580C607.614 90.693 628.938 66.6696 643.523 43.2217Z"
-                            fill="white"
+                            fill="var(--T-Dusty-Blue)"
                         />
                     </svg>
 
@@ -287,7 +234,7 @@
                             />
 
                             <img
-                                src="/assets/images/section-images/masthead-sticker-imoji.png"
+                                src="/assets/images/section-images/template-2-masthead-sticker-imoji.png"
                                 alt=""
                                 width="73"
                                 height="73"
@@ -297,106 +244,16 @@
                     </div>
                 </div>
 
-                <div class="container grid gap-6 md:gap-10 md:pt-16">
-                    <h2>
-                        Explore Our Centre:<br />
-                        My First Skool, 2 Punggol Drive
-                    </h2>
-
-                    <div class="explore-centre__grid grid gap-4 md:gap-[1.88rem]">
-                        <!-- Grid item 1 -->
-                        <div class="grid gap-4 md:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-[1fr_auto]">
-                            <div
-                                class="explore-centre__item-1 grid content-start gap-6 rounded-large bg-primary-100 p-8 md:order-2 md:grid-rows-[auto_1fr_auto] lg:max-w-[23.13rem]"
-                            >
-                                <img
-                                    src="/assets/images/icons/icon-open-book.svg"
-                                    width="80"
-                                    height="80"
-                                    alt=""
-                                    class="max-md:max-h-20 max-md:max-w-20"
-                                />
-                                <h3 class="max-w-[19rem] text-2xl leading-7 md:self-end md:text-3xl md:leading-9">
-                                    Mother tongue and language curriculum
-                                </h3>
-
-                                <div class="flex items-center justify-start gap-6 max-xs:flex-wrap">
-                                    <div class="grid gap-2">
-                                        <img src="/assets/images/logos/logo-my.png" alt="" width="35" height="25" />
-                                        <span class="max-w-[6.75rem] text-xs font-400 leading-5"
-                                            >Offers Malay languge curriculum</span
-                                        >
-                                    </div>
-
-                                    <div class="grid gap-2">
-                                        <img
-                                            src="/public/assets/images/logos/logo-tamil.png"
-                                            alt=""
-                                            width="65"
-                                            height="25"
-                                        />
-                                        <span class="max-w-[6.75rem] text-xs font-400 leading-5"
-                                            >Offers Malay languge curriculum</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Grid item 2 -->
-                            <iframe
-                                style="height: 450px; width: 793px"
-                                class="explore-centre__item-2 w-full max-w-full rounded-large"
-                                src="https://www.google.com/maps/embed?pb=!4v1592125373262!6m8!1m7!1sCAoSLEFGMVFpcE1OX0oxQlpJYWdEcnp0M211NzRxSGJ3LU9HaGdmRnplbFV2MjUt!2m2!1d1.4063782!2d103.9037027!3f315.09512393587823!4f2.899240285718207!5f0.7820865974627469"
-                                title=""
-                                data-origwidth=""
-                                data-origheight=""
-                            >
-                            </iframe>
-                        </div>
-
-                        <!-- Grid item 3 -->
-                        <div class="explore-centre__item-3 grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-[1.88rem]">
-                            <img
-                                src="/public/assets/images/section-images/our-centre-image-1.png"
-                                alt=""
-                                width="370"
-                                height="208"
-                                class="w-full"
-                            />
-                            <img
-                                src="/public/assets/images/section-images/our-centre-image-2.png"
-                                alt=""
-                                width="370"
-                                height="208"
-                                class="w-full"
-                            />
-                            <img
-                                src="/public/assets/images/section-images/our-centre-image-3.png"
-                                alt=""
-                                width="370"
-                                height="208"
-                                class="w-full"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ====================== -->
-            <!-- Seamless transitions -->
-            <!-- ====================== -->
-            <section id="seamless-transitions" class="section mb-20 grid bg-tinted-freshGreen">
-                <div class="container grid gap-6 py-10 pb-6 md:gap-12 xl:gap-16 xl:py-20 xl:pb-8">
+                <div class="container grid gap-5 py-10 md:gap-12 md:py-20 md:pt-6 xl:gap-16">
                     <div class="grid items-center gap-2 md:gap-4 xl:grid-cols-[auto_1fr] xl:gap-12">
-                        <h2>
-                            Seamless transitions,<br />
-                            bright futures
+                        <h2 class="max-w-[30rem]">
+                            Where curiosity<br />
+                            meets care
                         </h2>
 
-                        <p class="font-700 xl:max-w-[39.12rem]">
-                            Our Early Years Centre (EYC) ensures a smooth transition with guaranteed MOE Kindergarten
-                            placement, priority primary school admission, and a nurturing environment that fosters
-                            learning, social growth, and curiosity.
+                        <p class="font-700 leading-7 md:max-w-[47.38rem]">
+                            A safe, inspiring space where dedicated educators, enriching activities, and engaging
+                            learning corners spark curiosity and growth.
                         </p>
                     </div>
 
@@ -405,7 +262,7 @@
                         <!-- Tab pills -->
                         <div class="mfs-tab__btn-container">
                             <button class="mfs-tab__btn active" data-tab="tab-1">
-                                Priority primary school admission
+                                A safe & nurturing environment
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -421,7 +278,7 @@
                                 </svg>
                             </button>
                             <button class="mfs-tab__btn" data-tab="tab-2">
-                                Boosting social skills
+                                Dedicated educator support
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -437,7 +294,7 @@
                                 </svg>
                             </button>
                             <button class="mfs-tab__btn" data-tab="tab-3">
-                                Sparking curiosity outdoors
+                                Thoughtfully nutritious meals
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -459,17 +316,22 @@
                             <!-- Tab content 1 -->
                             <div class="mfs-tab__content active" data-target="tab-1">
                                 <!-- Actual content -->
-                                <div class="grid items-center gap-6 md:grid-cols-2 lg:grid-cols-[1fr_auto] xl:gap-20">
-                                    <img
-                                        class="rounded-large md:order-2"
-                                        src="/public/assets/images/section-images/school-admission.png"
-                                        width="450"
-                                        height="338"
-                                        alt=""
-                                    />
+                                <div class="grid items-center gap-6 md:grid-cols-2 lg:grid-cols-[auto_auto] xl:gap-20">
+                                    <div class="tab-video-player relative w-full overflow-hidden md:order-2">
+                                        <video
+                                            class="video-player"
+                                            playsinline
+                                            controls
+                                            data-poster="/assets/images/section-images/video-player-poster-2.png"
+                                        >
+                                            <source src="/assets/videos/demo-video.mp4" type="video/mp4" />
+                                        </video>
+                                    </div>
 
-                                    <div class="grid content-start gap-4">
-                                        <h3 class="max-w-[27.5rem] text-balance">Priority primary School admission</h3>
+                                    <div class="grid w-full max-w-[27.5rem] content-start gap-4">
+                                        <h3 class="max-w-[27.5rem] text-balance">
+                                            A safe & nurturing <br />environment
+                                        </h3>
                                         <p class="font-400 md:text-lg">
                                             Ensure a smooth start to your child's educational journey with our Early
                                             Years Centre:
@@ -480,30 +342,31 @@
                                             <!-- item 1 -->
                                             <div class="grid grid-cols-[auto_1fr] items-start gap-4">
                                                 <img
-                                                    src="/public/assets/images/icons/icon-guaranteed-placement.svg"
+                                                    src="/public/assets/images/icons/icon-learning-corner.svg"
                                                     width="42"
                                                     height="42"
                                                     alt=""
                                                     class="mt-1"
                                                 />
                                                 <p class="font-400 [&_b]:font-900">
-                                                    <b>Guaranteed placement</b> in Kindergarten 1 at a nearby partner
-                                                    MOE Kindergarten.
+                                                    <b>Captivating Learning Corners:</b> Our learning spaces are
+                                                    thoughtfully designed to engage and inspire young minds.
                                                 </p>
                                             </div>
 
                                             <!-- item 2 -->
                                             <div class="grid grid-cols-[auto_1fr] items-start gap-4">
                                                 <img
-                                                    src="/public/assets/images/icons/icon-priority-admission.svg"
+                                                    src="/public/assets/images/icons/icon-expertly-crafted.svg"
                                                     width="42"
                                                     height="42"
                                                     alt=""
                                                     class="mt-1"
                                                 />
                                                 <p class="font-400 [&_b]:font-900">
-                                                    <b>Priority admission</b> to the affiliated primary school for a
-                                                    seamless transition.
+                                                    <b>Expertly Crafted:</b> Each area is created by our team of skilled
+                                                    curriculum specialists, ensuring an enriching educational
+                                                    experience.
                                                 </p>
                                             </div>
 
@@ -517,9 +380,8 @@
                                                     class="mt-1"
                                                 />
                                                 <p class="font-400 [&_b]:font-900">
-                                                    <b>Continuity in learning that gives you peace of mind</b>, Your
-                                                    child will experience a smooth and consistent transition from our
-                                                    Early Years Centre to primary school.
+                                                    <b>Curiosity Driven:</b> The environment is tailored to spark
+                                                    curiosity, encouraging children to explore and discover.
                                                 </p>
                                             </div>
                                         </div>
@@ -530,7 +392,7 @@
                             <!-- Tab content 2 -->
                             <div class="mfs-tab__content" data-target="tab-2">
                                 <!-- Actual content -->
-                                <div class="grid items-center gap-6 md:grid-cols-2 lg:grid-cols-[1fr_auto] xl:gap-20">
+                                <div class="grid items-center gap-6 md:grid-cols-2 lg:grid-cols-[auto_auto] xl:gap-20">
                                     <img
                                         class="rounded-large md:order-2"
                                         src="/public/assets/images/section-images/school-admission.png"
@@ -539,7 +401,7 @@
                                         alt=""
                                     />
 
-                                    <div class="grid content-start gap-4">
+                                    <div class="grid w-full max-w-[27.5rem] content-start gap-4">
                                         <h3 class="max-w-[27.5rem] text-balance">
                                             Priority primary School admission 2
                                         </h3>
@@ -612,7 +474,7 @@
                                         alt=""
                                     />
 
-                                    <div class="grid content-start gap-4">
+                                    <div class="grid w-full max-w-[27.5rem] content-start gap-4">
                                         <h3 class="max-w-[27.5rem] text-balance">
                                             Priority primary School admission 3
                                         </h3>
@@ -675,66 +537,56 @@
                         </div>
                     </div>
                 </div>
-                <div class="container grid">
-                    <a href="#" class="mfs-button relative ml-auto translate-y-1/2 !px-8">Register now</a>
-                </div>
             </section>
 
             <!-- ====================== -->
-            <!-- Secure Spot -->
+            <!-- Seamless transitions -->
             <!-- ====================== -->
-            <section class="section">
-                <div class="container grid gap-10">
-                    <!-- Item 1 -->
-                    <div class="grid justify-center gap-4 rounded-large bg-secondary-lightCream p-6">
-                        <h2 class="text-center max-md:text-[2.5rem] max-md:leading-[3rem]">Secure your spot</h2>
-                        <p class="text-center text-lg font-400 [&_b]:font-700">
-                            <b>Enjoy exclusive enrolment perks including $8.55 worth of Linkpoints monthly!</b><br />For
-                            all enrolments at My First Skool, 2 Punggol Drive (Early years centre):
-                        </p>
+            <section id="seamless-transitions" class="grid bg-tinted-skyBlue">
+                <div class="container grid gap-6 py-10 pb-6 md:gap-12 xl:gap-32 xl:py-20 xl:pb-8">
+                    <div class="grid items-center gap-2 md:gap-4 xl:grid-cols-[1fr_auto] xl:gap-12">
+                        <h2 class="max-w-[30rem]">
+                            Priority primary<br />
+                            school admission
+                        </h2>
 
-                        <p
-                            class="text-balance rounded-large border border-dashed border-gray-80 p-4 text-center text-[1.5rem] font-700 leading-[1.86rem]"
-                        >
-                            Enjoy $300 in Grab vouchers for transport and food delivery
+                        <p class="font-700 xl:max-w-[31.62rem]">
+                            Ensure a smooth start to your child's educational journey with our Early Years Centre.
                         </p>
                     </div>
 
-                    <!-- Item 2 -->
                     <div class="relative w-full overflow-hidden">
                         <div class="swiper swiper--spots overflow-hidden">
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <div class="swiper-slide max-w-full overflow-hidden">
+                                <div class="swiper-slide max-w-full">
                                     <div
-                                        class="grid w-full items-center gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[1fr_auto]"
+                                        class="grid w-full items-center justify-items-center gap-6 md:gap-8 lg:grid-cols-[auto_1fr]"
                                     >
-                                        <img
-                                            src="/assets/images/section-images/image-playgroup.png"
-                                            width="570"
-                                            height="428"
-                                            alt=""
-                                            class="w-full"
-                                        />
-
-                                        <div class="grid content-center gap-4 xl:max-w-[24.5rem]">
-                                            <span
-                                                class="max-w-[24.4rem] text-[1.875rem] font-700 leading-[2.375rem] text-gray-80"
+                                        <div class="relative w-full overflow-hidden lg:order-2">
+                                            <video
+                                                class="video-player"
+                                                playsinline
+                                                controls
+                                                data-poster="/assets/images/section-images/video-player-poster.png"
                                             >
-                                                Perks for playgroup to nursery 1
-                                            </span>
+                                                <source src="/assets/videos/demo-video.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
 
+                                        <div class="grid max-w-[26.13rem] content-center gap-4">
                                             <div
                                                 class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-primary-100 p-4"
                                             >
                                                 <img
-                                                    src="/public/assets/images/icons/icon-building.svg"
+                                                    src="/public/assets/images/icons/icon-building-2.svg"
                                                     alt=""
                                                     width="42"
                                                     height="42"
                                                 />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $87.20 Registration Fee Waiver
+                                                <span>
+                                                    <b>Guaranteed placement</b> in Kindergarten 1 at a nearby partner
+                                                    MOE Kindergarten.
                                                 </span>
                                             </div>
 
@@ -742,13 +594,14 @@
                                                 class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-tinted-dustyBlue p-4"
                                             >
                                                 <img
-                                                    src="/public/assets/images/icons/icon-antena.svg"
+                                                    src="/public/assets/images/icons/icon-saving.svg"
                                                     alt=""
                                                     width="42"
                                                     height="42"
                                                 />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 Off Singapore Holiday Camps
+                                                <span>
+                                                    <b>Priority admission</b> to the affiliated primary school for a
+                                                    seamless transition.
                                                 </span>
                                             </div>
 
@@ -761,58 +614,44 @@
                                                     width="42"
                                                     height="42"
                                                 />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 NTUC FairPrice Vouchers
+                                                <span>
+                                                    <b>Seamless learning ensures a smooth transition</b> from our EYC to
+                                                    primary school.
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <!-- Slides -->
-                                <div class="swiper-slide max-w-full overflow-hidden">
+                                <div class="swiper-slide max-w-full">
                                     <div
-                                        class="grid w-full items-center gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-[1fr_auto]"
+                                        class="grid w-full items-center justify-items-center gap-6 md:gap-8 lg:grid-cols-[auto_1fr]"
                                     >
-                                        <img
-                                            src="/assets/images/section-images/image-playgroup.png"
-                                            width="570"
-                                            height="428"
-                                            alt=""
-                                            class="w-full"
-                                        />
-
-                                        <div class="grid content-center gap-4 xl:max-w-[24.5rem]">
-                                            <span
-                                                class="max-w-[24.4rem] text-[1.875rem] font-700 leading-[2.375rem] text-gray-80"
+                                        <div class="relative w-full overflow-hidden lg:order-2">
+                                            <video
+                                                class="video-player"
+                                                playsinline
+                                                controls
+                                                data-poster="/assets/images/section-images/video-player-poster.png"
                                             >
-                                                Perks for playgroup to nursery 2
-                                            </span>
+                                                <source src="/assets/videos/demo-video.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
 
+                                        <div class="grid max-w-[26.13rem] content-center gap-4">
                                             <div
                                                 class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-primary-100 p-4"
                                             >
                                                 <img
-                                                    src="/public/assets/images/icons/icon-building.svg"
+                                                    src="/public/assets/images/icons/icon-building-2.svg"
                                                     alt=""
                                                     width="42"
                                                     height="42"
                                                 />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $87.20 Registration Fee Waiver
-                                                </span>
-                                            </div>
-
-                                            <div
-                                                class="grid grid-cols-[auto_1fr] items-center gap-6 rounded-large bg-tinted-dustyBlue p-4"
-                                            >
-                                                <img
-                                                    src="/public/assets/images/icons/icon-antena.svg"
-                                                    alt=""
-                                                    width="42"
-                                                    height="42"
-                                                />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 Off Singapore Holiday Camps
+                                                <span>
+                                                    <b>Guaranteed placement</b> in Kindergarten 1 at a nearby partner
+                                                    MOE Kindergarten.
                                                 </span>
                                             </div>
 
@@ -825,8 +664,9 @@
                                                     width="42"
                                                     height="42"
                                                 />
-                                                <span class="text-sm font-900 leading-5">
-                                                    $100 NTUC FairPrice Vouchers
+                                                <span>
+                                                    <b>Seamless learning ensures a smooth transition</b> from our EYC to
+                                                    primary school.
                                                 </span>
                                             </div>
                                         </div>
@@ -841,24 +681,76 @@
                         </div>
                     </div>
                 </div>
+                <div class="container grid">
+                    <a href="#" class="mfs-button relative ml-auto translate-y-1/2 !px-8">Register now</a>
+                </div>
+            </section>
+
+            <!-- ====================== -->
+            <!-- Secure Spot -->
+            <!-- ====================== -->
+            <section class="bg-tinted-softBeige">
+                <div
+                    class="container grid items-center gap-10 py-10 md:grid-cols-2 md:py-20 lg:grid-cols-[auto_1fr] xl:gap-32"
+                >
+                    <img
+                        src="/assets/images/section-images/secure-spot-image.png"
+                        width="470"
+                        height="352"
+                        alt=""
+                        class="max-h-[352px] rounded-large object-cover"
+                    />
+                    <!-- Item 1 -->
+                    <div class="grid max-w-[35.5rem] gap-4 md:gap-6">
+                        <h2 class="max-md:text-[1.875rem] max-md:leading-[2rem]">Secure your spot</h2>
+
+                        <p class="font-700">
+                            Enjoy exclusive enrolment perks including $8.55 worth of Linkpoints monthly!
+                        </p>
+
+                        <div
+                            class="prose prose-ul:mt-0 prose-li:mb-0 prose-li:mt-0 prose-li:pl-0 prose-li:marker:text-gray-80 max-md:mt-2"
+                        >
+                            <b>For playgroup to nursery 1:</b>
+                            <ul class="">
+                                <li>Waiver of registration fee worth $87.20</li>
+                                <li>$100 NTUC FairPrice vouchers</li>
+                            </ul>
+
+                            <b>For nursery 2 to kindergarten 2:</b>
+                            <ul class="">
+                                <li>Waiver of registration fee worth $87.20</li>
+                                <li>$150 NTUC FairPrice vouchers</li>
+                                <li>$100 off Holiday Camps by Outdoor School Singapore</li>
+                            </ul>
+
+                            <b>For all enrolments at My First Skool, 2 Punggol Drive (Early years centre):</b>
+                            <ul class="">
+                                <li>$300 Grab vouchers only</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                </div>
             </section>
 
             <!-- ====================== -->
             <!-- Principal Message -->
             <!-- ====================== -->
-            <section id="principal-message" class="section bg-secondary-paleIvory">
+            <section id="principal-message" class="bg-tinted-dustyBlue">
                 <div
                     class="grid content-center gap-4 overflow-hidden py-20 pl-6 md:gap-16 lg:grid-cols-[auto_1fr] xl:pl-[calc(calc(100vw_-_var(--container-width))_/_2)]"
                 >
                     <h2 class="grid content-center justify-start">
-                        <span class="rounded-round bg-primary-100 px-4 py-1 pb-2">Principal’s</span> message
+                        <span class="rounded-round bg-secondary-lightCream px-4 py-1 pb-2">Principal’s</span> message
                     </h2>
 
                     <div class="relative grid py-7 md:py-12">
                         <div
                             class="absolute right-0 top-1/2 z-[1] h-full w-full -translate-y-1/2 translate-x-28 md:translate-x-40 xl:w-full"
                         >
-                            <div class="relative h-full w-full rounded-s-large rounded-bl-none bg-primary-100">
+                            <div class="relative h-full w-full rounded-s-large rounded-bl-none bg-secondary-lightCream">
                                 <svg
                                     class="absolute bottom-0 left-0 translate-y-[80%]"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -869,7 +761,7 @@
                                 >
                                     <path
                                         d="M0.656054 34.0055V0.620605H65.6969L30.0727 44.3925C28.5586 46.3243 26.6243 47.8857 24.4166 48.9584C22.209 50.031 19.7859 50.5867 17.3314 50.583C15.3892 50.54 13.4648 50.2013 11.6245 49.5789C8.38303 48.4785 5.57443 46.3777 3.60328 43.579C1.63214 40.7803 0.600192 37.4282 0.656054 34.0055Z"
-                                        fill="var(--P-100)"
+                                        fill="var(--S-Light-Cream)"
                                     />
                                 </svg>
                             </div>
@@ -915,23 +807,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- ====================== -->
-            <!-- HubSpot Form -->
-            <!-- ====================== -->
-            <section class="bg-tinted-dustyBlue">
-                <div class="container">
-                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                    <script>
-                        hbspt.forms.create({
-                            portalId: '22078937',
-                            formId: '02b7cb82-55e8-48f5-b774-7d3fb8c0c7eb',
-                            region: 'na1',
-                            css: ''
-                        });
-                    </script>
                 </div>
             </section>
 
@@ -1005,13 +880,13 @@
             <!-- ====================== -->
             <!-- Testimonial Slider -->
             <!-- ====================== -->
-            <section id="testimonial-slider" class="section bg-secondary-softPeach">
+            <section id="testimonial-slider" class="section bg-tinted-softBeige">
                 <div
                     class="relative grid content-start gap-4 pt-10 md:grid-cols-[auto_1fr] md:gap-6 md:pt-20 xl:gap-32 xl:pl-[calc(calc(100vw_-_var(--container-width))_/_2)]"
                 >
                     <div class="grid content-start gap-16 md:mt-12 xl:mt-14">
                         <h2 class="mx-6 block max-w-[12rem] content-center text-balance md:max-w-[16.5rem]">
-                            <span class="inline-block rounded-round bg-tinted-sageGreen px-5 py-1 pb-2">Hear it</span>
+                            <span class="inline-block rounded-round bg-tinted-dustyBlue px-5 py-1 pb-2">Hear it</span>
                             from other parents
                         </h2>
 
@@ -1041,7 +916,7 @@
                             <div
                                 class="overlay absolute right-0 top-0 z-[1] h-full w-full translate-x-28 md:translate-x-36 xl:w-full"
                             >
-                                <div class="relative h-full w-full rounded-s-large rounded-bl-none bg-tinted-sageGreen">
+                                <div class="relative h-full w-full rounded-s-large rounded-bl-none bg-tinted-dustyBlue">
                                     <svg
                                         class="absolute left-0 top-full -translate-y-1"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1052,7 +927,7 @@
                                     >
                                         <path
                                             d="M0.656054 34.0055V0.620605H65.6969L30.0727 44.3925C28.5586 46.3243 26.6243 47.8857 24.4166 48.9584C22.209 50.031 19.7859 50.5867 17.3314 50.583C15.3892 50.54 13.4648 50.2013 11.6245 49.5789C8.38303 48.4785 5.57443 46.3777 3.60328 43.579C1.63214 40.7803 0.600192 37.4282 0.656054 34.0055Z"
-                                            fill="var(--T-Sage-Green)"
+                                            fill="var(--T-Dusty-Blue)"
                                         />
                                     </svg>
                                 </div>
@@ -1191,7 +1066,7 @@
             <!-- ====================== -->
             <!-- Popular FAQ's -->
             <!-- ====================== -->
-            <section class="section !mt-0 bg-tinted-sageGreen">
+            <section class="section !mt-0 bg-tinted-rosePink">
                 <div
                     class="container grid items-start gap-6 py-10 md:grid-cols-[auto_1fr] md:gap-10 md:gap-x-4 md:py-20 xl:gap-x-[1.88rem]"
                 >
@@ -1240,7 +1115,7 @@
                                 >
                                     <path
                                         d="M48.3333 64C35.0733 64 24.3333 53.25 24.3333 40V24C24.3333 10.75 13.5933 0 0.333344 0V64H48.3333Z"
-                                        fill="#F3ECE4"
+                                        fill="var(--T-Soft-Beige)"
                                     />
                                 </svg>
                             </button>
@@ -1256,7 +1131,7 @@
                                 >
                                     <path
                                         d="M48.3333 64C35.0733 64 24.3333 53.25 24.3333 40V24C24.3333 10.75 13.5933 0 0.333344 0V64H48.3333Z"
-                                        fill="#F3ECE4"
+                                        fill="var(--T-Soft-Beige)"
                                     />
                                 </svg>
                             </button>
@@ -1272,7 +1147,7 @@
                                 >
                                     <path
                                         d="M48.3333 64C35.0733 64 24.3333 53.25 24.3333 40V24C24.3333 10.75 13.5933 0 0.333344 0V64H48.3333Z"
-                                        fill="#F3ECE4"
+                                        fill="var(--T-Soft-Beige)"
                                     />
                                 </svg>
                             </button>
@@ -1772,12 +1647,17 @@
 
                     <!-- Fourth column -->
                     <div class="grid w-full gap-4 sm:max-w-[17rem]">
+                        <script
+                            charset="utf-8"
+                            type="text/javascript"
+                            src="//js.hsforms.net/forms/embed/v2.js"
+                        ></script>
                         <script>
                             hbspt.forms.create({
                                 portalId: '21698896',
                                 formId: 'cfc8cd3e-612d-4a57-829b-0404f7336ca3',
                                 region: 'na1',
-                                css: ''``
+                                css: ''
                             });
                         </script>
                     </div>

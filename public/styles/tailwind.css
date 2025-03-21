@@ -1939,6 +1939,10 @@ video {
   max-width: 100%;
 }
 
+.max-w-\[21rem\] {
+  max-width: 21rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -2349,10 +2353,6 @@ video {
   grid-template-columns: auto auto;
 }
 
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -2587,6 +2587,10 @@ video {
 
 .gap-\[1\.88rem\] {
   gap: 1.88rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -3147,6 +3151,10 @@ video {
 
 .bg-white {
   background-color: var(--White);
+}
+
+.bg-primary-50 {
+  background-color: var(--P-50);
 }
 
 .decoration-slice {
@@ -5843,6 +5851,10 @@ video {
     max-height: 4.5rem;
   }
 
+  .max-md\:w-\[calc\(100\%_\+_3rem\)\] {
+    width: calc(100% + 3rem);
+  }
+
   .max-md\:max-w-20 {
     max-width: 5rem;
   }
@@ -5873,6 +5885,16 @@ video {
 
   .max-md\:text-balance {
     text-wrap: balance;
+  }
+
+  .max-md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .max-md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .max-md\:text-\[1\.875rem\] {
@@ -5983,6 +6005,18 @@ video {
     margin-top: 1.5rem;
   }
 
+  .md\:-mt-32 {
+    margin-top: -8rem;
+  }
+
+  .md\:\!-mt-32 {
+    margin-top: -8rem !important;
+  }
+
+  .md\:-mt-20 {
+    margin-top: -5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -6013,6 +6047,18 @@ video {
 
   .md\:max-w-\[23\.13rem\] {
     max-width: 23.13rem;
+  }
+
+  .md\:max-w-\[35\.56rem\] {
+    max-width: 35.56rem;
+  }
+
+  .md\:max-w-\[34rem\] {
+    max-width: 34rem;
+  }
+
+  .md\:max-w-\[47\.38rem\] {
+    max-width: 47.38rem;
   }
 
   .md\:-translate-y-1\/2 {
@@ -6155,6 +6201,14 @@ video {
     padding-top: 5rem;
   }
 
+  .md\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .md\:pt-6 {
+    padding-top: 1.5rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -6213,6 +6267,10 @@ video {
     grid-template-columns: auto 1fr;
   }
 
+  .lg\:grid-cols-\[auto_auto\] {
+    grid-template-columns: auto auto;
+  }
+
   .lg\:gap-12 {
     gap: 3rem;
   }
@@ -6269,6 +6327,10 @@ video {
     max-width: 39.12rem;
   }
 
+  .xl\:max-w-\[23\.18rem\] {
+    max-width: 23.18rem;
+  }
+
   .xl\:grid-cols-\[1fr_auto\] {
     grid-template-columns: 1fr auto;
   }
@@ -6297,9 +6359,17 @@ video {
     gap: 8rem;
   }
 
+  .xl\:gap-4 {
+    gap: 1rem;
+  }
+
   .xl\:gap-x-\[1\.88rem\] {
     -moz-column-gap: 1.88rem;
          column-gap: 1.88rem;
+  }
+
+  .xl\:justify-self-start {
+    justify-self: start;
   }
 
   .xl\:py-20 {
