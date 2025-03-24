@@ -1,6 +1,7 @@
 import FilterOptions from './FilterOptions';
 import { state } from '@/store';
 import { useSnapshot } from 'valtio';
+import React from 'react';
 
 const Filter = () => {
     const snap = useSnapshot(state);

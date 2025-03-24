@@ -45,10 +45,10 @@ const config = (env, options) => {
                 '@': path.resolve(__dirname, 'src') // Add this line for the path alias
             }
         },
-        externals: {
-            react: 'React',
-            'react-dom': 'ReactDOM'
-        },
+        // externals: {
+        //     react: 'React',
+        //     'react-dom': 'ReactDOM'
+        // },
         module: {
             rules: [
                 {

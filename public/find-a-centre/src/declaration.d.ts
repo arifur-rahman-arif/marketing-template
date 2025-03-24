@@ -76,3 +76,7 @@ declare module '*.module.sass' {
     const classes: { readonly [key: string]: string };
     export default classes;
 }
+
+declare module 'valtio' {
+    function useSnapshot<T extends object>(p: T): T;
+}

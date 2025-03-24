@@ -3,6 +3,7 @@ import Filter from '@/components/Filter';
 import Map from '@/components/Map';
 import { state } from '@/store';
 import { cloneDeep } from 'lodash';
+import React from 'react';
 import useSWR from 'swr';
 
 /**

@@ -15,15 +15,16 @@ export interface CentreSearchProps {
         value: string;
         active: boolean;
     }>;
-    programmeType: Array<{
+    programmeTypes: Array<{
         label: string;
         value: string;
         active: boolean;
     }>;
+    openProgrammeMenu: boolean;
     distance: {
         min: number;
         max: number;
-        value: [number, number];
+        value: number[];
     };
     latitude: number;
     longitude: number;
@@ -65,11 +66,17 @@ const defaultFormData: CentreSearchProps = {
             active: false
         }
     ],
-    programmeType: [
+    openProgrammeMenu: true,
+    programmeTypes: [
+        {
+            label: 'All',
+            value: 'all',
+            active: true
+        },
         {
             label: 'Infant Care',
             value: 'infant-care',
-            active: true
+            active: false
         },
         {
             label: 'Playgroup',
