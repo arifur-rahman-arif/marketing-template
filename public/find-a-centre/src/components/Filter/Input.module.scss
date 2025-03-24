@@ -1,0 +1,32 @@
+.styles {
+    :global {
+        .range-slider {
+            height: 0.75rem;
+            border-radius: var(--Border-Radius-border-radius-large);
+            background: #facab0;
+            // opacity: 0.5;
+
+            &__range {
+                background: var(--P-100);
+            }
+
+            &__thumb {
+                background: var(--P-100);
+                width: 1.8rem;
+                height: 1.8rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    border-radius: 50%;
+                    background-color: var(--White);
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}

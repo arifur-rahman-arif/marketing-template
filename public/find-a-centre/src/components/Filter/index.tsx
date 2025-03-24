@@ -1,3 +1,4 @@
+import FilterOptions from './FilterOptions';
 import { state } from '@/store';
 import { useSnapshot } from 'valtio';
 
@@ -43,6 +44,33 @@ const Filter = () => {
                 >
                     Reset
                 </button>
+            </div>
+
+            {/* Modal */}
+            <div
+                className={`container fixed left-0 top-0 z-20 h-full w-full overflow-y-auto overflow-x-hidden bg-white transition-all duration-700 ${snap.modalOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0'}`}
+            >
+                <div className="grid gap-6 pb-24 pt-10">
+                    {/* Header */}
+                    <div className="flex items-center justify-between gap-4">
+                        <button type="button" onClick={() => (state.modalOpen = false)}>
+                            <img src="/assets/images/icons/icon-cross.svg" alt="" width={24} height={24} />
+                        </button>
+
+                        <span className="text-lg font-700">Filters</span>
+
+                        <button
+                            type="button"
+                            className="text-base font-700 underline decoration-gray-80 decoration-2 underline-offset-[10px]"
+                            onClick={snap.handleReset}
+                        >
+                            Reset
+                        </button>
+                    </div>
+
+                    {/* Filter Options */}
+                    <FilterOptions />
+                </div>
             </div>
         </div>
     );

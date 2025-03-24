@@ -45,7 +45,6 @@ const config = (env, options) => {
                 '@': path.resolve(__dirname, 'src') // Add this line for the path alias
             }
         },
-        // Enable this when you load react externally
         externals: {
             react: 'React',
             'react-dom': 'ReactDOM'

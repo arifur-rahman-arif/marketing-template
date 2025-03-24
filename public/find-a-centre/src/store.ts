@@ -23,6 +23,7 @@ export interface CentreSearchProps {
     distance: {
         min: number;
         max: number;
+        value: [number, number];
     };
     latitude: number;
     longitude: number;
@@ -98,7 +99,8 @@ const defaultFormData: CentreSearchProps = {
     ],
     distance: {
         min: 0,
-        max: 20
+        max: 20,
+        value: [5, 15]
     },
     motherTongue: [
         {
@@ -130,7 +132,7 @@ const defaultFormData: CentreSearchProps = {
 
 export const state: StoreInterface = proxy<StoreInterface>({
     formData: { ...defaultFormData },
-    modalOpen: false,
+    modalOpen: true,
     handleReset: () => {
         state.formData = { ...defaultFormData };
     }
