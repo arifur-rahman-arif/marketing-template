@@ -27,5 +27,26 @@ export default defineConfig({
         minify: true, // Ensures esbuild minifies as well
         legalComments: 'none', // Removes unnecessary comments
         keepNames: false // Allows mangling of function and variable names
-    }
+    },
+    server: {
+        watch: {
+            ignored: [] // Prevent ignoring public directory
+        },
+        hmr: {
+            overlay: false // Prevents HMR errors from breaking reload
+        }
+    },
+    plugins: [
+        {
+            name: 'watch-public',
+            configureServer(server) {
+                server.watcher.add(path.resolve(__dirname, 'public'));
+                server.watcher.on('change', file => {
+                    if (file.includes('public')) {
+                        server.ws.send({ type: 'full-reload', path: '*' });
+                    }
+                });
+            }
+        }
+    ]
 });

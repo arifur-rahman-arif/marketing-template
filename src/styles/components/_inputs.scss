@@ -27,10 +27,30 @@
 
 .form-input {
     $self: &;
+    display: grid;
 
     input,
     textarea {
         @include input-style();
+    }
+
+    &--invalid {
+        input,
+        textarea {
+            border: 1px solid var(--Alert-100);
+
+            &::placeholder {
+                color: var(--Alert-100);
+            }
+        }
+
+        #{ $self }__error {
+            @include media-breakpoint-down(md) {
+                display: block;
+            }
+            transform: translateY(0.1rem);
+            opacity: 1;
+        }
     }
 
     &__error {
@@ -51,25 +71,6 @@
             top: 100%;
             transform: translateY(-2rem);
             left: 0;
-        }
-    }
-
-    &--invalid {
-        input,
-        textarea {
-            border: 1px solid var(--Alert-100);
-
-            &::placeholder {
-                color: var(--Alert-100);
-            }
-        }
-
-        #{ $self }__error {
-            @include media-breakpoint-down(md) {
-                display: block;
-            }
-            transform: translateY(0.1rem);
-            opacity: 1;
         }
     }
 }

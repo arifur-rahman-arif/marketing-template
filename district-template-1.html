@@ -10,6 +10,12 @@
             rel="stylesheet"
         />
         <title>My First Skool</title>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- 
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script> -->
     </head>
     <body>
         <div id="app">
@@ -563,7 +569,13 @@
             <!-- ====================== -->
             <!-- Find a centre -->
             <!-- ====================== -->
-            <section class="find-a-centre"></section>
+            <section id="find-a-centre" class="find-a-centre bg-tinted-skyBlue">
+                <div class="container grid gap-8 py-10 md:gap-10 md:py-20">
+                    <h2 class="max-w-[50rem]">Find a preschool centre in Pasir Ris</h2>
+
+                    <div id="centre-search"></div>
+                </div>
+            </section>
 
             <!-- ====================== -->
             <!-- Trusted brands -->
@@ -636,7 +648,7 @@
             <!-- HubSpot Form -->
             <!-- ====================== -->
             <section id="registration-form" class="bg-tinted-aquaGreen">
-                <div class="container">
+                <!-- <div class="container">
                     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
                     <script>
                         hbspt.forms.create({
@@ -646,7 +658,7 @@
                             css: ''
                         });
                     </script>
-                </div>
+                </div> -->
             </section>
 
             <!-- ====================== -->
@@ -1419,6 +1431,11 @@
 
                     <!-- Fourth column -->
                     <div class="grid w-full gap-4 sm:max-w-[17rem]">
+                        <script
+                            charset="utf-8"
+                            type="text/javascript"
+                            src="//js.hsforms.net/forms/embed/v2.js"
+                        ></script>
                         <script>
                             hbspt.forms.create({
                                 portalId: '21698896',
@@ -1495,5 +1512,6 @@
             </footer>
         </div>
         <script type="module" src="/src/main.js"></script>
+        <script type="text/javascript" src="/find-a-centre/build/index.js"></script>
     </body>
 </html>

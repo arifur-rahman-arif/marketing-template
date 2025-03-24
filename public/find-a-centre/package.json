@@ -1,0 +1,53 @@
+{
+  "name": "date-time",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "dependencies": {
+    "@types/node": "^22.13.11",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "lodash": "^4.17.21",
+    "react-flags-select": "^2.4.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-select": "^5.10.1",
+    "swr": "^2.3.3",
+    "tailwind-merge": "^3.0.2",
+    "typescript": "^5.8.2",
+    "valtio": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/lodash": "^4.17.16",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.1.5",
+    "sass": "^1.86.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "svg-url-loader": "^8.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
