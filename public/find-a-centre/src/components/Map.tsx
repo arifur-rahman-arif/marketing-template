@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Map = () => {
-    return <div>Map</div>;
+    return <div className="hidden bg-red-300 lg:block">Map</div>;
 };
 
 export default Map;

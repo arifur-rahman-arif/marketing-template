@@ -42,8 +42,18 @@ const App = () => {
         return (
             <form className="grid gap-8 md:gap-10">
                 <Filter />
-                <CentreList />
-                <Map />
+
+                {/* Spacer */}
+                <div className="h-[1px] w-full bg-gray-80 max-lg:hidden"></div>
+
+                <p>
+                    <b>5 centre(s)</b> found near your place
+                </p>
+
+                <div className="grid overflow-hidden rounded-large lg:max-h-[41.125rem] lg:grid-cols-[auto_1fr]">
+                    <CentreList />
+                    <Map />
+                </div>
             </form>
         );
     } else {

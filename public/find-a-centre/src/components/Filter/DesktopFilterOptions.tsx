@@ -204,7 +204,7 @@ const DesktopFilterOptions = () => {
 
                         <button
                             type="button"
-                            className="text-sm font-700 underline decoration-gray-80 decoration-2 underline-offset-[5px]"
+                            className="text-sm font-700 underline decoration-gray-80 decoration-2 underline-offset-[5px] transition-all duration-500 hover:text-primary-100 hover:decoration-primary-100"
                             onClick={snap.handleReset}
                         >
                             Reset

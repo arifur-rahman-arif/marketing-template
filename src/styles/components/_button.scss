@@ -41,16 +41,6 @@
 
     @include mfs-button();
 
-    &--small {
-        padding: var(--Spacing-spacing-03) var(--Spacing-spacing-06);
-        font-size: var(--font-size-Small, 0.875rem);
-
-        @include media-breakpoint-up(md) {
-            padding: var(--Spacing-spacing-03) var(--Spacing-spacing-06);
-            font-size: var(--font-size-Small, 0.875rem);
-        }
-    }
-
     // Secondary
     &--secondary {
         border-radius: var(--Border-Radius-border-radius-round);
@@ -85,6 +75,15 @@
         &:active {
             color: var(--Gray-80);
             background: transparent;
+        }
+    }
+
+    &--small {
+        padding: var(--Spacing-spacing-03) var(--Spacing-spacing-06);
+        font-size: 0.875rem;
+
+        @include media-breakpoint-up(md) {
+            padding: var(--Spacing-spacing-03) var(--Spacing-spacing-06);
         }
     }
 }

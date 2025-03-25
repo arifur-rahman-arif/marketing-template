@@ -314,6 +314,25 @@ body {
     ::-webkit-scrollbar-track-piece {
         background: var(--T-Aqua-Green);
     }
+
+    #centre-list::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    #centre-list::-webkit-scrollbar-track-piece {
+        background: var(--Gray-20) !important;
+    }
+
+    #centre-list::-webkit-scrollbar-thumb {
+        background: var(--Gray-40);
+        border-radius: 100px;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    #centre-list::-webkit-scrollbar {
+        width: 0px;
+    }
 }
 
 input:-webkit-autofill {
