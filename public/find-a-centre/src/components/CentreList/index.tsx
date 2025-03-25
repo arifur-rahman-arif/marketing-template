@@ -3,7 +3,7 @@ import React from 'react';
 
 const CentreList = () => {
     return (
-        <div className="grid bg-secondary-lightCream lg:max-w-[31.13rem] lg:py-10 lg:pr-6">
+        <div className="grid bg-secondary-lightCream lg:max-w-[31.13rem] lg:py-10 lg:pr-5">
             <div
                 id="centre-list"
                 className="grid gap-6 overflow-y-auto overflow-x-hidden rounded-large p-5 max-lg:h-full max-lg:max-h-[50rem] sm:grid-cols-2 lg:max-h-[36.1rem] lg:grid-cols-1 lg:py-0"
