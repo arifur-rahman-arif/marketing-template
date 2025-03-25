@@ -5,14 +5,22 @@ type CheckboxProps = {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     id: string;
     label: string;
+    value: string;
     className?: string; // Added optional className prop for future enhancements.
 };
 
-const Checkbox = ({ checked, onChange, id, label, className }: CheckboxProps) => {
+const Checkbox = ({ checked, onChange, id, label, value, className }: CheckboxProps) => {
     return (
         <div className={`form-input form-input--checkbox ${className}`}>
-            <label htmlFor={id}>
-                <input id={id} type="checkbox" checked={checked} onChange={onChange} className="form-input" />
+            <label htmlFor={id} className="cursor-pointer">
+                <input
+                    id={id}
+                    type="checkbox"
+                    checked={checked}
+                    onChange={onChange}
+                    className="form-input"
+                    value={value}
+                />
                 <span className="checkbox">
                     <svg
                         className="h-3 w-3"
@@ -31,7 +39,7 @@ const Checkbox = ({ checked, onChange, id, label, className }: CheckboxProps) =>
                         />
                     </svg>
                 </span>
-                <span>{label}</span>
+                {label}
             </label>
         </div>
     );

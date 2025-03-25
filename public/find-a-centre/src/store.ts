@@ -1,5 +1,6 @@
 import { proxy } from 'valtio';
 import { devtools } from 'valtio/utils';
+import { cloneDeep } from 'lodash';
 
 export interface CentreData {
     centreType: string;
@@ -10,7 +11,8 @@ export interface CentreData {
 }
 
 export interface CentreSearchProps {
-    centreType: Array<{
+    openCentreTypeMenu: boolean;
+    centreTypes: Array<{
         label: string;
         value: string;
         active: boolean;
@@ -28,7 +30,13 @@ export interface CentreSearchProps {
     };
     latitude: number;
     longitude: number;
-    isCertified: boolean;
+    certificationMenuOpen: boolean;
+    certifications: Array<{
+        label: string;
+        value: string;
+        active: boolean;
+    }>;
+    openMotherTongueMenu: boolean;
     motherTongue: Array<{
         label: string;
         value: string;
@@ -46,10 +54,25 @@ interface StoreInterface {
     formError: string;
     handleFormSubmit: () => void;
     handleReset: () => void;
+    handleFilterClick: () => void;
+    activeFilters: {
+        search: string;
+        centreTypes: string[];
+        programmeTypes: string[];
+        distance: {
+            min: number;
+            max: number;
+        };
+        latitude: number;
+        longitude: number;
+        certifications: string[];
+        motherTongue: string[];
+    };
 }
 
 const defaultFormData: CentreSearchProps = {
-    centreType: [
+    openCentreTypeMenu: false,
+    centreTypes: [
         {
             label: 'All',
             value: 'all',
@@ -66,7 +89,7 @@ const defaultFormData: CentreSearchProps = {
             active: false
         }
     ],
-    openProgrammeMenu: true,
+    openProgrammeMenu: false,
     programmeTypes: [
         {
             label: 'All',
@@ -109,6 +132,7 @@ const defaultFormData: CentreSearchProps = {
         max: 20,
         value: [5, 15]
     },
+    openMotherTongueMenu: false,
     motherTongue: [
         {
             label: 'All',
@@ -131,17 +155,52 @@ const defaultFormData: CentreSearchProps = {
             active: false
         }
     ],
-    isCertified: false,
+    certificationMenuOpen: false,
+    certifications: [
+        {
+            label: 'Certified Centres',
+            value: 'certified-centres',
+            active: false
+        }
+    ],
     search: '',
     latitude: 0,
     longitude: 0
 };
 
 export const state: StoreInterface = proxy<StoreInterface>({
-    formData: { ...defaultFormData },
-    modalOpen: true,
+    formData: cloneDeep(defaultFormData),
+    modalOpen: false,
+    activeFilters: {
+        search: '',
+        centreTypes: ['all'],
+        programmeTypes: ['all'],
+        distance: {
+            min: 5,
+            max: 15
+        },
+        latitude: 0,
+        longitude: 0,
+        certifications: ['certified-centres'],
+        motherTongue: ['all']
+    },
     handleReset: () => {
-        state.formData = { ...defaultFormData };
+        state.formData = cloneDeep(defaultFormData);
+    },
+    handleFilterClick: () => {
+        state.activeFilters = {
+            search: state.formData.search,
+            centreTypes: state.formData.centreTypes.filter(item => item.active).map(item => item.value),
+            programmeTypes: state.formData.programmeTypes.filter(item => item.active).map(item => item.value),
+            distance: {
+                min: state.formData.distance.value[0],
+                max: state.formData.distance.value[1]
+            },
+            latitude: state.formData.latitude,
+            longitude: state.formData.longitude,
+            certifications: state.formData.certifications.filter(item => item.active).map(item => item.value),
+            motherTongue: state.formData.motherTongue.filter(item => item.active).map(item => item.value)
+        };
     }
 } as StoreInterface);
 
