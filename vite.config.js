@@ -9,6 +9,7 @@ const inputFiles = Object.fromEntries(
 
 export default defineConfig({
     build: {
+        // minify: false,
         minify: 'terser', // Enables Terser minification
         sourcemap: false, // Disables source maps for smaller output
         rollupOptions: {
@@ -18,7 +19,7 @@ export default defineConfig({
                 chunkFileNames: '[name].[hash].js',
                 assetFileNames: '[name].[ext]',
                 format: 'es',
-                compact: true, // Compacts output for minification
+                compact: false, // Compacts output for minification
                 generatedCode: 'es2015'
             }
         }
