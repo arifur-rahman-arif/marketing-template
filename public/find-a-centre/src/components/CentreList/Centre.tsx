@@ -9,11 +9,31 @@ interface Props {
     language: string[];
     link: string;
     largeChildCareCentre?: boolean;
+    id: string;
+    onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onMouseOver: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const Centre = ({ image, isCertified, title, address, distance, language, link, largeChildCareCentre }: Props) => {
+const Centre = ({
+    image,
+    isCertified,
+    title,
+    address,
+    distance,
+    language,
+    link,
+    largeChildCareCentre,
+    id,
+    onClick,
+    onMouseOver
+}: Props) => {
     return (
-        <div className="grid content-start gap-2 lg:max-w-[25.125rem] lg:grid-cols-[auto_1fr] lg:gap-4">
+        <div
+            className="centre-item grid cursor-pointer content-start gap-2 rounded-large p-2.5 transition-all duration-500 hover:bg-secondary-lightGrayBeige lg:max-w-[27.125rem] lg:grid-cols-[auto_1fr] lg:gap-4"
+            id={id}
+            onClick={onClick}
+            onMouseOver={onMouseOver}
+        >
             <div className="relative">
                 <img
                     src={image}
@@ -50,12 +70,12 @@ const Centre = ({ image, isCertified, title, address, distance, language, link, 
 
                     <div className="flex flex-wrap items-center justify-start gap-x-2 gap-y-0">
                         {language?.map((item, index) => (
-                            <>
+                            <React.Fragment key={item}>
                                 <span className="text-xs leading-5">{item}</span>
                                 {language.length - 1 !== index && (
                                     <span className="block h-0.5 w-0.5 rounded-full bg-gray-80"></span>
                                 )}
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
                 </div>

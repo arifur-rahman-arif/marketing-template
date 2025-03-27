@@ -1,5 +1,3 @@
-import { CountryCode, isValidNumber, parsePhoneNumber } from 'libphonenumber-js';
-
 /**
  * Returns country code
  *

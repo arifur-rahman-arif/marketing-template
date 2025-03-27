@@ -1,13 +1,13 @@
 import FilterOptions from './FilterOptions';
 import { state } from '@/store';
 import { useSnapshot } from 'valtio';
-import React from 'react';
+import React, { useEffect } from 'react';
 import DesktopFilterOptions from '@/components/Filter/DesktopFilterOptions';
 
 const Filter = () => {
     const snap = useSnapshot(state);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 1024) {
                 state.formData.openCentreTypeMenu = true;

@@ -1,7 +1,124 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { state } from '@/store';
+import { useSnapshot } from 'valtio';
+
+// Fix default marker icon issue in Leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: '/assets/images/icons/icon-map-dark.svg',
+    iconUrl: '/assets/images/icons/icon-map-dark.svg',
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
+    // iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+    // iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+    // shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
+});
+
+// Custom marker icon size
+// const customIcon = new L.Icon({
+//     iconUrl: '/assets/images/icons/icon-map-dark.svg',
+//     iconSize: [40, 40], // Set the size of the icon here (width, height)
+//     iconAnchor: [20, 40], // This ensures the marker's position aligns correctly (centered)
+//     popupAnchor: [0, -40] // Adjust this if needed to position the popup properly
+// });
+
+// Define a function to create an SVG marker with a customizable color
+const createSvgIcon = (id: string) => {
+    return L.divIcon({
+        className: id,
+        html: `
+           <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_39365_31346)">
+                    <path d="M6.82994 10.9701C9.92056 5.34931 14.8295 2.69258 21.1702 2.41431C21.9796 2.49183 22.8097 2.52645 23.6247 2.65658C28.2786 3.40002 32.0317 5.65111 34.6137 9.59952C37.2747 13.6656 38.019 18.0155 36.0204 22.6298C34.8008 25.4471 33.1765 28.025 31.3956 30.51C28.9813 33.8742 26.3009 37.021 23.5069 40.0723C22.2276 41.4706 19.9755 41.4567 18.7101 40.0086C16.8322 37.86 14.946 35.7169 13.1512 33.5004C10.6496 30.4076 8.36555 27.1583 6.65947 23.5435C5.96234 22.0691 5.37193 20.5504 5.20008 18.9168C4.90626 16.1036 5.48004 13.4261 6.82994 10.9701ZM21.1563 25.353C24.9732 25.3475 28.1095 22.1605 28.1054 18.291C28.0998 14.4713 24.9662 11.3591 21.1328 11.3674C17.2854 11.3757 14.1629 14.5253 14.1629 18.3976C14.1643 22.2311 17.3076 25.3585 21.1563 25.353Z" fill="#595959"/>
+                    <path d="M17.0221 18.3782C17.011 20.6376 18.8349 22.4858 21.0898 22.4997C23.3988 22.5121 25.242 20.6875 25.2448 18.3865C25.2476 16.152 23.4001 14.2886 21.1591 14.2651C18.9222 14.2415 17.0346 16.1188 17.0221 18.3782Z" fill="#595959"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_39365_31346">
+                    <rect width="41" height="41" fill="white" transform="translate(0 0.706055)"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        `,
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    });
+};
+
+// Sample location data
+const locations = [
+    { id: 1, name: 'Marina Bay Sands', lat: 1.2834, lon: 103.8607 },
+    { id: 2, name: 'Sentosa Island', lat: 1.2494, lon: 103.8303 },
+    { id: 3, name: 'Gardens by the Bay', lat: 1.2816, lon: 103.8636 },
+    { id: 4, name: 'Orchard Road', lat: 1.3051, lon: 103.8318 }
+];
+
+// Define a function to create an SVG marker with a customizable color
 
 const Map = () => {
-    return <div className="hidden bg-red-300 lg:block">Map</div>;
+    const snap = useSnapshot(state);
+    const mapRef = useRef<any>();
+
+    const changeMapPosition = (lat: number, lon: number) => {
+        const map = mapRef.current;
+        if (map) {
+            map.flyTo([lat, lon], 15, {
+                animate: true, // Smooth animation
+                duration: 0.3 // Animation duration in seconds
+            });
+        }
+    };
+
+    useEffect(() => {
+        state.changeMapPosition = changeMapPosition;
+    }, []);
+
+    // Function to handle the click event on a marker
+    const handleMarkerClick = (lat: number, lon: number, id: number) => {
+        changeMapPosition(lat, lon);
+
+        // Set the centre scroll into view with provided id
+        const centreElement = document.getElementById(`centre-${id}`);
+        if (centreElement) {
+            centreElement.scrollIntoView({
+                behavior: 'smooth', // Smooth scrolling
+                block: 'center', // Scroll the item to the center of the view,
+                inline: 'nearest' // Ensure no horizontal scroll, just vertical centering
+            });
+            document.querySelectorAll('.centre-item').forEach(el => el.classList.remove('bg-secondary-lightGrayBeige'));
+            centreElement.classList.add('bg-secondary-lightGrayBeige');
+        }
+    };
+
+    return (
+        <div className="hidden w-full place-items-center lg:grid">
+            <MapContainer
+                center={[1.2834, 103.8607]}
+                zoom={12}
+                style={{ height: '657.59px', width: '671.92px' }}
+                minZoom={12}
+                maxZoom={18}
+                ref={mapRef}
+            >
+                <TileLayer url="https://www.onemap.gov.sg/maps/tiles/Grey/{z}/{x}/{y}.png" />
+                {locations.map(loc => (
+                    <Marker
+                        key={loc.id}
+                        position={[loc.lat, loc.lon]}
+                        // icon={customIcon}
+                        icon={createSvgIcon(`pin_${loc.id}`)}
+                        eventHandlers={{
+                            click: () => handleMarkerClick(loc.lat, loc.lon, loc.id) // Handle the click event
+                        }}
+                    >
+                        <Popup>{loc.name}</Popup>
+                    </Marker>
+                ))}
+            </MapContainer>
+        </div>
+    );
 };
 
 export default Map;

@@ -68,6 +68,7 @@ interface StoreInterface {
         certifications: string[];
         motherTongue: string[];
     };
+    changeMapPosition: (lat: number, lon: number) => void;
 }
 
 const defaultFormData: CentreSearchProps = {

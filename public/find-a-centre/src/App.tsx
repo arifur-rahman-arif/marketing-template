@@ -50,7 +50,7 @@ const App = () => {
                     <b>5 centre(s)</b> found near your place
                 </p>
 
-                <div className="grid overflow-hidden rounded-large lg:max-h-[41.125rem] lg:grid-cols-[auto_1fr]">
+                <div className="grid overflow-hidden rounded-large lg:max-h-[41.125rem] lg:grid-cols-[31.13rem_1fr]">
                     <CentreList />
                     <Map />
                 </div>

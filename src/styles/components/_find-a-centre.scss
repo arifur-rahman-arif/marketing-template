@@ -1,0 +1,21 @@
+#centre-search {
+    .leaflet-bottom {
+        display: none !important;
+    }
+
+    .leaflet-marker-icon {
+        svg,
+        svg * {
+            transition: all 0.5s ease-in-out;
+        }
+
+        &.active {
+            svg {
+                scale: 1.2;
+            }
+            svg path {
+                fill: var(--P-100);
+            }
+        }
+    }
+}
