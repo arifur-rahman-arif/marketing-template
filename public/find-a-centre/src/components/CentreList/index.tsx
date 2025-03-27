@@ -17,7 +17,7 @@ const CentreList = () => {
             <div
                 ref={outsideRef}
                 id="centre-list"
-                className="grid gap-6 overflow-y-auto overflow-x-hidden rounded-large p-5 !pb-1 max-lg:h-full max-lg:max-h-[50rem] sm:grid-cols-2 lg:max-h-[36.1rem] lg:grid-cols-1 lg:py-0 lg:pr-2"
+                className="grid gap-6 overflow-y-auto overflow-x-hidden rounded-large p-5 !pb-1 max-lg:h-full max-lg:max-h-[50rem] sm:grid-cols-2 lg:max-h-[38.1rem] lg:grid-cols-1 lg:py-0 lg:pr-2"
             >
                 {/* Item */}
                 <Centre

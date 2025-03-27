@@ -3235,6 +3235,10 @@ video {
   background-color: var(--S-Light-Cream);
 }
 
+.bg-secondary-lightGrayBeige {
+  background-color: var(--S-Light-Gray-Beige);
+}
+
 .bg-secondary-paleIvory {
   background-color: var(--S-Pale-Ivory);
 }
@@ -3273,10 +3277,6 @@ video {
 
 .bg-white {
   background-color: var(--White);
-}
-
-.bg-secondary-lightGrayBeige {
-  background-color: var(--S-Light-Gray-Beige);
 }
 
 .decoration-slice {
@@ -3401,6 +3401,10 @@ video {
   padding: 0.5rem;
 }
 
+.p-2\.5 {
+  padding: 0.625rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -3415,14 +3419,6 @@ video {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-2\.5 {
-  padding: 0.625rem;
 }
 
 .\!px-8 {
@@ -3505,6 +3501,10 @@ video {
   padding-bottom: 0.9rem;
 }
 
+.\!pb-1 {
+  padding-bottom: 0.25rem !important;
+}
+
 .\!pr-12 {
   padding-right: 3rem !important;
 }
@@ -3547,14 +3547,6 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem;
-}
-
-.\!pb-1 {
-  padding-bottom: 0.25rem !important;
 }
 
 .text-left {
@@ -5835,18 +5827,6 @@ video {
   }
 }
 
-.hover\:bg-gray-40:hover {
-  background-color: var(--Gray-40);
-}
-
-.hover\:bg-gray-20:hover {
-  background-color: var(--Gray-20);
-}
-
-.hover\:bg-gray-10:hover {
-  background-color: var(--Gray-10);
-}
-
 .hover\:bg-secondary-lightGrayBeige:hover {
   background-color: var(--S-Light-Gray-Beige);
 }
@@ -6511,6 +6491,10 @@ video {
     max-height: 36.1rem;
   }
 
+  .lg\:max-h-\[38\.1rem\] {
+    max-height: 38.1rem;
+  }
+
   .lg\:max-h-\[41\.125rem\] {
     max-height: 41.125rem;
   }
@@ -6527,16 +6511,12 @@ video {
     max-width: 25.125rem;
   }
 
-  .lg\:max-w-\[31\.13rem\] {
-    max-width: 31.13rem;
-  }
-
-  .lg\:max-w-\[26\.125rem\] {
-    max-width: 26.125rem;
-  }
-
   .lg\:max-w-\[27\.125rem\] {
     max-width: 27.125rem;
+  }
+
+  .lg\:max-w-\[31\.13rem\] {
+    max-width: 31.13rem;
   }
 
   .lg\:grid-cols-1 {
@@ -6608,16 +6588,12 @@ video {
     padding-bottom: 13rem;
   }
 
-  .lg\:pr-6 {
-    padding-right: 1.5rem;
-  }
-
-  .lg\:pr-3 {
-    padding-right: 0.75rem;
-  }
-
   .lg\:pr-2 {
     padding-right: 0.5rem;
+  }
+
+  .lg\:pr-6 {
+    padding-right: 1.5rem;
   }
 
   .lg\:\!text-base {
