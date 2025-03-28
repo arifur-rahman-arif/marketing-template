@@ -4,10 +4,21 @@ import { cloneDeep } from 'lodash';
 
 export interface CentreData {
     centreType: string;
-    programmeType: string[];
+    centreProgrammes: Array<{
+        label: string;
+        value: string;
+    }>;
     distance: number;
     isCertified: boolean;
-    motherTongue: string[];
+    motherTongue: Array<{
+        label: string;
+        value: string;
+    }>;
+    latitude: string;
+    longitude: string;
+    postalCode: string;
+    centreAddress: string;
+    imageUrl: string;
 }
 
 export interface CentreSearchProps {
@@ -69,6 +80,10 @@ interface StoreInterface {
         motherTongue: string[];
     };
     changeMapPosition: (lat: number, lon: number) => void;
+    userCurrentLocation: {
+        lat: number;
+        lon: number;
+    };
 }
 
 const defaultFormData: CentreSearchProps = {
@@ -202,6 +217,10 @@ export const state: StoreInterface = proxy<StoreInterface>({
             certifications: state.formData.certifications.filter(item => item.active).map(item => item.value),
             motherTongue: state.formData.motherTongue.filter(item => item.active).map(item => item.value)
         };
+    },
+    userCurrentLocation: {
+        lat: 0,
+        lon: 0
     }
 } as StoreInterface);
 

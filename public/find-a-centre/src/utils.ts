@@ -1,10 +1,16 @@
+type LocationPromise = {
+    countryCode: string;
+    latitude: number;
+    longitude: number;
+};
+
 /**
  * Returns country code
  *
  * @returns {Promise<void>}
  */
-export const detectLocation = (): Promise<string> => {
-    return new Promise<string>((resolve, reject) => {
+export const detectLocation = (): Promise<LocationPromise> => {
+    return new Promise<LocationPromise>((resolve, reject) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 async position => {
@@ -15,7 +21,14 @@ export const detectLocation = (): Promise<string> => {
                             `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
                         );
                         const data = await response.json();
-                        resolve(data.countryCode);
+
+                        console.log(latitude);
+
+                        resolve({
+                            countryCode: data.countryCode,
+                            latitude,
+                            longitude
+                        });
                     } catch (error) {
                         console.error('Error fetching location data:', error);
                         reject(error);
