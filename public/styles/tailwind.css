@@ -1533,6 +1533,14 @@ video {
   z-index: 4;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
 .col-span-full {
   grid-column: 1 / -1;
 }
@@ -3277,6 +3285,10 @@ video {
 
 .bg-white {
   background-color: var(--White);
+}
+
+.bg-gray-40 {
+  background-color: var(--Gray-40);
 }
 
 .decoration-slice {

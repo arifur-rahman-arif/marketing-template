@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { state } from '@/store';
+import { CentreData, state } from '@/store';
 import { useSnapshot } from 'valtio';
 
 // Fix default marker icon issue in Leaflet
@@ -47,19 +47,9 @@ const createSvgIcon = (id: string) => {
     });
 };
 
-// Sample location data
-const locations = [
-    { id: 1, name: 'Marina Bay Sands', lat: 1.2834, lon: 103.8607 },
-    { id: 2, name: 'Sentosa Island', lat: 1.2494, lon: 103.8303 },
-    { id: 3, name: 'Gardens by the Bay', lat: 1.2816, lon: 103.8636 },
-    { id: 4, name: 'Orchard Road', lat: 1.3051, lon: 103.8318 }
-];
-
-// Define a function to create an SVG marker with a customizable color
-
 const Map = () => {
-    const snap = useSnapshot(state);
     const mapRef = useRef<any>();
+    const snap = useSnapshot(state);
 
     const changeMapPosition = (lat: number, lon: number) => {
         const map = mapRef.current;
@@ -71,9 +61,29 @@ const Map = () => {
         }
     };
 
+    const setDefaultMapView = () => {
+        if (mapRef.current) {
+            const map = mapRef.current;
+            map.setView([averageLatitude, averageLongitude], 12, {
+                animate: true,
+                duration: 0.3
+            });
+        }
+    };
+
+    const averageLatitude =
+        snap.filteredCentres.reduce((acc, centre) => acc + Number(centre.latitude), 0) / snap.filteredCentres.length;
+    const averageLongitude =
+        snap.filteredCentres.reduce((acc, centre) => acc + Number(centre.longitude), 0) / snap.filteredCentres.length;
+
     useEffect(() => {
         state.changeMapPosition = changeMapPosition;
+        state.setDefaultMapView = setDefaultMapView;
     }, []);
+
+    useEffect(() => {
+        setDefaultMapView();
+    }, [snap.filteredCentres]);
 
     // Function to handle the click event on a marker
     const handleMarkerClick = (lat: number, lon: number, id: number) => {
@@ -93,9 +103,9 @@ const Map = () => {
     };
 
     return (
-        <div className="hidden w-full place-items-center lg:grid">
+        <div className="relative z-40 hidden w-full place-items-center lg:grid">
             <MapContainer
-                center={[1.2834, 103.8607]}
+                center={[averageLatitude, averageLongitude]}
                 zoom={12}
                 style={{ height: '657.59px', width: '671.92px' }}
                 minZoom={12}
@@ -103,17 +113,17 @@ const Map = () => {
                 ref={mapRef}
             >
                 <TileLayer url="https://www.onemap.gov.sg/maps/tiles/Grey/{z}/{x}/{y}.png" />
-                {locations.map(loc => (
+                {snap.filteredCentres?.map((centre, index) => (
                     <Marker
-                        key={loc.id}
-                        position={[loc.lat, loc.lon]}
+                        key={index}
+                        position={[Number(centre.latitude), Number(centre.longitude)]}
                         // icon={customIcon}
-                        icon={createSvgIcon(`pin_${loc.id}`)}
+                        icon={createSvgIcon(`pin_${index + 1}`)}
                         eventHandlers={{
-                            click: () => handleMarkerClick(loc.lat, loc.lon, loc.id) // Handle the click event
+                            click: () => handleMarkerClick(Number(centre.latitude), Number(centre.longitude), index + 1) // Handle the click event
                         }}
                     >
-                        <Popup>{loc.name}</Popup>
+                        <Popup>{centre.title}</Popup>
                     </Marker>
                 ))}
             </MapContainer>

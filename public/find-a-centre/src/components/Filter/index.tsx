@@ -58,8 +58,9 @@ const Filter = () => {
                     type="text"
                     value={snap.formData?.search}
                     onChange={e => (state.formData.search = e.target.value)}
-                    className="!pr-12"
+                    className="centre-search-input !pr-12"
                     placeholder="Enter area name or postal code"
+                    id="mobile-centre-search"
                 />
                 <img
                     src="/public/assets/images/icons/icon-search.svg"

@@ -23,8 +23,9 @@ const DesktopFilterOptions = () => {
                             type="text"
                             value={snap.formData?.search}
                             onChange={e => (state.formData.search = e.target.value)}
-                            className="!pr-12"
+                            className="centre-search-input !pr-12"
                             placeholder="Enter area name or postal code"
+                            id="desktop-centre-search"
                         />
                         <img
                             src="/public/assets/images/icons/icon-search.svg"
@@ -41,7 +42,7 @@ const DesktopFilterOptions = () => {
                     <label className="text-base font-700">Filter by:</label>
 
                     {/* Filter options options */}
-                    <div className="flex w-full items-center justify-start gap-4">
+                    <div className="relative z-50 flex w-full items-center justify-start gap-4">
                         {/* Centre type*/}
                         <Dropdown
                             title="Centre type"

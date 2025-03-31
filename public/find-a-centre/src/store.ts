@@ -1,9 +1,13 @@
 import { proxy } from 'valtio';
 import { devtools } from 'valtio/utils';
 import { cloneDeep } from 'lodash';
+import Fuse from 'fuse.js';
 
 export interface CentreData {
-    centreType: string;
+    title: string;
+    link: string;
+    centreCode?: string;
+    centreType: 'early-years-centre' | 'large-childcare-centre';
     centreProgrammes: Array<{
         label: string;
         value: string;
@@ -59,13 +63,13 @@ export interface CentreSearchProps {
 interface StoreInterface {
     formData: CentreSearchProps;
     centres: CentreData[];
+    filteredCentres: CentreData[] | [];
     formSubmitted: boolean;
     modalOpen: boolean;
-    isMutating: boolean;
-    formError: string;
     handleFormSubmit: () => void;
     handleReset: () => void;
     handleFilterClick: () => void;
+    setDefaultMapView: () => void;
     activeFilters: {
         search: string;
         centreTypes: string[];
@@ -134,12 +138,12 @@ const defaultFormData: CentreSearchProps = {
         },
         {
             label: 'Kindergarten 1',
-            value: 'kindergarten-1',
+            value: 'k1-programme',
             active: false
         },
         {
             label: 'Kindergarten 2',
-            value: 'kindergarten-2',
+            value: 'k2-programme',
             active: false
         }
     ],
@@ -184,7 +188,7 @@ const defaultFormData: CentreSearchProps = {
     longitude: 0
 };
 
-export const state: StoreInterface = proxy<StoreInterface>({
+export const state: StoreInterface = proxy<any>({
     formData: cloneDeep(defaultFormData),
     modalOpen: false,
     activeFilters: {
@@ -200,8 +204,15 @@ export const state: StoreInterface = proxy<StoreInterface>({
         certifications: ['certified-centres'],
         motherTongue: ['all']
     },
+    filteredCentres: [],
+    userCurrentLocation: {
+        lat: 0,
+        lon: 0
+    },
     handleReset: () => {
         state.formData = cloneDeep(defaultFormData);
+        state.filteredCentres = state.centres;
+        state.setDefaultMapView();
     },
     handleFilterClick: () => {
         state.activeFilters = {
@@ -217,10 +228,65 @@ export const state: StoreInterface = proxy<StoreInterface>({
             certifications: state.formData.certifications.filter(item => item.active).map(item => item.value),
             motherTongue: state.formData.motherTongue.filter(item => item.active).map(item => item.value)
         };
-    },
-    userCurrentLocation: {
-        lat: 0,
-        lon: 0
+
+        state.filteredCentres = (() => {
+            const { centreTypes, programmeTypes, distance, certifications, motherTongue, search } = state.activeFilters;
+
+            let filteredCentres = state.centres.filter(centre => {
+                let isMatch = true;
+
+                // Centre Type Filtering
+                if (!(centreTypes.includes('all') || centreTypes.includes(centre.centreType))) {
+                    isMatch = false;
+                }
+
+                // Programme Types Filtering
+                if (
+                    !(
+                        programmeTypes.includes('all') ||
+                        centre.centreProgrammes.some(prog => programmeTypes.includes(prog.value))
+                    )
+                ) {
+                    isMatch = false;
+                }
+
+                // Certification Filtering
+                if (certifications.includes('certified-centres') && !centre.isCertified) {
+                    isMatch = false;
+                }
+
+                // Mother Tongue Filtering
+                if (
+                    !(
+                        motherTongue.includes('all') ||
+                        centre.motherTongue.some(lang => motherTongue.includes(lang.value))
+                    )
+                ) {
+                    isMatch = false;
+                }
+
+                // Distance Filtering (if needed)
+                if (centre.distance < distance.min || centre.distance > distance.max) {
+                    isMatch = false;
+                }
+
+                return isMatch;
+            });
+
+            // **Fuzzy Search with Fuse.js**
+            if (search.trim()) {
+                const fuse = new Fuse(filteredCentres, {
+                    keys: ['title', 'centreType', 'postalCode', 'centreProgrammes.label', 'motherTongue.label'],
+                    threshold: 0.3, // Adjusts fuzziness (lower = stricter match, higher = looser match)
+                    findAllMatches: true,
+                    ignoreLocation: true
+                });
+
+                filteredCentres = fuse.search(search.trim()).map(result => result.item);
+            }
+
+            return filteredCentres;
+        })();
     }
 } as StoreInterface);
 

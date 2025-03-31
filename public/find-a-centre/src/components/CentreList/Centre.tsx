@@ -85,6 +85,7 @@ const Centre = ({
             <a
                 className="mfs-button mfs-button--secondary mfs-button--small lg:col-span-full lg:!text-base"
                 href={link}
+                target="_blank"
             >
                 Centre details
             </a>

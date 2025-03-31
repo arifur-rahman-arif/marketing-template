@@ -1,13 +1,15 @@
 import CentreList from '@/components/CentreList';
 import Filter from '@/components/Filter';
 import Map from '@/components/Map';
-import { state } from '@/store';
-import { detectLocation } from '@/utils';
+import { CentreData, state } from '@/store';
 import { cloneDeep } from 'lodash';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useSWR from 'swr';
+import { useSnapshot } from 'valtio';
 
 const NoResult = ({ type }: { type?: string }) => {
+    const snap = useSnapshot(state);
+
     return (
         <div className="grid justify-items-center gap-4 py-10">
             <h2 className="text-center">
@@ -19,7 +21,9 @@ const NoResult = ({ type }: { type?: string }) => {
             {type != 'initRequest' ? (
                 <>
                     <p>Try refining your search or exploring other filters.</p>
-                    <button className="mfs-button">Start new search</button>
+                    <button onClick={snap.handleReset} className="mfs-button">
+                        Start new search
+                    </button>
                 </>
             ) : null}
         </div>
@@ -33,6 +37,8 @@ const NoResult = ({ type }: { type?: string }) => {
  * @constructor
  */
 const App = () => {
+    const snap = useSnapshot(state);
+
     /**
      * Sends data to a specified URL using a POST request.
      *
@@ -70,6 +76,20 @@ const App = () => {
         detect();
     }, []);
 
+    useEffect(() => {
+        if (data?.status === 'success') {
+            state.centres = cloneDeep(data.data);
+            state.filteredCentres = state.centres.sort((a, b) => {
+                const priorityOrder = {
+                    'large-childcare-centre': 1, // Highest priority (appears first)
+                    'early-years-centre': 2 // Lower priority (appears later)
+                };
+
+                return priorityOrder[a.centreType] - priorityOrder[b.centreType];
+            });
+        }
+    }, [data]);
+
     if (error) {
         console.log(error);
 
@@ -91,27 +111,33 @@ const App = () => {
     }
 
     if (data?.status === 'success') {
-        state.centres = cloneDeep(data.data);
-        // detectLocation();
-
         return (
-            <form className="grid gap-8 md:gap-10">
+            <form
+                className="grid gap-8 md:gap-10"
+                onSubmit={snap.handleFilterClick}
+                onKeyDown={e => {
+                    if (e.key === 'Enter') {
+                        snap.handleFilterClick();
+                    }
+                }}
+            >
                 <Filter />
 
                 {/* Spacer */}
                 <div className="h-[1px] w-full bg-gray-80 max-lg:hidden"></div>
 
                 <p>
-                    <b>5 centre(s)</b> found near your place
+                    <b>{snap.filteredCentres?.length} centre(s)</b> found near your place
                 </p>
 
-                <div className="grid overflow-hidden rounded-large lg:max-h-[41.125rem] lg:grid-cols-[31.13rem_1fr]">
-                    <CentreList />
-                    <Map />
-                </div>
-
-                {/* No results component */}
-                {/* <NoResult /> */}
+                {snap.filteredCentres?.length ? (
+                    <div className="grid overflow-hidden rounded-large lg:max-h-[41.125rem] lg:grid-cols-[31.13rem_1fr]">
+                        <CentreList />
+                        <Map />
+                    </div>
+                ) : (
+                    <NoResult />
+                )}
             </form>
         );
     } else {
