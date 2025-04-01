@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { CentreData, state } from '@/store';
+import { state } from '@/store';
 import { useSnapshot } from 'valtio';
 
 // Fix default marker icon issue in Leaflet
@@ -15,14 +15,6 @@ L.Icon.Default.mergeOptions({
     // iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
     // shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
 });
-
-// Custom marker icon size
-// const customIcon = new L.Icon({
-//     iconUrl: '/assets/images/icons/icon-map-dark.svg',
-//     iconSize: [40, 40], // Set the size of the icon here (width, height)
-//     iconAnchor: [20, 40], // This ensures the marker's position aligns correctly (centered)
-//     popupAnchor: [0, -40] // Adjust this if needed to position the popup properly
-// });
 
 // Define a function to create an SVG marker with a customizable color
 const createSvgIcon = (id: string) => {
@@ -51,9 +43,32 @@ const Map = () => {
     const mapRef = useRef<any>();
     const snap = useSnapshot(state);
 
+    const preloadTiles = (lat: number, lon: number, zoom: number) => {
+        const tileLayer = mapRef.current._layers[0]; // Access the tile layer
+        const bounds = mapRef.current.getBounds();
+        const tileSize = tileLayer.options.tileSize;
+
+        // Calculate the tiles to preload in the area around the new position
+        const topLeft = mapRef.current.project([lat, lon], zoom).subtract([tileSize / 2, tileSize / 2]);
+        const bottomRight = mapRef.current.project([lat, lon], zoom).add([tileSize / 2, tileSize / 2]);
+
+        const topLeftTile = mapRef.current.unproject(topLeft, zoom);
+        const bottomRightTile = mapRef.current.unproject(bottomRight, zoom);
+
+        // Preload tiles within the new bounds
+        for (let x = topLeftTile.lng; x <= bottomRightTile.lng; x++) {
+            for (let y = topLeftTile.lat; y <= bottomRightTile.lat; y++) {
+                const tileUrl = tileLayer.getTileUrl({ x, y, z: zoom });
+                const img = new Image();
+                img.src = tileUrl;
+            }
+        }
+    };
+
     const changeMapPosition = (lat: number, lon: number) => {
         const map = mapRef.current;
         if (map) {
+            // Reduce or disable zoom animation when zooming in or out
             map.flyTo([lat, lon], 15, {
                 animate: true, // Smooth animation
                 duration: 0.3 // Animation duration in seconds
@@ -65,8 +80,8 @@ const Map = () => {
         if (mapRef.current) {
             const map = mapRef.current;
             map.setView([averageLatitude, averageLongitude], 12, {
-                animate: true,
-                duration: 0.3
+                animate: false,
+                duration: 0.5
             });
         }
     };
@@ -110,9 +125,10 @@ const Map = () => {
                 style={{ height: '657.59px', width: '671.92px' }}
                 minZoom={12}
                 maxZoom={18}
+                scrollWheelZoom={false}
                 ref={mapRef}
             >
-                <TileLayer url="https://www.onemap.gov.sg/maps/tiles/Grey/{z}/{x}/{y}.png" />
+                <TileLayer url="https://www.onemap.gov.sg/maps/tiles/Grey/{z}/{x}/{y}.png" crossOrigin="anonymous" />
                 {snap.filteredCentres?.map((centre, index) => (
                     <Marker
                         key={index}

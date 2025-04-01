@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <link rel="stylesheet" href="/styles/tailwind.css" />
+        <link rel="stylesheet" href="/find-a-centre/build/styles/main.min.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
@@ -660,7 +661,13 @@
             <!-- ====================== -->
             <!-- Find a centre -->
             <!-- ====================== -->
-            <section class="find-a-centre"></section>
+            <section id="find-a-centre" class="find-a-centre bg-tinted-sageGreen">
+                <div class="container grid gap-8 py-10 md:gap-10 md:py-20">
+                    <h2 class="max-w-[60rem]">Find a preschool centre in Pasir Ris</h2>
+
+                    <div id="centre-search"></div>
+                </div>
+            </section>
 
             <!-- ====================== -->
             <!-- Trusted brands -->
@@ -1597,5 +1604,6 @@
             </footer>
         </div>
         <script type="module" src="/src/main.js"></script>
+        <script type="text/javascript" src="/find-a-centre/build/index.js"></script>
     </body>
 </html>

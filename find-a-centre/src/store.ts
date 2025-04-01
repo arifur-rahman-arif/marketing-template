@@ -210,7 +210,8 @@ export const state: StoreInterface = proxy<any>({
     filteredCentres: [],
     userCurrentLocation: {
         // lat: 1.3667, // Test value for Singapore
-        // lon: 103.8, // Test value for Singapore
+        // lon: 103.8, // Test value for Singapore,
+        // countryCode: 'SG'
         lat: 0,
         lon: 0,
         countryCode: ''

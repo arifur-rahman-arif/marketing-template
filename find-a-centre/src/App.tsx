@@ -1,9 +1,9 @@
 import CentreList from '@/components/CentreList';
 import Filter from '@/components/Filter';
 import Map from '@/components/Map';
-import { CentreData, state } from '@/store';
+import { state } from '@/store';
 import { cloneDeep } from 'lodash';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useSWR from 'swr';
 import { useSnapshot } from 'valtio';
 
@@ -53,7 +53,7 @@ const App = () => {
         return await res.json();
     };
 
-    const url = 'http://mfs-old.local/wp-json/mfs/get-centres';
+    const url = 'https://stgmfs5.wpenginepowered.com/wp-json/mfs/get-centres';
 
     const { data, error } = useSWR(url, getData);
 

@@ -21,7 +21,9 @@ export default defineConfig({
                 format: 'es',
                 compact: false, // Compacts output for minification
                 generatedCode: 'es2015'
-            }
+            },
+            // Exclude the folder containing the React component from bundling
+            external: ['public/find-a-centre/*']
         }
     },
     esbuild: {
