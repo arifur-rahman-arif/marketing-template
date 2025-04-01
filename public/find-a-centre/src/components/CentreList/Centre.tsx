@@ -5,7 +5,7 @@ interface Props {
     isCertified?: boolean;
     title: string;
     address: string;
-    distance: string;
+    distance: number;
     language: string[];
     link: string;
     largeChildCareCentre?: boolean;
@@ -62,7 +62,9 @@ const Centre = ({
                 <p className="text-sm">{address}</p>
 
                 {/* Distance */}
-                <span className="text-xs font-700 leading-5 text-primary-100">{distance}</span>
+                {distance ? (
+                    <span className="text-xs font-700 leading-5 text-primary-100">±{distance}KM AWAY</span>
+                ) : null}
 
                 {/* Curriculum */}
                 <div className="mt-2 grid lg:mt-auto">

@@ -26,7 +26,7 @@ const CentreList = () => {
                         isCertified={centre.isCertified}
                         title={centre.title}
                         address={centre.centreAddress}
-                        distance="±0.3KM AWAY"
+                        distance={centre.distance || 0}
                         link={centre.link}
                         largeChildCareCentre={centre.centreType === 'large-childcare-centre'}
                         language={centre.motherTongue.map(item => item.label)}

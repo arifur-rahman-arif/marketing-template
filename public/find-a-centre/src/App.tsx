@@ -66,6 +66,13 @@ const App = () => {
 
                         state.userCurrentLocation.lat = latitude;
                         state.userCurrentLocation.lon = longitude;
+
+                        const response = await fetch(
+                            `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+                        );
+                        const data = await response.json();
+
+                        state.userCurrentLocation.countryCode = data.countryCode;
                     },
                     error => {
                         console.error('Error retrieving location:', error);
@@ -78,7 +85,27 @@ const App = () => {
 
     useEffect(() => {
         if (data?.status === 'success') {
+            const { lat: userLat, lon: userLon, countryCode } = state.userCurrentLocation;
+
             state.centres = cloneDeep(data.data);
+
+            // Set the distance value for each of the centre based on current user location
+            if (countryCode === 'SG' && userLat && userLon) {
+                state.centres = state.centres.map(centre => {
+                    const calculatedDistance = snap.calculateDistance(
+                        userLat,
+                        userLon,
+                        Number(centre.latitude),
+                        Number(centre.longitude)
+                    );
+
+                    return {
+                        ...centre,
+                        distance: calculatedDistance
+                    };
+                });
+            }
+
             state.filteredCentres = state.centres.sort((a, b) => {
                 const priorityOrder = {
                     'large-childcare-centre': 1, // Highest priority (appears first)

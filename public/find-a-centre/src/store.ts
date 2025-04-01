@@ -66,10 +66,7 @@ interface StoreInterface {
     filteredCentres: CentreData[] | [];
     formSubmitted: boolean;
     modalOpen: boolean;
-    handleFormSubmit: () => void;
-    handleReset: () => void;
-    handleFilterClick: () => void;
-    setDefaultMapView: () => void;
+
     activeFilters: {
         search: string;
         centreTypes: string[];
@@ -83,11 +80,17 @@ interface StoreInterface {
         certifications: string[];
         motherTongue: string[];
     };
-    changeMapPosition: (lat: number, lon: number) => void;
     userCurrentLocation: {
         lat: number;
         lon: number;
+        countryCode: string;
     };
+    handleFormSubmit: () => void;
+    handleReset: () => void;
+    handleFilterClick: () => void;
+    changeMapPosition: (lat: number, lon: number) => void;
+    setDefaultMapView: () => void;
+    calculateDistance: (lat1: number, lon1: number, lat2: number, lon2: number) => number;
 }
 
 const defaultFormData: CentreSearchProps = {
@@ -149,8 +152,8 @@ const defaultFormData: CentreSearchProps = {
     ],
     distance: {
         min: 0,
-        max: 20,
-        value: [5, 15]
+        max: 40,
+        value: [5, 30]
     },
     openMotherTongueMenu: false,
     motherTongue: [
@@ -206,13 +209,28 @@ export const state: StoreInterface = proxy<any>({
     },
     filteredCentres: [],
     userCurrentLocation: {
+        // lat: 1.3667, // Test value for Singapore
+        // lon: 103.8, // Test value for Singapore
         lat: 0,
-        lon: 0
+        lon: 0,
+        countryCode: ''
     },
     handleReset: () => {
         state.formData = cloneDeep(defaultFormData);
         state.filteredCentres = state.centres;
         state.setDefaultMapView();
+
+        if (window.innerWidth <= 1024) {
+            state.formData.openCentreTypeMenu = true;
+            state.formData.openProgrammeMenu = true;
+            state.formData.openMotherTongueMenu = true;
+            state.formData.certificationMenuOpen = true;
+        } else {
+            state.formData.openCentreTypeMenu = false;
+            state.formData.openProgrammeMenu = false;
+            state.formData.openMotherTongueMenu = false;
+            state.formData.certificationMenuOpen = false;
+        }
     },
     handleFilterClick: () => {
         state.activeFilters = {
@@ -265,9 +283,16 @@ export const state: StoreInterface = proxy<any>({
                     isMatch = false;
                 }
 
-                // Distance Filtering (if needed)
-                if (centre.distance < distance.min || centre.distance > distance.max) {
-                    isMatch = false;
+                // Distance Filtering
+                // Enable this when user is in Singapore location
+                if (
+                    state.userCurrentLocation.countryCode === 'SG' &&
+                    state.userCurrentLocation.lat &&
+                    state.userCurrentLocation.lon
+                ) {
+                    if (centre.distance < distance.min || centre.distance > distance.max) {
+                        isMatch = false;
+                    }
                 }
 
                 return isMatch;
@@ -287,7 +312,29 @@ export const state: StoreInterface = proxy<any>({
 
             return filteredCentres;
         })();
+    },
+    /**
+     * Calculates the distance between two points on the surface of the Earth.
+     * @param lat1 The latitude of the first point.
+     * @param lon1 The longitude of the first point.
+     * @param lat2 The latitude of the second point.
+     * @param lon2 The longitude of the second point.
+     * @returns The distance between the two points in kilometers.
+     */
+    calculateDistance: (lat1: number, lon1: number, lat2: number, lon2: number) => {
+        const toRad = (value: number) => (value * Math.PI) / 180;
+        const R = 6371; // Earth's radius in KM
+
+        const dLat = toRad(lat2 - lat1);
+        const dLon = toRad(lon2 - lon1);
+
+        const a =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return parseFloat((R * c).toFixed(2));
     }
 } as StoreInterface);
 
-devtools(state, { name: 'Centre Search', enabled: true });
+// devtools(state, { name: 'Centre Search', enabled: true });

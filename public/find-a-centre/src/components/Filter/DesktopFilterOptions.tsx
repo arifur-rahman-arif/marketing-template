@@ -106,32 +106,38 @@ const DesktopFilterOptions = () => {
                             >
                                 <div className="grid gap-4 rounded-small border border-solid border-gray-20 px-4 py-2">
                                     {/* Range Slider */}
-                                    <div className="grid gap-4">
-                                        <span className="font-700">Distance</span>
+                                    {snap.userCurrentLocation.countryCode === 'SG' &&
+                                    snap.userCurrentLocation.lat &&
+                                    snap.userCurrentLocation.lon ? (
+                                        <div className="grid gap-4">
+                                            <span className="font-700">Distance</span>
 
-                                        <Slider
-                                            getAriaLabel={() => 'Distance'}
-                                            value={snap.formData.distance.value}
-                                            onChange={(_, value) => (state.formData.distance.value = value as number[])}
-                                            valueLabelDisplay="auto"
-                                            min={snap.formData.distance.min}
-                                            max={snap.formData.distance.max}
-                                        />
+                                            <Slider
+                                                getAriaLabel={() => 'Distance'}
+                                                value={snap.formData.distance.value}
+                                                onChange={(_, value) =>
+                                                    (state.formData.distance.value = value as number[])
+                                                }
+                                                valueLabelDisplay="auto"
+                                                min={snap.formData.distance.min}
+                                                max={snap.formData.distance.max}
+                                            />
 
-                                        <div className="-mt-1 flex items-center justify-between gap-4">
-                                            <span className="text-sm">
-                                                {snap.formData.distance.min}km
-                                                <br />
-                                                <span className="text-xs">Minimum</span>
-                                            </span>
+                                            <div className="-mt-1 flex items-center justify-between gap-4">
+                                                <span className="text-sm">
+                                                    {snap.formData.distance.value[0]}km
+                                                    <br />
+                                                    <span className="text-xs">Minimum</span>
+                                                </span>
 
-                                            <span className="text-right text-sm">
-                                                {snap.formData.distance.max}km
-                                                <br />
-                                                <span className="text-right text-xs">Minimum</span>
-                                            </span>
+                                                <span className="text-right text-sm">
+                                                    {snap.formData.distance.value[1]}km
+                                                    <br />
+                                                    <span className="text-right text-xs">Minimum</span>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    ) : null}
 
                                     {/* Certifications */}
                                     <div className="grid gap-2">

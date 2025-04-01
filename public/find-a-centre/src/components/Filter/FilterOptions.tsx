@@ -12,35 +12,41 @@ const FilterOptions = () => {
     return (
         <div className={`grid gap-6 ${styles.styles}`}>
             {/* Range Slider */}
-            <div className="grid gap-4">
-                <span className="text-lg font-bold">Distance</span>
+            {snap.userCurrentLocation.countryCode === 'SG' &&
+            snap.userCurrentLocation.lat &&
+            snap.userCurrentLocation.lon ? (
+                <>
+                    <div className="grid gap-4">
+                        <span className="text-lg font-bold">Distance</span>
 
-                <Slider
-                    getAriaLabel={() => 'Distance'}
-                    value={snap.formData.distance.value}
-                    onChange={(_, value) => (state.formData.distance.value = value as number[])}
-                    valueLabelDisplay="auto"
-                    min={snap.formData.distance.min}
-                    max={snap.formData.distance.max}
-                />
+                        <Slider
+                            getAriaLabel={() => 'Distance'}
+                            value={snap.formData.distance.value}
+                            onChange={(_, value) => (state.formData.distance.value = value as number[])}
+                            valueLabelDisplay="auto"
+                            min={snap.formData.distance.min}
+                            max={snap.formData.distance.max}
+                        />
 
-                <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm">
-                        {snap.formData.distance.min}km
-                        <br />
-                        <span className="text-xs">Minimum</span>
-                    </span>
+                        <div className="flex items-center justify-between gap-4">
+                            <span className="text-sm">
+                                {snap.formData.distance.value[0]}km
+                                <br />
+                                <span className="text-xs">Minimum</span>
+                            </span>
 
-                    <span className="text-right text-sm">
-                        {snap.formData.distance.max}km
-                        <br />
-                        <span className="text-right text-xs">Minimum</span>
-                    </span>
-                </div>
-            </div>
+                            <span className="text-right text-sm">
+                                {snap.formData.distance.value[1]}km
+                                <br />
+                                <span className="text-right text-xs">Maximum</span>
+                            </span>
+                        </div>
+                    </div>
 
-            {/* Divider */}
-            <div className="h-[1px] w-full bg-gray-20"></div>
+                    {/* Divider */}
+                    <div className="h-[1px] w-full bg-gray-20"></div>
+                </>
+            ) : null}
 
             {/* Certified Centre */}
             <div className="grid">
