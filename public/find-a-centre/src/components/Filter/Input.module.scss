@@ -1,0 +1,56 @@
+.styles {
+    :global {
+        & .MuiSlider-rail {
+            background: #facab0;
+            height: 0.75rem;
+            border-radius: var(--Border-Radius-border-radius-large);
+        }
+
+        & .MuiSlider-track {
+            background: var(--P-100);
+            height: 0.75rem;
+            border: none;
+
+            @media screen and (min-width: 768px) {
+                & .MuiSlider-thumb {
+                    height: 0.65rem;
+                }
+            }
+        }
+
+        & .MuiSlider-thumb {
+            background: var(--P-100);
+            width: 1.8rem;
+            height: 1.8rem;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 1.3rem;
+                height: 1.3rem;
+                border-radius: 50%;
+                background-color: var(--White);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        & .MuiSlider-valueLabel {
+            background: var(--White);
+            font-family: 'Livvic', serif; /* Use the Google Font */
+            box-shadow: var(--Shadow-1);
+            border: 1px solid var(--P-100);
+            border-radius: var(--Border-Radius-border-radius-xsmall);
+
+            &::before {
+                border-bottom: 1px solid var(--P-100);
+                border-right: 1px solid var(--P-100);
+            }
+        }
+
+        & .MuiSlider-valueLabelLabel {
+            font-weight: var(--600);
+        }
+    }
+}
