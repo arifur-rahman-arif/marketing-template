@@ -85,7 +85,7 @@ const App = () => {
 
     useEffect(() => {
         if (data?.status === 'success') {
-            const { lat: userLat, lon: userLon, countryCode } = state.userCurrentLocation;
+            const { lat: userLat, lon: userLon, countryCode } = snap.userCurrentLocation;
 
             state.centres = cloneDeep(data.data);
 
@@ -115,7 +115,7 @@ const App = () => {
                 return priorityOrder[a.centreType] - priorityOrder[b.centreType];
             });
         }
-    }, [data]);
+    }, [data, snap.userCurrentLocation]);
 
     if (error) {
         console.log(error);
