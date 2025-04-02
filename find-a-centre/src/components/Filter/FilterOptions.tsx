@@ -57,7 +57,7 @@ const FilterOptions = () => {
                 >
                     <span className="font-700">SPARK certification</span>
                     <img
-                        src="/assets/images/icons/icon-arrow-down.svg"
+                        src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-arrow-down.svg"
                         width={20}
                         height={20}
                         alt=""
@@ -105,7 +105,7 @@ const FilterOptions = () => {
                 >
                     <span className="font-700">Programme type</span>
                     <img
-                        src="/assets/images/icons/icon-arrow-down.svg"
+                        src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-arrow-down.svg"
                         width={20}
                         height={20}
                         alt=""
@@ -153,7 +153,7 @@ const FilterOptions = () => {
                 >
                     <span className="font-700">Mother tongue</span>
                     <img
-                        src="/assets/images/icons/icon-arrow-down.svg"
+                        src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-arrow-down.svg"
                         width={20}
                         height={20}
                         alt=""
@@ -201,7 +201,7 @@ const FilterOptions = () => {
                 >
                     <span className="font-700">Centre type</span>
                     <img
-                        src="/assets/images/icons/icon-arrow-down.svg"
+                        src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-arrow-down.svg"
                         width={20}
                         height={20}
                         alt=""

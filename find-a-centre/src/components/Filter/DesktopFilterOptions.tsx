@@ -28,7 +28,7 @@ const DesktopFilterOptions = () => {
                             id="desktop-centre-search"
                         />
                         <img
-                            src="/public/assets/images/icons/icon-search.svg"
+                            src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-search.svg"
                             alt=""
                             width={24}
                             height={24}
@@ -92,7 +92,7 @@ const DesktopFilterOptions = () => {
                             >
                                 <span className="text-sm leading-6">Others</span>
                                 <img
-                                    src="/assets/images/icons/icon-arrow-down.svg"
+                                    src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-arrow-down.svg"
                                     width={14}
                                     height={14}
                                     alt=""

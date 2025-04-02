@@ -34,7 +34,7 @@ const Dropdown = ({ title, onClick, isOpen, options, onChange, type, closeDropdo
             >
                 <span className="text-sm leading-6">{title}</span>
                 <img
-                    src="/assets/images/icons/icon-arrow-down.svg"
+                    src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-arrow-down.svg"
                     width={14}
                     height={14}
                     alt=""

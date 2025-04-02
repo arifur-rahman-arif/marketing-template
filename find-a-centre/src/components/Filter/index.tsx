@@ -63,7 +63,7 @@ const Filter = () => {
                     id="mobile-centre-search"
                 />
                 <img
-                    src="/public/assets/images/icons/icon-search.svg"
+                    src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-search.svg"
                     alt=""
                     width={24}
                     height={24}
@@ -81,7 +81,12 @@ const Filter = () => {
                     className="flex items-center justify-start gap-4 text-lg font-700"
                     onClick={() => (state.modalOpen = !snap.modalOpen)}
                 >
-                    <img src="/public/assets/images/icons/icon-filter.svg" alt="" width={24} height={24} />
+                    <img
+                        src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-filter.svg"
+                        alt=""
+                        width={24}
+                        height={24}
+                    />
                     Filters ({getSelectedFilters()})
                 </button>
 
@@ -102,7 +107,12 @@ const Filter = () => {
                     {/* Header */}
                     <div className="flex items-center justify-between gap-4">
                         <button type="button" onClick={() => (state.modalOpen = false)}>
-                            <img src="/assets/images/icons/icon-cross.svg" alt="" width={24} height={24} />
+                            <img
+                                src="https://marketing-template-pi.vercel.app/assets/images/icons/icon-cross.svg"
+                                alt=""
+                                width={24}
+                                height={24}
+                            />
                         </button>
 
                         <span className="text-lg font-700">Filters</span>
