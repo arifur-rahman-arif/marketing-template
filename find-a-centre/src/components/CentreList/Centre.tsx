@@ -52,7 +52,14 @@ const Centre = ({
             </div>
 
             <div className="flex flex-col gap-2">
-                {isCertified ? <img src="/assets/images/logos/spark-logo.png" width={46} height={44} alt="" /> : null}
+                {isCertified ? (
+                    <img
+                        src="https://marketing-template-pi.vercel.app/assets/images/logos/spark-logo.png"
+                        width={46}
+                        height={44}
+                        alt=""
+                    />
+                ) : null}
                 {/* Is certified */}
 
                 {/* Title */}
