@@ -15,15 +15,13 @@ export default defineConfig({
         rollupOptions: {
             input: inputFiles,
             output: {
-                entryFileNames: '[name].[hash].js', // Uses hashed filenames
-                chunkFileNames: '[name].[hash].js',
+                entryFileNames: '[name].js', // Uses hashed filenames
+                chunkFileNames: '[name].js',
                 assetFileNames: '[name].[ext]',
                 format: 'es',
                 compact: false, // Compacts output for minification
                 generatedCode: 'es2015'
-            },
-            // Exclude the folder containing the React component from bundling
-            external: ['public/find-a-centre/*']
+            }
         }
     },
     esbuild: {
