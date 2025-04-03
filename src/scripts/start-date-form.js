@@ -84,14 +84,14 @@ class StartDateForm {
 
             // Take the start date and set it to another input with id #hs_form_target_widget_1743652996643-3242932545104-input
             const startDateInput = $('#hs_form_target_widget_1743652996643-3242932545104-input');
-            const date = new Date(startDate);
-            startDateInput.val(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`);
+            const date = new Date(Date.parse(startDate));
+            startDateInput.val(`${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`); // 05 / 04 / 2025
 
             // Select the hidden input (assuming it's the next input element)
-            // const startDateHiddenInput = $('#hs_form_target_widget_1743652996643-3242932545104-input + input');
+            const startDateHiddenInput = $('#hs_form_target_widget_1743652996643-3242932545104-input + input');
 
             // Set the hidden input value to the timestamp
-            // startDateHiddenInput.val(1746403200000);
+            startDateHiddenInput.val(date.getTime());
 
             // Scroll to a specific section after form submission
             $('html, body').animate(
