@@ -7,6 +7,17 @@ class StartDateForm {
         this.initializeDatepicker();
         this.handleFormSubmit();
         this.initializeHubSpotDatePicker();
+
+        // Scroll to register from on clicking the register button
+        $('.register-now-btn').on('click', e => {
+            e.preventDefault();
+            $('html, body').animate(
+                {
+                    scrollTop: $('.hsfc-Form').offset().top
+                },
+                1000
+            );
+        });
     }
 
     initializeHubSpotDatePicker = () => {
