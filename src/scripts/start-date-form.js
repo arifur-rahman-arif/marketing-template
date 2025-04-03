@@ -10,19 +10,19 @@ class StartDateForm {
     }
 
     initializeHubSpotDatePicker = () => {
-        const dateInput = $('.hsfc-DateInput');
+        setTimeout(() => {
+            const dateInput = $('.hsfc-DateInput');
 
-        if (dateInput.length > 0) {
-            setTimeout(() => {
-                flatpickr(dateInput, {
-                    locale: {
-                        firstDayOfWeek: 0
-                    },
-                    dateFormat: 'd / m / Y',
-                    disableMobile: true
-                });
-            }, 4500);
-        }
+            if (dateInput.length < 1) return;
+
+            flatpickr(dateInput, {
+                locale: {
+                    firstDayOfWeek: 0
+                },
+                dateFormat: 'd / m / Y',
+                disableMobile: true
+            });
+        }, 4500);
     };
 
     /**
