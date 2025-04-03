@@ -148,6 +148,9 @@
     input[type='text'],
     input[type='email'] {
         @include input-style();
+        font-family: 'Livvic', serif; /* Use the Google Font */
+        font-size: 1rem;
+        font-weight: var(--500);
     }
 
     input[type='checkbox'] {
@@ -254,6 +257,61 @@
         p:nth-child(2) {
             &,
             * {
+                font-size: 1.125rem !important;
+                font-weight: var(--500);
+                line-height: 1.625rem !important; /* 144.444% */
+            }
+        }
+    }
+}
+
+.hsfc-Step__Content.hsfc-Step__Content.hsfc-Step__Content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-width);
+    width: 100%;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    @include media-breakpoint-up(xl) {
+        padding-left: 0;
+        padding-right: 0;
+
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    #hs_form_target_widget_1743652996643-24 {
+        display: grid;
+        gap: 0.5rem;
+        justify-items: center;
+
+        p:first-child {
+            &,
+            * {
+                color: var(--Gray-80);
+                text-align: center;
+
+                /* Desktop/Heading 3 */
+                font-size: 2.5rem !important;
+                font-weight: var(--700);
+                line-height: 3rem !important; /* 120% */
+
+                @include media-breakpoint-down(md) {
+                    /* Desktop/Heading 4 */
+                    font-size: 1.875rem !important;
+                    line-height: 2.375rem !important; /* 126.667% */
+                }
+            }
+        }
+
+        p:nth-child(2) {
+            &,
+            * {
+                text-align: center;
                 font-size: 1.125rem !important;
                 font-weight: var(--500);
                 line-height: 1.625rem !important; /* 144.444% */
