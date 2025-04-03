@@ -11,14 +11,14 @@ class StartDateForm {
 
     initializeHubSpotDatePicker = () => {
         setTimeout(() => {
-            const dateInput = $('.hsfc-DateInput');
-
-            flatpickr(dateInput, {
-                locale: {
-                    firstDayOfWeek: 0
-                },
-                dateFormat: 'd / m / Y',
-                disableMobile: true
+            $('.hsfc-DateInput').each(function () {
+                flatpickr(this, {
+                    locale: {
+                        firstDayOfWeek: 0
+                    },
+                    dateFormat: 'd / m / Y',
+                    disableMobile: true
+                });
             });
         }, 4500);
     };

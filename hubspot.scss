@@ -271,6 +271,9 @@
         margin-right: auto;
         max-width: var(--container-width);
         width: 100%;
+
+        display: grid;
+        align-content: center;
     }
 
     @include media-breakpoint-up(xl) {
@@ -314,6 +317,10 @@
                 font-weight: var(--500);
                 line-height: 1.625rem !important; /* 144.444% */
             }
+        }
+
+        p:nth-child(3) {
+            display: none !important;
         }
     }
 }
