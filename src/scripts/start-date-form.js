@@ -13,13 +13,15 @@ class StartDateForm {
         const dateInput = $('.hsfc-DateInput');
 
         if (dateInput.length > 0) {
-            flatpickr(dateInput, {
-                locale: {
-                    firstDayOfWeek: 0
-                },
-                dateFormat: 'd / m / Y',
-                disableMobile: true
-            });
+            setTimeout(() => {
+                flatpickr(dateInput, {
+                    locale: {
+                        firstDayOfWeek: 0
+                    },
+                    dateFormat: 'd / m / Y',
+                    disableMobile: true
+                });
+            }, 4500);
         }
     };
 
