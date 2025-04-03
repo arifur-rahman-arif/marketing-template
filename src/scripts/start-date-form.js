@@ -13,8 +13,6 @@ class StartDateForm {
         setTimeout(() => {
             const dateInput = $('.hsfc-DateInput');
 
-            if (dateInput.length < 1) return;
-
             flatpickr(dateInput, {
                 locale: {
                     firstDayOfWeek: 0
