@@ -1,0 +1,263 @@
+@mixin media-breakpoint-up($break-points) {
+    @if $break-points == xs {
+        @media (min-width: 400px) {
+            @content;
+        }
+    } @else if $break-points == sm {
+        @media (min-width: 640px) {
+            @content;
+        }
+    } @else if $break-points == md {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $break-points == lg {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    } @else if $break-points == xl {
+        @media (min-width: 1280px) {
+            @content;
+        }
+    } @else if $break-points == '2xl' {
+        @media (min-width: 1536px) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg, xl, '2xl'";
+    }
+}
+
+@mixin media-breakpoint-down($break-points) {
+    @if $break-points == sm {
+        @media (max-width: 639px) {
+            @content;
+        }
+    } @else if $break-points == md {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $break-points == lg {
+        @media (max-width: 1023px) {
+            @content;
+        }
+    } @else if $break-points == xl {
+        @media (max-width: 1279px) {
+            @content;
+        }
+    } @else if $break-points == 2xl {
+        @media (max-width: 1535px) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint mixin supports: sm, md, lg, xl, 2xl";
+    }
+}
+
+@mixin input-style {
+    display: flex;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    border-radius: var(--Border-Radius-border-radius-round, 6.25rem);
+    border: 1px solid var(--Gray-20, #d9d9d9);
+    background: var(--White, #fff);
+    position: relative;
+    z-index: 3;
+    transition: all 0.5s ease-in-out;
+
+    &::placeholder {
+        color: var(--Gray-40);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: var(--400);
+        line-height: 1.75rem; /* 175% */
+        transition: all 0.5s ease-in-out;
+    }
+
+    &:focus {
+        border-color: var(--White);
+    }
+}
+
+@mixin mfs-button() {
+    background: var(--Gray-80);
+    outline: none;
+    border: 2px solid var(--Gray-80);
+    display: inline-block;
+    padding: var(--Spacing-spacing-03);
+    border-radius: 6.25rem;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 2; /* Ensure the text is above the pseudo-element */
+    color: var(--White);
+    font-weight: var(--700);
+    font-size: 0.875rem;
+
+    @include media-breakpoint-up(md) {
+        padding: var(--Spacing-spacing-04) var(--Spacing-spacing-06);
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background: var(--Gray-60);
+        border-color: var(--Gray-60);
+        box-shadow: var(--Shadow-3);
+    }
+
+    &:focus {
+        background: var(--Gray-80);
+        border: 2px solid var(--Gray-40);
+    }
+
+    &:active {
+        background: var(--Gray-80);
+    }
+}
+
+.hsfc-Form.hsfc-Form.hsfc-Form.hsfc-Form {
+    padding: 2.5rem 0;
+    width: 100%;
+    background: #acd9cd;
+
+    @media (min-width: 1280px) {
+        padding: 5rem 0;
+    }
+
+    @include media-breakpoint-down(xl) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .hsfc-Step__Content {
+        border-radius: 1.5rem;
+        background: #fff7eb;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 73.125rem;
+        width: 100%;
+
+        padding: 3.5rem;
+
+        @include media-breakpoint-down(md) {
+            padding: 1.5rem;
+        }
+    }
+
+    .hsfc-DateInput,
+    input[type='text'],
+    input[type='email'] {
+        @include input-style();
+    }
+
+    input[type='checkbox'] {
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 0.25rem;
+        border: 1px solid var(--Gray-40);
+        background: var(--White, #fff);
+        appearance: none;
+
+        &:checked {
+            background: var(--P-100);
+            border-color: var(--P-100);
+        }
+    }
+
+    input[type='radio'] {
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 1px solid var(--Gray-40);
+        background: var(--White, #fff);
+        appearance: none;
+
+        &:checked {
+            background: var(--P-100);
+            border-color: var(--P-100);
+        }
+    }
+
+    .hsfc-FieldLabel {
+        curspr: pointer;
+        &,
+        * {
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: var(--700);
+            line-height: 1.375rem;
+        }
+    }
+
+    .hsfc-ErrorAlert {
+        font-family: 'Livvic', serif; /* Use the Google Font */
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        font-weight: var(--500);
+        color: var(--Alert-100);
+        z-index: 2;
+    }
+
+    .hsfc-DropdownOptions__List {
+        .hsfc-DropdownOptions__List__ListItem {
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    .hsfc-DropdownOptions__Search {
+        padding: 1rem;
+    }
+
+    .hsfc-PhoneInput__FlagAndCaret {
+        padding: 0 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .hsfc-PhoneInput {
+        gap: 0.5rem;
+    }
+
+    .hsfc-Button {
+        @include mfs-button();
+        font-family: 'Livvic', serif; /* Use the Google Font */
+        margin-right: auto;
+    }
+
+    .hsfc-RichText {
+        &,
+        * {
+            font-family: 'Livvic', serif; /* Use the Google Font */
+        }
+    }
+
+    #hs_form_target_widget_1743652996643-1 {
+        display: grid;
+        gap: 0.5rem;
+
+        p:first-child {
+            &,
+            * {
+                color: var(--Gray-80);
+
+                /* Desktop/Heading 3 */
+                font-size: 2.5rem !important;
+                font-weight: var(--700);
+                line-height: 3rem !important; /* 120% */
+
+                @include media-breakpoint-down(md) {
+                    /* Desktop/Heading 4 */
+                    font-size: 1.875rem !important;
+                    line-height: 2.375rem !important; /* 126.667% */
+                }
+            }
+        }
+
+        p:nth-child(2) {
+            &,
+            * {
+                font-size: 1.125rem !important;
+                font-weight: var(--500);
+                line-height: 1.625rem !important; /* 144.444% */
+            }
+        }
+    }
+}

@@ -6,7 +6,22 @@ class StartDateForm {
         this.form = $('.registration-start-date-form');
         this.initializeDatepicker();
         this.handleFormSubmit();
+        this.initializeHubSpotDatePicker();
     }
+
+    initializeHubSpotDatePicker = () => {
+        const dateInput = $('.hsfc-DateInput');
+
+        if (dateInput.length > 0) {
+            flatpickr(dateInput, {
+                locale: {
+                    firstDayOfWeek: 0
+                },
+                dateFormat: 'd / m / Y',
+                disableMobile: true
+            });
+        }
+    };
 
     /**
      * Initializes date pickers for check-in and check-out inputs within the given form.
@@ -67,10 +82,21 @@ class StartDateForm {
 
             console.log(startDate);
 
+            // Take the start date and set it to another input with id #hs_form_target_widget_1743652996643-3242932545104-input
+            const startDateInput = $('#hs_form_target_widget_1743652996643-3242932545104-input');
+            const date = new Date(startDate);
+            startDateInput.val(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`);
+
+            // Select the hidden input (assuming it's the next input element)
+            // const startDateHiddenInput = $('#hs_form_target_widget_1743652996643-3242932545104-input + input');
+
+            // Set the hidden input value to the timestamp
+            // startDateHiddenInput.val(1746403200000);
+
             // Scroll to a specific section after form submission
             $('html, body').animate(
                 {
-                    scrollTop: $('#registration-form').offset().top
+                    scrollTop: $('.hsfc-Form').offset().top
                 },
                 1000
             );
