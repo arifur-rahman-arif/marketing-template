@@ -53,7 +53,7 @@ const App = () => {
         return await res.json();
     };
 
-    const url = 'https://stgmfs5.wpenginepowered.com/wp-json/mfs/get-centres';
+    const url = 'https://www.myfirstskool.com/wp-json/mfs/get-centres';
 
     const { data, error } = useSWR(url, getData);
 
