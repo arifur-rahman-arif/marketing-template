@@ -170,7 +170,13 @@ const App = () => {
     } else {
         return (
             <div className="rounded-radius2 bg-color15 grid min-h-[30rem] place-items-center md:min-h-[40rem]">
-                <img alt="Loading" width="60" height="60" className="" src="/assets/images/icons/spinner-dark.svg" />
+                <img
+                    alt="Loading"
+                    width="60"
+                    height="60"
+                    className=""
+                    src="https://marketing-template-pi.vercel.app/assets/images/icons/spinner-dark.svg"
+                />
             </div>
         );
     }
